@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: sans-serif;
+}
+.container:nth-of-type(2) {
+	margin-top: 40px;
+}
+.navbar-toggler {
+border-radius:50%;
+    width:40px;
+    padding:5px 0px;
+    border: none;
+    color:white;
+}
+
+.navbar-toggler:hover {
+    background-color:rgba(0,0,0,0.05);
+    border-radius:50%;
+    
+}
+.navbar-toggler-icon {
+    
+}
+.stayloggedinlabel {
+    padding:0;
+    margin:0;
+    
+}
+.stayloggedinlabel input {
+    margin-right:10px;
+}
+.plrobj {
+	display:inline-block;
+	text-align:center;
+	width: 30px;
+	height: 30px;
+	line-height:28px;
+	border-radius:50%;
+	border: 1px solid white;
+	color:white;
+	font-size:14px;
+	margin: 0;
+	padding: 0;
+}
+
+tr:nth-of-type(odd) .plrobj {
+	background-color: orange;
+}
+tr:nth-of-type(even) .plrobj {
+	background-color: indianred;
+}
+
+tr td:nth-of-type(3) {
+	text-align:center;
+	padding:1px 6px;
+}
+tr th:nth-of-type(3) {
+	text-align:center;
+}
