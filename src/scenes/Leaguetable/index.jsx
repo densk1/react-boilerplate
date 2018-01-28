@@ -3,40 +3,21 @@ import {
 	Container, 
 	Table 
 } from 'reactstrap';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 import NavBar from '../../components/Navbar';
-const decode = require('unescape');
-
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { 
-			tableData: null,
-		};
-	}
-	componentWillMount = () => {
-		this.fetchTableData();
-	}
-	fetchTableData = () => {
-		return fetch('http://do:3000/team/0/leaguetable/')
-			.then((response) => response.json())
-			.then((responseJson) => {
-			  
-			this.setState({tableData:responseJson.result })
-			
-			})
-			.catch((error) => {
-			  console.error(error);
-			});
+	componentDidMount = () => {
+		this.props.getTable();
 	}
 	buildTable = () => {
 		let position = 1;
-		console.log('decode', decode('&#039;'))
-		return(this.state.tableData.map(d =>  
+		return(this.props.table.map(d =>  
 				<tr key={d.SquadID}>
 					<td>{position++}</td>
-					<td>{decode(d.SquadPlayerName)}</td>
+					<td>{d.SquadPlayerName}</td>
 					<td><div className="plrobj">{d.Squad_Number}</div></td>
 					<td>{d.GamesPlayed}</td>
 					<td>{d.Wins}</td>
@@ -62,7 +43,6 @@ class App extends Component {
 					</tr>
 		)
 	}
-			  
 	render(){
 		return (
 			<div>
@@ -73,13 +53,17 @@ class App extends Component {
 							{this.tableTop()}
 						</thead>
 						<tbody>
-							{this.state.tableData && this.buildTable()}
+							{this.props.table && this.buildTable()}
 						</tbody>
 					</Table>
 				</Container>
 			</div>
 		)
 	}	
-}	
+}
 	
-export default App;
+function mapStateToProps ({ table }) {
+	return { table };
+}
+	
+export default connect(mapStateToProps,actions)(App);

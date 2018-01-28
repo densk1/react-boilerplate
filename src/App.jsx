@@ -4,6 +4,10 @@ import {
 	Route, 
 	Switch,
 } from 'react-router-dom';
+/*
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+*/
 
 import Home from './scenes/Home/';
 import Login from './scenes/Login';
@@ -25,3 +29,6 @@ class App extends Component {
 }
 
 export default App;
+
+
+// export default connect(mapStateToProps,actions)(App);

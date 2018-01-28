@@ -1,21 +1,12 @@
-const getData = () = {
-	return fetch('http://do:3000/team/0/leaguetable/')
-		.then((response) => response.json())
-		.then((responseJson) => {
+import { GET_TABLE } from '../../actions/types';
 
-			this.setState({tableData:responseJson.result })
-
-		})
-		.catch((error) => {
-		  console.error(error);
-		});
-}
-
-const reducer = ( state = [], action, data ) => {
+const reducer = ( state = null, action ) => {
 	switch (action.type) {
-		case PREVIOUS_SEASON:
-			return getData( data.teamIndex, data.season = null )
+		case GET_TABLE:
+			return action.payload || false;
+		default:
+			return state;
 	}
 }
-
 export default reducer;
+
