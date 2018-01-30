@@ -1,5 +1,5 @@
 {
-  "name": "01_leaguetable",
+  "name": "react-boilerplate",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,7 +13,6 @@
     "reactstrap": "^5.0.0-alpha.4",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "unescape": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,12 +20,12 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "description": "Boilerplate for react project running with redux",
   "main": "index.js",
   "devDependencies": {
     "install-peers": "^1.0.2",
     "redux-logger": "^3.0.6"
   },
-  "author": "",
+  "author": "***REMOVED***",
   "license": "ISC"
 }
