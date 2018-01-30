@@ -1,5 +1,5 @@
 # react-boilerplate
-### A boilerplate for react projects setup with a redux store and using bootstrap
+### A boilerplate for react projects, including redux store setup and using bootstrap for HTML styling.
 
 
 #### To do
