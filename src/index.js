@@ -11,8 +11,8 @@ import reducers from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(
-	reducers, 			// => this is the list of reducers from the application
-	{}, 				// INITIALSTATE of application => Most important when taking care of server side rendering
+	reducers, 						// => this is the list of reducers from the application
+	{}, 							// INITIALSTATE of application => Most important when taking care of server side rendering
 	applyMiddleware(reduxThunk) 	// Will add in redux-thunk at a later stage
 );
 
