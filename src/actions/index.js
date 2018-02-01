@@ -1,9 +1,18 @@
 import axios from 'axios';
 import {
 	DO_LOGIN,
+	LOGIN_FAILED,
 	// UPDATE_TABLE,
 	GET_TABLE,
 } from './types';
+
+/*
+function handleErrors(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+}*/
 
 const baseURL = 'http://localhost:4000';
 /*
@@ -18,13 +27,23 @@ export const updateTable = ( teamIndex, seasonID  ) => {
 
 */
 
-export const doLogin = ( emailAddress, password, stayLoggedIn ) => async dispatch => {
-	const res = await axios.post(baseURL+'/auth/login', { 
+export const doLogin = ( emailAddress, password, stayLoggedIn ) =>  dispatch => {
+	axios.post(baseURL+'/auth/login', { 
 		emailAddress, 
 		password, 
 		stayLoggedIn,
-	});
-	dispatch({ type: DO_LOGIN, payload: res.data.result });
+	}).then((res) =>{
+		dispatch({ type: DO_LOGIN, payload: res.data.result });
+	}).catch( 
+		error => {
+			dispatch({type: LOGIN_FAILED, payload: null });
+			//console.log(error.response);
+			//console.log(error.response.status);
+		}
+		
+	);
+	//console.log('RR: ', res );
+	
 }
 
 export const getTable = ( teamIndex = 0, season = '' ) => async dispatch => {
