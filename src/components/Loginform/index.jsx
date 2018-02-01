@@ -16,8 +16,8 @@ class App extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			emailaddress: 	'cardenk@gmail.com',
-			password: 		'8987',
+			emailaddress: 	'',
+			password: 		'',
 			stayloggedin: 	true,
 			submitted:		false,
 		}

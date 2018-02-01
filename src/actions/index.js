@@ -32,17 +32,17 @@ export const doLogin = ( emailAddress, password, stayLoggedIn ) =>  dispatch => 
 		emailAddress, 
 		password, 
 		stayLoggedIn,
-	}).then((res) =>{
+	}).then(res => {
 		dispatch({ type: DO_LOGIN, payload: res.data.result });
 	}).catch( 
 		error => {
 			dispatch({type: LOGIN_FAILED, payload: null });
-			//console.log(error.response);
-			//console.log(error.response.status);
+			console.log(error.response);
+			console.log(error.data);
+			console.log(error.response.status);
 		}
-		
 	);
-	//console.log('RR: ', res );
+
 	
 }
 
