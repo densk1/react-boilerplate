@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import { 
-	Container, 
-	Row, 
-	Col,
-	Form,
-	FormGroup,
-	Label,
-	Input,
-	Button,
-} from 'reactstrap';
+
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
@@ -35,50 +26,54 @@ class App extends Component {
 	}
 	render() {
 		return (
-            <Container>
-                <Row>
-                    <Col sm={{size:6, offset:3}}>
-                        <Form>
-                            <FormGroup>
-                                <Input 
+            <div className="container">
+                <div className="row">
+                    <div className="col col-sm-6 offset-sm-3">
+                        <form>
+                            <div className="form-group">
+                                <input 
+                                    className="form-control"
                                     type="text" 
                                     name="emailaddress" 
                                     value={this.state.emailaddress} 
                                     placeholder="Email Address"
                                     onChange={(e) => this.setState({ emailaddress: e.target.value })}
                                     />
-                            </FormGroup>
-                            <FormGroup>
-                                <Input 
+                            </div>
+                            <div className="form-group">
+                                <input 
+                                    className="form-control"
                                     type="password" 
                                     name="password" 
                                     value={this.state.password}
                                     placeholder="Password"
                                     onChange={(e) => this.setState({ password: e.target.value })}
                                     />
-                            </FormGroup>
-                            <FormGroup >
-                                <Label className="text-muted small stayloggedinlabel">
+                            </div>
+                            <div className="form-group">
+                                <label className="text-muted small stayloggedinlabel form-control-label">
                                     <input 
 										type="checkbox" 
 										name="stayloggedin" 
 										checked={this.state.stayloggedin}
+                                        value={this.state.stayloggedin}
 										onChange={() => this.setState({ stayloggedin: this.state.stayloggedin ? false : true })}
 										/>Keep me logged in.
-                                </Label>
-                            </FormGroup>
-                            <FormGroup >
-                            <Button 
-                                className="w-100"
-                                color="success"
-								onClick={(e) => (this.onLoginSubmit(e))}
-                                >Login</Button>
-                            </FormGroup>
-                        </Form>
-                    </Col>	
-                </Row>
-				{console.log('Login Result: ', this.props.loginResult)}
-            </Container>
+                                </label>
+                            </div>
+                            <div className="form-group">
+                                <button 
+                                    type="button"
+                                    className="w-100 btn btn-success"
+                                    color="success"
+                                    onClick={(e) => (this.onLoginSubmit(e))}
+                                    >Login</button>
+                            </div>
+                        </form>
+                    </div>	
+                </div>
+                {console.log('Login: ', this.props.loginResult)}
+            </div>
 			
 		);
 	}
