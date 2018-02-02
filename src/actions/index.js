@@ -14,7 +14,7 @@ function handleErrors(response) {
     return response;
 }*/
 
-const baseURL = 'http://localhost:4000';
+//const baseURL = 'http://localhost:4000';
 /*
 
 export const doLogin = ( email, password ) => {
@@ -28,7 +28,7 @@ export const updateTable = ( teamIndex, seasonID  ) => {
 */
 
 export const doLogin = ( emailAddress, password, stayLoggedIn ) =>  dispatch => {
-	axios.post(baseURL+'/auth/login', { 
+	axios.post('/auth/login', { 
 		emailAddress, 
 		password, 
 		stayLoggedIn,
@@ -47,6 +47,6 @@ export const doLogin = ( emailAddress, password, stayLoggedIn ) =>  dispatch => 
 }
 
 export const getTable = ( teamIndex = 0, season = '' ) => async dispatch => {
-	const res = await axios.get(baseURL+'/team/'+teamIndex+'/leaguetable/'+season);
+	const res = await axios.get('/team/'+teamIndex+'/leaguetable/'+season);
 	dispatch({ type: GET_TABLE, payload: res.data.result });
 }
