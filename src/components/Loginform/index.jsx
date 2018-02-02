@@ -9,19 +9,29 @@ import {
 	Input,
 	Button,
 } from 'reactstrap';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 class App extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			emailaddress: '',
-			password: '',
-			stayloggedin: true,
+			emailaddress: 	'',
+			password: 		'',
+			stayloggedin: 	true,
+			submitted:		false,
 		}
 	}
-	onSubmit = (e) => {
+	onLoginSubmit = (e) => {
 		e.preventDefault();
-		this.setState({ stayloggedin: this.state.stayloggedin ? false : true })
+		this.setState({ stayloggedin: this.state.stayloggedin ? false : true })			
+		const { emailaddress, password, stayloggedin } = this.state;
+
+		if (emailaddress && password) {
+			this.setState({ submitted: true });
+			this.props.doLogin(emailaddress, password, stayloggedin);
+		}
+	
 	}
 	render() {
 		return (
@@ -61,15 +71,24 @@ class App extends Component {
                             <Button 
                                 className="w-100"
                                 color="success"
-								onClick={(e) => (this.onSubmit(e))}
+								onClick={(e) => (this.onLoginSubmit(e))}
                                 >Login</Button>
                             </FormGroup>
                         </Form>
                     </Col>	
                 </Row>
+				{console.log('Login Result: ', this.props.loginResult)}
             </Container>
+			
 		);
 	}
 }
 
-export default App;
+
+
+
+function mapStateToProps ({ loginResult }) {
+	return { loginResult };
+}
+	
+export default connect(mapStateToProps,actions)(App);
