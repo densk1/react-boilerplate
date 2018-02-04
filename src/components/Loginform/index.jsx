@@ -29,7 +29,7 @@ class App extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col col-sm-6 offset-sm-3">
-                        <form>
+                        <form className="was-validated">
                             <div className="form-group">
                                 <input 
                                     className="form-control"
@@ -37,18 +37,26 @@ class App extends Component {
                                     name="emailaddress" 
                                     value={this.state.emailaddress} 
                                     placeholder="Email Address"
-                                    onChange={(e) => this.setState({ emailaddress: e.target.value })}
-                                    />
+                                    onChange={(e) => this.setState({ emailaddress: e.target.value })} 
+                                    required
+									/>
+
                             </div>
                             <div className="form-group">
-                                <input 
+
+								<input 
                                     className="form-control"
                                     type="password" 
                                     name="password" 
                                     value={this.state.password}
                                     placeholder="Password"
-                                    onChange={(e) => this.setState({ password: e.target.value })}
+                                    onChange={(e) => this.setState({ password: e.target.value })} 
+									required
                                     />
+								<div className="invalid-feedback">
+									Requires 1 number and 1 lower/uppercase character.
+								</div>
+
                             </div>
                             <div className="form-group">
                                 <label className="text-muted small stayloggedinlabel form-control-label">

@@ -39,9 +39,7 @@ export const doLogin = ( emailAddress, password, stayLoggedIn ) =>  dispatch => 
 	}).catch( 
 		err => {
 			dispatch({type: LOGIN_FAILED, payload: null });
-			console.log(err.response);
-			console.log(err.data);
-			console.log(err.response.status);
+			//console.log(err.response, err.data, err.response.status);
 		}
 	);
 
