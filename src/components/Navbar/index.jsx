@@ -1,15 +1,4 @@
 import React, { Component } from 'react';
-import { 
-	Navbar,
-	Nav,
-	NavItem,
-	NavLink,
-	NavbarToggler,
-	Collapse,
-	NavbarBrand,
-		
-} from 'reactstrap';
-
 class App extends Component {
 	constructor (props) {
 		super(props);
@@ -24,25 +13,28 @@ class App extends Component {
 	}
 	render() {
 		return (
-			<div>
-				<Navbar color="success" dark expand="sm">
-					<NavbarBrand href="/">den den</NavbarBrand>
-					<NavbarToggler onClick={this.toggleNavbar} />
-          			<Collapse isOpen={!this.state.collapsed} navbar>
-						<Nav navbar>
-							<NavItem>
-								<NavLink href="/">Home</NavLink>
-							</NavItem>	
-							<NavItem>
-								<NavLink href="login">Login</NavLink>
-							</NavItem>	
-							<NavItem>
-								<NavLink href="table">Table</NavLink>
-							</NavItem>	
-						</Nav>
-					</Collapse>
-				</Navbar>
-			</div>
+                <div className="navbar navbar-expand-sm navbar-dark bg-success">
+					<a href="/" className="navbar-brand">den den</a>
+                    <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+          			<div class="collapse navbar-collapse" id="navbarNav">
+						<ul className="navbar-nav">
+							<li className="nav-item">
+								<a href="/" className="nav-link">Home</a>
+							</li>	
+							<li className="nav-item">
+								<a href="login" className="nav-link">Login</a>
+							</li>	
+							<li className="nav-item">
+								<a href="table" className="nav-link">Table</a>
+							</li>
+                            <li className="nav-item ">
+                                <button className="btn btn-secondary my-2 my-sm-0 " type="submit">Logout</button>
+                            </li>
+						</ul>
+					</div>
+				</div>
 		)
 	}	
 }

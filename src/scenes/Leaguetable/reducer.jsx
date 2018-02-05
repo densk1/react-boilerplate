@@ -1,4 +1,4 @@
-import { GET_TABLE } from '../../actions/types';
+import { GET_TABLE } from './types.js';
 
 const reducer = ( state = null, action ) => {
 	switch (action.type) {
