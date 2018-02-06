@@ -41,10 +41,8 @@ class App extends Component {
                                     onChange={(e) => this.setState({ emailaddress: e.target.value })} 
                                     required
 									/>
-
                             </div>
                             <div className="form-group">
-
 								<input 
                                     className="form-control"
                                     type="password" 
@@ -57,7 +55,6 @@ class App extends Component {
 								<div className="invalid-feedback">
 									Requires 1 number and 1 lower/uppercase character.
 								</div>
-
                             </div>
                             <div className="form-group">
                                 <label className="text-muted small stayloggedinlabel form-control-label">
