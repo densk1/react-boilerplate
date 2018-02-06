@@ -12,6 +12,8 @@ import * as actions from './actions/actions.js';
 //import Home from './scenes/Home/';
 import Login from './components/Loginform';
 import Table from './scenes/Leaguetable';
+import Form from './components/crmform';
+
 const Home = () => (
     <h1 className="success">Home</h1>
 )
@@ -34,6 +36,7 @@ class App extends Component {
                         <Switch>
                             <Route exact path="/" component={Home}/>
                             <Route path="/login" component={Login}/>
+                            <Route path="/form" component={Form}/>
                             <Route exact path="/team/:index(\d+)/leaguetable" component={Table}/>
                             <Route path="/team/:index(\d+)/leaguetable/:season(\d+)" component={Table}/>
                         </Switch>

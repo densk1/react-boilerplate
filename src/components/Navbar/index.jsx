@@ -25,7 +25,14 @@ class App extends Component {
                                     className="nav-link" 
 
                                 >Login</NavLink>
-							</li>	
+							</li>
+							<li className="nav-item">
+								<NavLink 
+                                    to="/form" 
+                                    className="nav-link" 
+
+                                >Form</NavLink>
+							</li>
 							<li className="nav-item">
 								<NavLink 
                                     to="/team" 
