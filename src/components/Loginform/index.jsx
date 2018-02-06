@@ -29,7 +29,8 @@ class App extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col col-sm-6 offset-sm-3">
-                        <form className="was-validated">
+                        {/*className="was-validated"*/}
+                        <form>
                             <div className="form-group">
                                 <input 
                                     className="form-control"
@@ -80,7 +81,6 @@ class App extends Component {
                         </form>
                     </div>	
                 </div>
-                {console.log('Login: ', this.props.loginResult)}
             </div>
 			
 		);

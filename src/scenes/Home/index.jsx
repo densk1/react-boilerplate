@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 
-import NavBar from '../../components/Navbar';
+//import NavBar from '../../components/Navbar';
 import LoginForm from '../../components/Loginform';
 
-class App extends Component {
+class Home extends Component {
 	render(){
 		return(
-			<div>
-				<NavBar/>
-				<LoginForm/>
-			</div>
+            <h1>Home</h1>
 		)
 	}
 }
 
-export default App;
+export default Home;

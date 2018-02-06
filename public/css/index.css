@@ -4,8 +4,11 @@ body {
 
   font-family: sans-serif;
 }
-.container:nth-of-type(2) {
+main {
 	margin-top: 40px;
+}
+footer {
+    background-color: lightgrey;
 }
 .navbar-toggler {
 border-radius:50%;

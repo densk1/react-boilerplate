@@ -12,7 +12,6 @@ export const doLogin = ( emailAddress, password, stayLoggedIn ) =>  dispatch => 
 		password, 
 		stayLoggedIn,
 	}).then(res => {
-
 		dispatch({ type: DO_LOGIN, payload: res.data.result });
 	}).catch( 
 		err => {
