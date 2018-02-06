@@ -1,11 +1,18 @@
+/*
 import axios from 'axios';
 import {
 	DO_LOGIN,
 	LOGIN_FAILED,
     AUTH_FAILED,
+} from '../components/Loginform/types';
+
+import {
+
 	// UPDATE_TABLE,
 	GET_TABLE,
-} from './types';
+} from '../scenes/Leaguetable/types';
+*/
+
 
 /*
 function handleErrors(response) {
@@ -15,18 +22,13 @@ function handleErrors(response) {
     return response;
 }*/
 
-//const baseURL = 'http://localhost:4000';
+
 /*
-
-export const doLogin = ( email, password ) => {
-	return { type: DO_LOGIN, data: 'someLoginFunctionName' }
-}
-
 export const updateTable = ( teamIndex, seasonID  ) => {
 	return { type: UPDATE_TABLE, data: 'someTableWithSeasonFetchFunction' }
 }
-
 */
+/*
 
 export const doLogin = ( emailAddress, password, stayLoggedIn ) =>  dispatch => {
 	axios.post('/auth/login', { 
@@ -42,8 +44,6 @@ export const doLogin = ( emailAddress, password, stayLoggedIn ) =>  dispatch => 
 			//console.log(err.response, err.data, err.response.status);
 		}
 	);
-
-	
 }
 
 export const getTable = ( teamIndex = 0, season = '' ) => async dispatch => {
@@ -55,8 +55,9 @@ export const getTable = ( teamIndex = 0, season = '' ) => async dispatch => {
         dispatch({ type: AUTH_FAILED, payload: null });
         // redirect
         console.log(err.response);
-		console.log(err.data);
-		console.log(err.response.status);
+		//console.log(err.data);
+		//console.log(err.response.status);
     })
 	
 }
+*/

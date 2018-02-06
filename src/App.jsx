@@ -4,10 +4,9 @@ import {
 	Route, 
 	Switch,
 } from 'react-router-dom';
-/*
+
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
-*/
+import * as actions from './actions/actions.js';
 
 import Home from './scenes/Home/';
 import Login from './scenes/Login';
@@ -15,6 +14,9 @@ import Table from './scenes/Leaguetable';
 
 
 class App extends Component {
+	componentDidMount = () => {
+		this.props.checkLogin();
+	}
 	render() {
 		return (
 			<BrowserRouter>
@@ -28,7 +30,8 @@ class App extends Component {
 	}
 }
 
-export default App;
-
-
-// export default connect(mapStateToProps,actions)(App);
+function mapStateToProps ({ checkLogin }) {
+	return { checkLogin };
+}
+	
+export default connect(mapStateToProps,actions)(App);

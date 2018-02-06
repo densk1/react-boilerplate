@@ -16,9 +16,9 @@ class App extends Component {
                 <div className="navbar navbar-expand-sm navbar-dark bg-success">
 					<a href="/" className="navbar-brand">den den</a>
                     <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-          			<div class="collapse navbar-collapse" id="navbarNav">
+          			<div className="collapse navbar-collapse" id="navbarNav">
 						<ul className="navbar-nav">
 							<li className="nav-item">
 								<a href="/" className="nav-link">Home</a>

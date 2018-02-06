@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { 
-	Container, 
-	Table 
-} from 'reactstrap';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import * as actions from './actions';
 
 import NavBar from '../../components/Navbar';
 
@@ -47,16 +43,16 @@ class App extends Component {
 		return (
 			<div>
 				<NavBar/>
-				<Container>
-					<Table size="sm" striped>
+				<div className="container">
+					<table className="table table-sm table-striped">
 						<thead>
 							{this.tableTop()}
 						</thead>
 						<tbody>
 							{this.props.table && this.buildTable()}
 						</tbody>
-					</Table>
-				</Container>
+					</table>
+				</div>
 			</div>
 		)
 	}	

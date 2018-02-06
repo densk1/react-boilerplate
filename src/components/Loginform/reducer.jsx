@@ -1,4 +1,4 @@
-import { DO_LOGIN, LOGIN_FAILED } from '../../actions/types';
+import { DO_LOGIN, LOGIN_FAILED } from './types.js';
 
 const reducer = ( state = null, action = null ) => {
 	switch (action.type) {
