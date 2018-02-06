@@ -2,9 +2,17 @@
 ### A boilerplate for react projects, including redux store setup and using bootstrap for HTML styling.
 
 ### Table of Contents
+1. Project Objective
+
+2. TODO: Major
+
+3. TODO: Minor
+
+4. Task List
+
+5. Project Requirements
 
 
-#### To do
 #### Objective
 - [] Create a boilerplate react project with node server for an application with **authentication**, **persistent login** and route serving.
 
