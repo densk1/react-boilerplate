@@ -55,11 +55,12 @@ A boilerplate for react projects, including redux store setup and using bootstra
 
 
 ## 8. Sitemap
+```
 /-Marketing
  |-/Signup
  |-/Login
  |-/Dashboard (Get some Data)
  |-/Manage Account
  |-/Logout
- 
+```
  
