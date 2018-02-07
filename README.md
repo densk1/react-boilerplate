@@ -18,14 +18,17 @@ A boilerplate for react projects, including redux store setup and using bootstra
 - [x] Mysql implementation
 - [ ] NoSQL implementation (MongoDB & Mongoose)
   - [ ] Create store on Mlab
-   - [ ] Connect to store on Mlab
-    - [ ] Create Schema
+  - [ ] Connect to store on Mlab
+  - [ ] Create Schema
 - [ ] Create form 
- -[ ] 
-- [ ] Build form for data collection and editing.
+  - [ ] Build form autocreator component
+  - [ ] Validate form data
+  - [ ] Add form data to MongoDB
+  - [ ] Check if formdata already exists using a key. 
+ - [ ] Build form for data collection and editing.
 
 ### TODO: Minor
-- [ ] Fix Passport `serialize` & `deserialize`
+- [ ] Fix Passport `.serializeUser` & `.deserializeUser()` (& `findOne()`) 
 - [ ] Google Passport Auth Flow
 - [ ] Hide menu on link click
 - [ ] Teams page, select Team and potentially season.
