@@ -17,9 +17,9 @@ A boilerplate for react projects, including redux store setup and using bootstra
 ### TODO: Major
 - [x] Mysql implementation
 - [ ] NoSQL implementation (MongoDB & Mongoose)
- - [ ] Create store on Mlab
- - [ ] Connect to store on Mlab
- - [ ] Create Schema
+  - [ ] Create store on Mlab
+   - [ ] Connect to store on Mlab
+    - [ ] Create Schema
 - [ ] Create form 
  -[ ] 
 - [ ] Build form for data collection and editing.
