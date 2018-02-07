@@ -26,6 +26,14 @@ border-radius:50%;
 .navbar-toggler-icon {
     
 }
+nav .btn-outline-secondary {
+	background-color: white;
+	border: none;
+}
+nav .btn-outline-secondary:hover {
+	background-color:silver;
+}
+
 .stayloggedinlabel {
     padding:0;
     margin:0;
@@ -56,9 +64,9 @@ tr:nth-of-type(even) .plrobj {
 }
 
 tr td:nth-of-type(3) {
-	text-align:center;
+	//text-align:center;
 	padding:1px 6px;
 }
 tr th:nth-of-type(3) {
-	text-align:center;
+	//text-align:center;
 }

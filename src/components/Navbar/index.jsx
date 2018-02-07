@@ -38,10 +38,18 @@ class App extends Component {
                                     to="/team" 
                                     className="nav-link"
                                 >Team</NavLink>
+							</li>							
+							<li className="nav-item">
+								<NavLink 
+                                    to="/contacts" 
+                                    className="nav-link"
+                                >Contacts</NavLink>
 							</li>
-                            <li className="nav-item ">
-                                <button className="btn btn-secondary my-2 my-sm-0 " type="submit">Logout</button>
-                            </li>
+							<form class="form-inline">
+								<a href="/logout">
+									<button class="btn btn-sm align-right btn-outline-secondary" type="button">Logout</button>
+								</a>
+							</form>
 						</ul>
 					</div>
 				</nav>

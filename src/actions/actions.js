@@ -6,12 +6,10 @@ import {
 
 
 export const checkLogin = () => dispatch => {
-axios.get('/auth/checklogin', { 
+axios.post('/auth/checklogin', { 
 	}).then(res => {
-		console.log("Global is logged in.");
 		dispatch({ type: CHECK_LOGIN, payload: res.data.result });
 	}).catch( err => {
-		console.log("Global NOT logged in.");
 		dispatch({type: CHECK_FAILED, payload: null });
 	});
 }
