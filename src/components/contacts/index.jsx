@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from './actions.js';
 
 
 class Contacts extends Component {
@@ -19,11 +21,11 @@ class Contacts extends Component {
 		return(
 			<div className="container">
 				<div className="row">
-					<div className="offset-sm-3 col-sm-6 center" >
+					<div className="offset-sm-2 col-sm-8 center" >
 						<div className="form-group row text-center">
 
 							<div className="col-sm-8" >
-								<input className="form-control" type="text" />
+								<input className="form-control" type="text" onChange={(e) => this.props.findContact(e.target.value)} />
 							</div>
 							<div className="col-sm-4" >
  								<button className="btn btn-secondary my-2 my-sm-0 w-100" type="submit">Search</button>
@@ -45,5 +47,8 @@ class Contacts extends Component {
 		)
 	}
 }
-
-export default Contacts;
+function mapStateToProps ({ findContact }) {
+	return { findContact };
+}
+	
+export default connect(mapStateToProps,actions)(Contacts);
