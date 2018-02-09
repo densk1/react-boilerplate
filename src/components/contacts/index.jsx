@@ -5,7 +5,7 @@ import * as actions from './actions.js';
 
 class Contacts extends Component {
 	componentDidMount = () => {
-		
+		this.props.getList()
 	}
 	tableHeader = () => {
 		return (
@@ -13,9 +13,6 @@ class Contacts extends Component {
 				<th>Name</th><th>Email</th><th>Role</th><th>Company</th><th>Telephone</th><th>Mobile</th>
 			</tr>
 		);
-	}
-	tableBody = () => {
-
 	}
 	render(){
 		return(
@@ -34,21 +31,40 @@ class Contacts extends Component {
 					</div>
 				</div>
 				<div className="row">
-					<table className="col-sm-12">
+					<table id="contacttable" className="col-sm-12 table table-striped table-hover ">
 						<thead>
 							{this.tableHeader()}
 						</thead>
 						<tbody>
-							{this.tableBody()}
+							{this.props.contactList && this.tableBody()}
 						</tbody>
 					</table>
 				</div>
 			</div>
 		)
 	}
+	tableBody = () => {
+        return(this.props.contactList.map( d => 
+                                      
+            <tr key={d._id}>
+                <td>{d.name}</td>
+                <td>{d.email}</td>
+                <td>Role</td>
+                <td>{d.company}</td>
+                <td>Telephone</td>
+                <td>Mobile</td>
+            </tr>
+
+        ))
+	}
 }
-function mapStateToProps ({ contact }) {
-	return { contact };
+               
+               
+function mapStateToProps ({ contactList }) {
+	return { contactList };
 }
 	
 export default connect(mapStateToProps,actions)(Contacts);
+
+                
+                

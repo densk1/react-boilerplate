@@ -42,7 +42,7 @@ class App extends Component {
 	render(){
 		return (
             <div className="container">
-                <table className="table table-sm table-striped">
+                <table id="leaguetable" className="table table-sm table-striped">
                     <thead>
                         {this.tableTop()}
                     </thead>

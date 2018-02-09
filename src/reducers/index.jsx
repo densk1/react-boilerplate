@@ -9,5 +9,5 @@ export default combineReducers({
 	loggedIn: 		globalReducer,
 	table: 			tableReducer,
 	loginResult: 	loginReducer,
-	findContact:    contactReducer
+	contactList:    contactReducer
 });
