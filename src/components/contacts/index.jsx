@@ -47,8 +47,8 @@ class Contacts extends Component {
 		)
 	}
 }
-function mapStateToProps ({ findContact }) {
-	return { findContact };
+function mapStateToProps ({ contact }) {
+	return { contact };
 }
 	
 export default connect(mapStateToProps,actions)(Contacts);

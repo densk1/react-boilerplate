@@ -7,6 +7,25 @@ import * as actions from './actions';
 class Form extends Component {
 	render() {
 		return(
+            <h1>hello</h1>
+        )
+	}
+
+}
+
+/*
+
+function mapStateToProps ({ loginResult }) {
+	return { loginResult };
+}
+	
+export default connect(mapStateToProps,actions)(App);
+
+*/
+
+/*
+buildForm = () => {
+        return(
 			<div className="container">
 				<form>
 				<h1 className="success text-center">Person Name</h1>
@@ -82,17 +101,7 @@ class Form extends Component {
 				</form>
 			</div>
 		)
-	}	
-}
-
-/*
-
-function mapStateToProps ({ loginResult }) {
-	return { loginResult };
-}
-	
-export default connect(mapStateToProps,actions)(App);
-
+    }
 */
 
 export default Form;

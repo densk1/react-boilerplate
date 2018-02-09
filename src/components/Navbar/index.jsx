@@ -45,9 +45,9 @@ class App extends Component {
                                     className="nav-link"
                                 >Contacts</NavLink>
 							</li>
-							<form class="form-inline">
+							<form className="form-inline">
 								<a href="/logout">
-									<button class="btn btn-sm align-right btn-outline-secondary" type="button">Logout</button>
+									<button className="btn btn-sm align-right btn-outline-secondary" type="button">Logout</button>
 								</a>
 							</form>
 						</ul>

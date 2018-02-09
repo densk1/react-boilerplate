@@ -5,7 +5,6 @@ import {
 	Switch,
 } from 'react-router-dom';
 import NavBar from './components/Navbar';
-import axios from 'axios';
 
 import { connect } from 'react-redux';
 import * as actions from './actions/actions.js';
@@ -29,15 +28,6 @@ class App extends Component {
 
 	componentDidMount = () => {
 		this.props.checkLogin();
-/*
-// Used to test mongoDB connection.
-        axios.get('/crm/list/2345', { 
-		  emailAddress: 'password', 
-		  password: 'password', 
-		  stayLoggedIn: 'stayLoggedIn',
-	   });
-*/
-
 	}
 	render() {
 		return (
