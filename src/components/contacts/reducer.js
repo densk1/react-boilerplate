@@ -1,6 +1,10 @@
-import { FIND_CONTACT, GET_LIST } from './types.js';
+import { 
+	FIND_CONTACT, 
+	GET_LIST 
+} from './types.js';
 
 const reducer = ( state = null, action = null ) => {
+	console.log(action.payload);
 	switch (action.type) {
 		case FIND_CONTACT:
 			return action.payload || false;
@@ -11,5 +15,3 @@ const reducer = ( state = null, action = null ) => {
 	}
 }
 export default reducer;
-
-

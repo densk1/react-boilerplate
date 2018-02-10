@@ -22,7 +22,7 @@ class Contacts extends Component {
 						<div className="form-group row text-center">
 
 							<div className="col-sm-8" >
-								<input className="form-control" type="text" onChange={(e) => this.props.findContact(e.target.value)} />
+								<input className="form-control" type="text" placeholder="Search..." onChange={(e) => this.props.findContact(e.target.value)} />
 							</div>
 							<div className="col-sm-4" >
  								<button className="btn btn-secondary my-2 my-sm-0 w-100" type="submit">Search</button>

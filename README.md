@@ -12,19 +12,20 @@ A boilerplate for react projects, including redux store setup and using bootstra
 4. Task List
 5. Project Requirements
 6. Route Planning
-7. Current WIP plan
+7. Add SCSS or less
+8. Current WIP plan
 
 ### TODO: Major
 - [x] Mysql implementation
-- [ ] NoSQL implementation (MongoDB & Mongoose)
-  - [ ] Create store on Mlab
-  - [ ] Connect to store on Mlab
-  - [ ] Create Schema
+- [x] NoSQL implementation (MongoDB & Mongoose)
+  - [x] Create store on Mlab
+  - [x] Connect to store on Mlab
+  - [x] Create Schema
 - [ ] Create form 
   - [ ] Build form autocreator component
   - [ ] Validate form data
   - [ ] Add form data to MongoDB
-  - [ ] Check if formdata already exists using a key. 
+  - [ ] Check if formdata already exists using a key. `{upsert: true}`
  - [ ] Build form for data collection and editing.
 
 ### TODO: Minor
