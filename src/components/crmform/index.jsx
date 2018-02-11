@@ -5,6 +5,7 @@ import * as actions from './actions';
 */
 
 class Form extends Component {
+	
 	render() {
 		return(
             <h1>hello</h1>
@@ -27,7 +28,7 @@ export default connect(mapStateToProps,actions)(App);
 buildForm = () => {
         return(
 			<div className="container">
-				<form>
+				<form class="needs-validation" novalidate>
 				<h1 className="success text-center">Person Name</h1>
 				<div className="form-group row">
 					<label htmlFor="name-text-input" className="col-sm-2 col-form-label text-muted	">Name</label>

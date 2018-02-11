@@ -29,8 +29,11 @@ class App extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col col-sm-6 offset-sm-3">
-                        {/*className="was-validated"*/}
-                        <form>
+                        {/*
+						className="was-validated" 
+						className="needs-validation" novalidate 
+						*/}
+                        <form >
                             <div className="form-group">
                                 <input 
                                     className="form-control"

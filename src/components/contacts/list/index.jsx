@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import * as actions from './actions.js';
 
 
 class Contacts extends Component {
+	
+	constructor (props) {
+		super(props);
+		this.state = {
+			id: null,
+		}
+	}
 	componentDidMount = () => {
 		this.props.getList()
 	}
+
 	tableHeader = () => {
 		return (
 			<tr>
@@ -33,10 +42,11 @@ class Contacts extends Component {
 				<div className="row">
 					<table id="contacttable" className="col-sm-12 table table-striped table-hover ">
 						<thead>
-							{this.tableHeader()}
+							{ this.tableHeader() }
+							{ this.state.id && <Redirect push to={"/contacts/card/"+this.state.id}/>}
 						</thead>
 						<tbody>
-							{this.props.contactList && this.tableBody()}
+							{this.props.contacts.list && this.tableBody()}
 						</tbody>
 					</table>
 				</div>
@@ -44,9 +54,9 @@ class Contacts extends Component {
 		)
 	}
 	tableBody = () => {
-        return(this.props.contactList.map( d => 
-                                      
-            <tr key={d._id}>
+        return(this.props.contacts.list.map( 
+			d => 
+            <tr key={d._id} onClick={()=>this.setState({ id: d._id })}>
                 <td>{d.name}</td>
                 <td>{d.email}</td>
                 <td>Role</td>
@@ -60,8 +70,8 @@ class Contacts extends Component {
 }
                
                
-function mapStateToProps ({ contactList }) {
-	return { contactList };
+function mapStateToProps ({ contacts }) {
+	return { contacts };
 }
 	
 export default connect(mapStateToProps,actions)(Contacts);

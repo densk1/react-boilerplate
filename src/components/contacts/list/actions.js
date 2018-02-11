@@ -22,9 +22,9 @@ export const findContact = (queryString = '') =>  dispatch => {
     .catch( err => {
 		dispatch({ type: FIND_CONTACT, payload: false });
         // redirect
+        console.log(err);
         // console.log(err.response);
 		// console.log(err.data);
 		// console.log(err.response.status);
 	})
-	
 }

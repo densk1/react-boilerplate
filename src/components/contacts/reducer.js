@@ -1,17 +1,13 @@
-import { 
-	FIND_CONTACT, 
-	GET_LIST 
-} from './types.js';
+//combine reducers crm
+import { combineReducers } from 'redux';
 
-const reducer = ( state = null, action = null ) => {
-	console.log(action.payload);
-	switch (action.type) {
-		case FIND_CONTACT:
-			return action.payload || false;
-        case GET_LIST:
-            return action.payload || false;
-		default:
-			return state;
-	}
-}
-export default reducer;
+import ListReducer from './list/reducer';
+import CardReducer from './card/reducer';
+import CommentsReducer from './card/comments/reducer';
+
+export default combineReducers({
+	list:		ListReducer,
+	card:		CardReducer,
+	comments:	CommentsReducer,
+});
+

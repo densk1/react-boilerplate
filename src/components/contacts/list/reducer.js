@@ -1,16 +1,14 @@
-import {
-	GET_CONTACT,
-	CLEAR_CARD,
-} from './types';
+import { 
+	FIND_CONTACT, 
+	GET_LIST 
+} from './types.js';
 
 const reducer = ( state = null, action = null ) => {
 	switch (action.type) {
-		case GET_CONTACT:
-			console.log(action.payload);
+		case FIND_CONTACT:
 			return action.payload || false;
-		case CLEAR_CARD:
-			return false;
-
+        case GET_LIST:
+            return action.payload || false;
 		default:
 			return state;
 	}

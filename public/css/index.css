@@ -5,7 +5,8 @@ body {
   font-family: sans-serif;
 }
 main {
-	margin-top: 40px;
+	margin: 20px ;
+	min-height:85vh;
 }
 footer {
     background-color: lightgrey;
