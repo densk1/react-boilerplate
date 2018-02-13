@@ -11,6 +11,5 @@ export default combineReducers({
 	table: 			tableReducer,
 	loginResult: 	loginReducer,
 	contacts: 		contactsReducer,
-	//contactList:    contactReducer,
-	//contactCard:	contactCardReducer
+
 });

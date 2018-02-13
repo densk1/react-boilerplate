@@ -2,30 +2,25 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './actions.js';
 
-import Comments from './comments/';
+import Comments from '../comments/';
 
 class App extends Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			newComment : ''
-		};
-	}
-	componentDidMount = () => {
+	componentDidMount = async () => {
 		let { clientID } = this.props.match.params;
-		this.props.getContact( clientID );
+		await this.props.getContact( clientID );
 	}
 
-	addComment = () => {
+	addComment = (e) => {
+		e.preventDefault();
 		let { clientID } = this.props.match.params;
-		let comment = this.state.newComment;
-		if (this.state.newComment.length > 1 ) {
+		let comment = this.props.newComment;
+		if (comment.length > 1 ) {
 			this.props.addNewComment( clientID, comment );
-			this.setState({ newComment: '' });
+			this.props.newCommentText('');
 		}
 	}
 	buildContactCard = () => {
-		let card = this.props.contacts.card;
+		let card = this.props.card;
 		return(
 			<div className="container">			
 				<div className="row">
@@ -53,14 +48,20 @@ class App extends Component {
 									<form >
 									<textarea 
 									className="form-control"
-									onChange={(e)=>this.setState({newComment: e.target.value})}
-									onKeyPress={(e)=> e.key === 'Enter' && this.addComment()}
+									onChange={(e)=> {
+										this.props.newCommentText(e.target.value);
+									}}
+									onKeyPress={(e)=> e.key === 'Enter' && this.addComment(e)}
 									placeholder="Add a note..."
-									value={this.state.newComment}
+									value={this.props.newComment}
+									
 									></textarea>
 									</form>
 								</div>
-								<button className="btn btn-sm btn-success" onClick={()=>this.addComment()}>Add Note</button>
+								<button 
+									className="btn btn-sm btn-success" 
+									onClick={(e)=>this.addComment(e)}
+									>Add Note</button>
 							</div>
 						</div>
 						<Comments clientID={this.props.match.params.clientID}/>
@@ -71,12 +72,14 @@ class App extends Component {
 		)
 	}
 	render(){
-		return this.props.contacts.card && this.buildContactCard()
+		return this.props.card && this.buildContactCard()
 	}
 }
 
 function mapStateToProps ({ contacts }) {
-	return { contacts };
+	let { card } = contacts;
+	let { newComment } = contacts.comments;
+	return { card, newComment };
 }
 	
 export default connect(mapStateToProps,actions)(App);

@@ -3,7 +3,8 @@ import {
 	GET_CONTACT,
 	CLEAR_CARD,
 	ADD_COMMENT,
-	ADD_COMMENT_FAILED,
+
+	NEW_COMMENT_TEXT
 } from './types';
 
 export const getContact = (clientID = null) =>  dispatch => { 
@@ -13,10 +14,7 @@ export const getContact = (clientID = null) =>  dispatch => {
 	})
     .catch( err => {
 		dispatch({ type: GET_CONTACT, payload: false });
-        // redirect
-        // console.log(err.response);
-		// console.log(err.data);
-		// console.log(err.response.status);
+        // console.log(err.response, err.data, err.response.status);
 	})
 }
 
@@ -34,7 +32,10 @@ export const addNewComment = (clientID, comment) => dispatch => {
 		dispatch({type: ADD_COMMENT, payload: res.data });
 	})
 	.catch( err => {
-		dispatch({ type: ADD_COMMENT_FAILED });
-		
+		dispatch({type: ADD_COMMENT, payload: '' });
 	})
 }
+
+export const newCommentText = ( newText ) => dispatch => {
+	dispatch({ type: NEW_COMMENT_TEXT, payload: newText })
+} 

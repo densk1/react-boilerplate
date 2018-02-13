@@ -18,7 +18,7 @@ class Comments extends Component {
 		)
 	}
 	showComments = () => {
-		let comments = this.props.contacts.comments;
+		let comments = this.props.comments;
 		return comments.map(
 			d=>
 			<div key={d._id} className="card mb-4">
@@ -27,10 +27,9 @@ class Comments extends Component {
 					<p className="card-text">
 						<small className="text-muted">
 							Added <strong>	<Moment date={d.added} fromNow /></strong> by 
-							<strong> {AllHtmlEntities.decode(d.addedBy)} </strong> 
-							<a href="" className="text-success">
-								edit
-							</a>
+							<strong> {AllHtmlEntities.decode(d.addedBy)} </strong>
+							<a href="" className="text-success col-sm-2">edit </a> 
+							<a href="" className="text-danger  col-sm-2">delete</a>
 						</small>
 					</p>
 				</div>
@@ -39,13 +38,14 @@ class Comments extends Component {
 	}
 	render() {
 		return(
-			this.props.contacts.comments && this.showComments()
+			this.props.comments && this.showComments()
 		)
 	}
 }
 
 function mapStateToProps ({ contacts }) {
-	return { contacts };
+	let {comments} = contacts.comments; 
+	return { comments };
 }
 	
 export default connect(mapStateToProps,actions)(Comments);
