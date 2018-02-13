@@ -1,0 +1,28 @@
+
+
+/**   Navbar Classes   */
+
+.navbar-toggler {
+border-radius:50%;
+    width:40px;
+    padding:5px 0px;
+    border: none;
+    color:white;
+}
+
+.navbar-toggler:hover {
+    background-color:rgba(0,0,0,0.05);
+    border-radius:50%;
+    
+}
+.navbar-toggler-icon {
+    
+}
+nav .btn-outline-secondary {
+	background-color: white;
+	border: none;
+}
+nav .btn-outline-secondary:hover {
+	background-color:silver;
+}
+
