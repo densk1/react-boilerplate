@@ -1,0 +1,30 @@
+#leaguetable  {
+	.plrobj {
+		display:inline-block;
+		text-align:center;
+		width: 30px;
+		height: 30px;
+		line-height:28px;
+		border-radius:50%;
+		border: 1px solid white;
+		color:white;
+		font-size:14px;
+		margin: 0;
+		padding: 0;
+	}
+
+	tr:nth-of-type(odd) .plrobj {
+		background-color: orange;
+	}
+	tr:nth-of-type(even) .plrobj {
+		background-color: indianred;
+	}
+
+	tr td:nth-of-type(3) {
+		text-align:center;
+		padding:1px 6px;
+	}
+	tr th:nth-of-type(3) {
+		text-align:center;
+	}
+}
