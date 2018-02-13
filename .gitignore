@@ -8,7 +8,7 @@
 
 # production
 /build
-/src/components/*.css
+style.css
 
 # server
 /server
