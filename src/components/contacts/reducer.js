@@ -10,4 +10,3 @@ export default combineReducers({
 	card:		CardReducer,
 	comments:	CommentsReducer,
 });
-
