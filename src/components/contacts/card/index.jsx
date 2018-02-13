@@ -25,7 +25,7 @@ class App extends Component {
 			<div className="container">			
 				<div className="row">
 					<div className="col-md-6 mb-4">
-						<div className="card special-card">
+						<div className="card">
 							<div className="card-body">
 								<h6 className="card-subtitle mb-2 text-muted">Name</h6>
 								<h5 className="card-title">{card.name}</h5>

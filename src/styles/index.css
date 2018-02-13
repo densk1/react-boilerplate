@@ -1,0 +1,28 @@
+/* 
+https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc
+*/
+#contactCard .special-card {
+  background-color: #0000cc; }
+
+.style-name {
+  color: indianred;
+  background-color: #e5aaaa; }
+
+/**   Navbar Classes   */
+nav .navbar-toggler {
+  border-radius: 50%;
+  width: 40px;
+  padding: 5px 0px;
+  border: none;
+  color: white; }
+
+nav .navbar-toggler:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%; }
+
+nav .btn-outline-secondary {
+  background-color: white;
+  border: none; }
+
+nav .btn-outline-secondary:hover {
+  background-color: silver; }

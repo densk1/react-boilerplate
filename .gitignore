@@ -9,7 +9,7 @@
 # production
 /build
 *style.css
-/src/styles/index.css
+#/src/styles/index.css
 
 # server
 /server

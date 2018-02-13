@@ -1,0 +1,15 @@
+
+#contactCard {
+    .special-card {
+        background-color: darken( blue, 10% ) ;
+    }
+}
+
+$styleName: 'name';
+$baseColor: indianred;
+
+.style-#{$styleName} {
+    color:$baseColor;
+    background-color: lighten($baseColor, 20% );
+}
+
