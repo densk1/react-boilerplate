@@ -1,0 +1,30 @@
+/* 
+https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc
+*/
+
+/* BODY CSS */
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: sans-serif;
+}
+main {
+	margin: 20px ;
+	min-height:85vh;
+}
+footer {
+    background-color: lightgrey;
+}
+
+/* DOCUMENT WIDE STYLES */
+
+/* COMPONENT STYLES
+*  Each component should encapsulate it's parts inside a unique ID
+*/
+
+@import '../components/contacts/list/_style.scss';
+@import '../components/contacts/card/_style.scss';
+@import '../components/Navbar/_style.scss';
+@import '../scenes/Leaguetable/_style.scss';
+@import '../components/Loginform/_style.scss';

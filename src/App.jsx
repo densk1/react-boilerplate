@@ -5,7 +5,7 @@ import {
 	Route, 
 	Switch,
 } from 'react-router-dom';
-import './styles/index.css';
+// import './styles/index.css';
 
 import NavBar from './components/Navbar';
 
@@ -28,7 +28,6 @@ const Footer = () => (
 )
 
 class App extends Component {
-
 	componentDidMount = () => {
 		this.props.checkLogin();
 	}
@@ -65,5 +64,4 @@ class App extends Component {
 function mapStateToProps ({ loggedIn }) {
 	return { loggedIn };
 }
-	
 export default connect(mapStateToProps,actions)(App);

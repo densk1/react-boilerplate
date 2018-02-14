@@ -72,8 +72,11 @@ class App extends Component {
 		)
 	}
 	render(){
-		return this.props.card && this.buildContactCard()
+		return this.props.card && this.buildContactCard();
 	}
+    componentWillUnmount = () => {
+        this.props.clearCard();
+    }
 }
 
 function mapStateToProps ({ contacts }) {

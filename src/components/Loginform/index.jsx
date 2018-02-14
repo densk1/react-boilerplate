@@ -26,7 +26,7 @@ class App extends Component {
 	}
 	render() {
 		return (
-            <div className="container">
+            <div id="mainloginform" className="container">
                 <div className="row">
                     <div className="col col-sm-6 offset-sm-3">
                         {/*
