@@ -5,13 +5,13 @@ class App extends Component {
 	render() {
 		return (
             <header>
-                <nav className="navbar navbar-expand-sm navbar-dark bg-success">
+                <nav className="navbar navbar-expand-sm navbar-dark bg-success" >
 					<a href="/" className="navbar-brand">den den</a>
                     <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-          			<div className="collapse navbar-collapse" id="navbarNav">
-						<ul className="navbar-nav">
+          			<div className="collapse navbar-collapse " id="navbarNav">
+						<ul className="navbar-nav w-100 justify-content-center">
 							<li className="nav-item">
 								<NavLink 
                                     to="/" 
@@ -45,11 +45,15 @@ class App extends Component {
                                     className="nav-link"
                                 >Contacts</NavLink>
 							</li>
-							<form className="form-inline">
-								<a href="/logout">
-									<button className="btn btn-sm align-right btn-outline-secondary" type="button">Logout</button>
-								</a>
-							</form>
+						</ul>
+						<ul className="nav navbar-nav ml-auto justify-content-end">
+							<li className="nav-item ">
+								<form className=" form-inline ">
+									<a href="/logout">
+										<button className="btn btn-md btn-outline-secondary" type="button">Logout</button>
+									</a>
+								</form>
+							</li>
 						</ul>
 					</div>
 				</nav>

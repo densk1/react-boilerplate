@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-//import NavBar from '../../components/Navbar';
 import LoginForm from '../../components/Loginform';
 
 class Home extends Component {

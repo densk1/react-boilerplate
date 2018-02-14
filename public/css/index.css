@@ -35,7 +35,8 @@ nav .navbar-toggler {
   width: 40px;
   padding: 5px 0px;
   border: none;
-  color: white; }
+  color: white;
+  outline-color: white; }
 
 nav .navbar-toggler:hover {
   background-color: rgba(0, 0, 0, 0.05);

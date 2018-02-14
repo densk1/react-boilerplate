@@ -1,5 +1,4 @@
 
-
 /**   Navbar Classes   */
 nav {
     .navbar-toggler {
@@ -8,6 +7,7 @@ nav {
         padding:5px 0px;
         border: none;
         color:white;
+		outline-color:white;
     }
     .navbar-toggler:hover {
         background-color:rgba(0,0,0,0.05);
