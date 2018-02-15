@@ -21,9 +21,10 @@ A boilerplate for react projects, including redux store setup and using bootstra
   - [x] Create store on Mlab
   - [x] Connect to store on Mlab
   - [x] Create Schema
-- [ ] Create form 
-  - [ ] Build form autocreator component
-  - [ ] Validate form data
+- [x] Create form 
+  - [x] Build form autocreator component
+  - [x] Validate form data
+  - [ ] 
   - [ ] Add form data to MongoDB
   - [ ] Check if formdata already exists using a key. `{upsert: true}`
  - [ ] Build form for data collection and editing.
@@ -38,21 +39,24 @@ A boilerplate for react projects, including redux store setup and using bootstra
 ## 6. Route Planning
 
 ## 7. Current WIP plan
+> Editable entry
+- [ ] Create Card that flips to be editable as a form.
+- [ ] 
+
 > Form for editing of CRM database
-- [X] Name
-- [ ] Email Address
-- [ ] Company | Job Title
-- [ ] Office
-- [ ] Extension
-- [ ] Direct
-- [ ] Mobile
-- [ ] Street Number and Name
-- [ ] Address Line 1
-- [ ] Address Line 2
-- [ ] City
-- [ ] Postcode
-- [ ] Country
-- [ ] Comments Box
+- [x] Name
+- [x] Email Address
+- [x] Company | Job Title
+- [x] Office
+- [x] Extension
+- [x] Desk
+- [x] Mobile
+- [x] Street Number and Name
+- [x] Address Line 1
+- [x] City
+- [x] Postcode
+- [x] Country
+- [x] Comments Box
  
 
 
