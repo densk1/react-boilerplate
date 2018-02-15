@@ -41,7 +41,9 @@ A boilerplate for react projects, including redux store setup and using bootstra
 ## 7. Current WIP plan
 > Editable entry
 - [ ] Create Card that flips to be editable as a form.
-- [ ] a
+- [ ] So data is 'live' updated.
+- [ ] Amend 'contact' Schema to include all new data types.
+- [ ] 
 
 > Form for editing of CRM database
 - [x] Name
@@ -57,8 +59,20 @@ A boilerplate for react projects, including redux store setup and using bootstra
 - [x] Postcode
 - [x] Country
 - [x] Comments Box
- 
 
+### > Need to haves
+- [ ] Contact Edit
+  	- [ ] Static form data VS Flip to Editable on a Card
+- [ ] Contact Delete
+- [ ] Contact Search
+- [ ] Account Management form > how to add 2x forms
+
+
+### > Nice to haves
+- [ ] Editable Notes
+- [ ] Actions and Dates for notes
+- [ ] Email Alerts
+- [ ] Dashboard
 
 ## 8. Sitemap
 ```
