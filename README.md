@@ -43,7 +43,7 @@ A boilerplate for react projects, including redux store setup and using bootstra
 - [ ] Create Card that flips to be editable as a form.
 - [ ] So data is 'live' updated.
 - [ ] Amend 'contact' Schema to include all new data types.
-- [ ] 
+// - [ ] 
 
 > Form for editing of CRM database
 - [x] Name
@@ -69,6 +69,7 @@ A boilerplate for react projects, including redux store setup and using bootstra
 
 
 ### > Nice to haves
+- [ ] Contact Specific ToDo list
 - [ ] Editable Notes
 - [ ] Actions and Dates for notes
 - [ ] Email Alerts
