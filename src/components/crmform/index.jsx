@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 
-
-/*
-import { connect } from 'react-redux';
-import * as actions from './actions';
-
-*/
-import FormTemplate from './form';
+import NewContactForm from './form';
 
 class Form extends Component {
 	submit = values => {
@@ -18,7 +12,9 @@ class Form extends Component {
 		return(
 			<div className="container">
 				<div className="row">
-					<FormTemplate />
+                    <div className="col-sm-12">
+					<NewContactForm onSubmit={this.submit} />
+                    </div>
 				</div>
 			</div>
         )
@@ -26,3 +22,14 @@ class Form extends Component {
 }
 
 export default Form;
+
+/*
+<input 
+    type="text" 
+    readonly 
+    disabled 
+    className="form-control-plaintext" 
+    id="staticEmail" 
+    value="email@example.com"
+/>
+*/
