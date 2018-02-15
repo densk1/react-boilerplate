@@ -41,7 +41,7 @@ A boilerplate for react projects, including redux store setup and using bootstra
 ## 7. Current WIP plan
 > Editable entry
 - [ ] Create Card that flips to be editable as a form.
-- [ ] 
+- [ ] a
 
 > Form for editing of CRM database
 - [x] Name
