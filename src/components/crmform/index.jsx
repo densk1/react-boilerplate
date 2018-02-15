@@ -7,23 +7,20 @@ class Form extends Component {
 		// print the form values to the console
 		console.log(values)
 	}
-
 	render() {
 		return(
 			<div className="container">
 				<div className="row">
-                    <div className="col-sm-12">
-						
-					<NewContactForm onSubmit={this.submit} />
-						
-                    </div>
+					<div className="col-sm-12">
+						<NewContactForm onSubmit={this.submit} />
+					</div>
 				</div>
 			</div>
-        )
+		)
 	}
 }
-
 export default Form;
+
 
 /*
 <input 

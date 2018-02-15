@@ -20,17 +20,17 @@ const renderFieldInline = (field) => (
 			</small>
         </label>
         <div className="col-sm-10 ">
-            <input 
-                {...field.input} 
-                type={field.type || "text" }
-                placeholder={field.placeholder || "" }
-                className="form-control form-control-success" 
-            />
-                { field.meta.touched && field.meta.error && 
-                    <span className="error small text-danger">
-                        {field.meta.error}
-                    </span>
-                }
+					<input 
+						{...field.input} 
+						type={field.type || "text" }
+						placeholder={field.placeholder || "" }
+						className="form-control form-control-success" 
+					/>
+						{ field.meta.touched && field.meta.error && 
+						<span className="error small text-danger">
+								{field.meta.error}
+						</span>
+						}
         </div>
     </div>
 )

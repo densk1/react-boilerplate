@@ -9,7 +9,6 @@ import CompanyFieldsInline from './templates/companyFieldsInline.jsx';
 import OfficeExtensionFieldsInline from './templates/officeExtensionFieldsInline.jsx';
 
 let ContactForm = props => {
-
 	const { 
         handleSubmit, 
         pristine, 
@@ -17,7 +16,9 @@ let ContactForm = props => {
         submitting 
     } = props;
 	return (
-		<form onSubmit={handleSubmit} className="col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10">
+		<form 
+		  onSubmit={handleSubmit} 
+		  className="card card-body col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10">
             <Fields 
                 label="Name"
                 names={['firstName', 'lastName']} 
@@ -34,6 +35,8 @@ let ContactForm = props => {
                 types1='text'
                 placeholder={[ 'Company Name', 'Job Title']}
                 component={CompanyFieldsInline}
+				value="hello"
+				
             />
 			<hr />
 			<Fields 
@@ -47,14 +50,14 @@ let ContactForm = props => {
                 component={OfficeExtensionFieldsInline}
             />
 			<hr />			
-            <Field label="Address" name="address1" placeholder="Address Line 1" component={FieldInline} />
+            <Field label="Address" name="address1" placeholder="No. & Street Name" component={FieldInline} />
             <Field label="&nbsp;" name="address2" placeholder="Address Line 2" component={FieldInline} />
             <Field label="&nbsp;" name="city" placeholder="City" component={FieldInline} />
             <Field label="&nbsp;" name="postcode" placeholder="Postcode" component={FieldInline} />
 			<hr />
 			<div className="text-muted text-center">
 				<h2>&lt; Insert First Comment box &gt;</h2>
-			</div>	
+			</div>
 			<hr />	
             
             <div className="form-group row">
