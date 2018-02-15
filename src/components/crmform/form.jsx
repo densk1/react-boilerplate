@@ -6,6 +6,7 @@ import { validate, warn } from './templates/formControl';
 import FieldInline from './templates/fieldInline.jsx';
 import FieldsInline from './templates/fieldsInline.jsx';
 import CompanyFieldsInline from './templates/companyFieldsInline.jsx';
+import OfficeExtensionFieldsInline from './templates/officeExtensionFieldsInline.jsx';
 
 let ContactForm = props => {
 
@@ -16,7 +17,7 @@ let ContactForm = props => {
         submitting 
     } = props;
 	return (
-		<form onSubmit={handleSubmit} className="offset-sm-1 col-sm-10">
+		<form onSubmit={handleSubmit} className="col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10">
             <Fields 
                 label="Name"
                 names={['firstName', 'lastName']} 
@@ -26,29 +27,44 @@ let ContactForm = props => {
                 component={FieldsInline}
             />
             <Field name="email" component={FieldInline} />
-
 			<Fields 
                 label="Company"
                 names={['company', 'role']} 
                 types0='text'
                 types1='text'
-                placeholder={[ 'Company Name', 'Current Role']}
+                placeholder={[ 'Company Name', 'Job Title']}
                 component={CompanyFieldsInline}
             />
-            <Field name="mobile" type="tel" component={FieldInline} />
-            <Field name="office" type="tel" component={FieldInline} />
-            <Field name="desk" type="tel" component={FieldInline} />
-            <Field name="date" type="date" component={FieldInline} />
-
+			<hr />
+			<Fields 
+                label="Phone"
+                names={['officePhone', 'extension', 'desk', 'mobile']} 
+                type0='tel'
+                type1='tel'
+                type2='tel'
+                type3='tel'
+                placeholder={[ 'Office', 'Ext', 'Desk', 'Mobile']}
+                component={OfficeExtensionFieldsInline}
+            />
+			<hr />			
+            <Field label="Address" name="address1" placeholder="Address Line 1" component={FieldInline} />
+            <Field label="&nbsp;" name="address2" placeholder="Address Line 2" component={FieldInline} />
+            <Field label="&nbsp;" name="city" placeholder="City" component={FieldInline} />
+            <Field label="&nbsp;" name="postcode" placeholder="Postcode" component={FieldInline} />
+			<hr />
+			<div className="text-muted text-center">
+				<h2>&lt; Insert First Comment box &gt;</h2>
+			</div>	
+			<hr />	
             
             <div className="form-group row">
-                <div className="col-sm-8 text-center mt-4">
-                    <button className="btn btn-sm btn-success w-100 " type="submit" disabled={submitting}>
+                <div className="col-7 text-center mt-4">
+                    <button className="btn btn-success w-100 " type="submit" disabled={submitting}>
                         Save
                     </button>
                 </div>
-                <div className="col-sm-4 text-center mt-4">
-                    <button className="btn btn-sm btn-warning w-100 " type="submit" disabled={pristine || submitting} onClick={reset}>
+                <div className="col-5 text-center mt-4">
+                    <button className="btn btn-outline-danger w-100 " type="submit" disabled={pristine || submitting} onClick={reset}>
                         Clear
                     </button>
                 </div>

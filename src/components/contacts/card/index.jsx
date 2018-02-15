@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './actions.js';
 
-//import Comments from '../comments/';
+import Comments from '../comments/';
 
 class App extends Component {
 	componentDidMount = async () => {
@@ -40,7 +40,7 @@ class App extends Component {
 						</div>
 
 					</div>
-					{/*<div className="col-md-12">
+					<div className="col-md-12">
 						<div className="card mb-4">
 							
 							<div className="card-body">
@@ -65,7 +65,7 @@ class App extends Component {
 							</div>
 						</div>
 						<Comments clientID={this.props.match.params.clientID}/>
-					</div>*/}
+					</div>
 				</div>
 			</div>
 

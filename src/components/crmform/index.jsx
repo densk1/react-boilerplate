@@ -13,7 +13,9 @@ class Form extends Component {
 			<div className="container">
 				<div className="row">
                     <div className="col-sm-12">
+						
 					<NewContactForm onSubmit={this.submit} />
+						
                     </div>
 				</div>
 			</div>

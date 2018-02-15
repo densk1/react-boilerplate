@@ -15,14 +15,16 @@ const firstLetterUppercase = (string) => {
 const renderFieldInline = (field) => (
     <div className="form-group row">
         <label className="col-sm-2 col-form-label text-muted pb-0">
-          {field.label || firstLetterUppercase(field.input.name) }
+			<small>
+			 {field.label || firstLetterUppercase(field.input.name)}
+			</small>
         </label>
-        <div className="col-sm-10">
+        <div className="col-sm-10 ">
             <input 
                 {...field.input} 
                 type={field.type || "text" }
                 placeholder={field.placeholder || "" }
-                className="form-control" 
+                className="form-control form-control-success" 
             />
                 { field.meta.touched && field.meta.error && 
                     <span className="error small text-danger">

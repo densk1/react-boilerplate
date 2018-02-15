@@ -22,7 +22,7 @@ const renderFieldsInline = (fields) => (
         <label 
             className="col-sm-2 col-form-label small text-muted pb-0"
         >
-            { firstLetterUppercase(fields.label) }
+            <small>{ firstLetterUppercase(fields.label) }</small>
         </label>
         <div className="col-sm-5 mb-sm-1 mb-4">
             <input 
