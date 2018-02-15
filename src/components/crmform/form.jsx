@@ -5,6 +5,7 @@ import { validate, warn } from './templates/formControl';
 
 import FieldInline from './templates/fieldInline.jsx';
 import FieldsInline from './templates/fieldsInline.jsx';
+import CompanyFieldsInline from './templates/companyFieldsInline.jsx';
 
 let ContactForm = props => {
 
@@ -25,6 +26,15 @@ let ContactForm = props => {
                 component={FieldsInline}
             />
             <Field name="email" component={FieldInline} />
+
+			<Fields 
+                label="Company"
+                names={['company', 'role']} 
+                types0='text'
+                types1='text'
+                placeholder={[ 'Company Name', 'Current Role']}
+                component={CompanyFieldsInline}
+            />
             <Field name="mobile" type="tel" component={FieldInline} />
             <Field name="office" type="tel" component={FieldInline} />
             <Field name="desk" type="tel" component={FieldInline} />

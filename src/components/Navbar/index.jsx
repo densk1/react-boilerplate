@@ -11,7 +11,7 @@ class App extends Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
           			<div className="collapse navbar-collapse " id="navbarNav">
-						<ul className="navbar-nav w-100 justify-content-center">
+						<ul className="navbar-nav w-100 justify-content-center mb-sm-0 mb-4">
 							<li className="nav-item">
 								<NavLink 
                                     to="/" 

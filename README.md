@@ -39,19 +39,19 @@ A boilerplate for react projects, including redux store setup and using bootstra
 
 ## 7. Current WIP plan
 > Form for editing of CRM database
- - Name
- - Job Title
- - Email Address
- - Mobile
- - Office
- - Direct
- - Street Number and Name
- - Address Line 1
- - Address Line 2
- - City
- - Postcode
- - Country
- - Comments Box
+- [ ] Name
+- [ ] Job Title
+- [ ] Email Address
+- [ ] Mobile
+- [ ] Office
+- [ ] Direct
+- [ ] Street Number and Name
+- [ ] Address Line 1
+- [ ] Address Line 2
+- [ ] City
+- [ ] Postcode
+- [ ] Country
+- [ ] Comments Box
  
 
 
