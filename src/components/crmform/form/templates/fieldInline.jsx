@@ -24,7 +24,7 @@ const renderFieldInline = (field) => (
 						{...field.input} 
 						type={field.type || "text" }
 						placeholder={field.placeholder || "" }
-						className="form-control form-control-success" 
+						className={"form-control "+ ((field.meta.touched && field.meta.error) && 'is-invalid') }
 					/>
 						{ field.meta.touched && field.meta.error && 
 						<span className="error small text-danger">

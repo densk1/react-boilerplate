@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import NewContactForm from './form';
+import ContactForm from './form/';
 
 class Form extends Component {
 	submit = values => {
@@ -12,7 +12,7 @@ class Form extends Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-sm-12">
-						<NewContactForm onSubmit={this.submit} />
+						<ContactForm onSubmit={this.submit} />
 					</div>
 				</div>
 			</div>
@@ -20,15 +20,3 @@ class Form extends Component {
 	}
 }
 export default Form;
-
-
-/*
-<input 
-    type="text" 
-    readonly 
-    disabled 
-    className="form-control-plaintext" 
-    id="staticEmail" 
-    value="email@example.com"
-/>
-*/
