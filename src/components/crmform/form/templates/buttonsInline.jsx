@@ -15,7 +15,7 @@ const buttonsInline = (props) => (
         </div>
         <div className="col-5 text-center mt-4">
             <button 
-                className="btn btn-outline-danger w-100 " 
+                className={"btn  w-100 "+(props.clearDisabled? "btn-outline-secondary" : "btn-outline-danger" )} 
                 type="submit" 
                 disabled={props.clearDisabled}
                 onClick={props.onClick}
