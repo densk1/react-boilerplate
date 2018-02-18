@@ -16,13 +16,11 @@ placeholder={[ 'First Name', 'Second Name']}
 component={FieldsInline}
 */
 const renderFieldsInline = (fields) => (
-    <div className="form-group row ">
+    <div className="form-group row mb-0">
         <label 
             className="col-sm-2 col-form-label small text-muted pb-0"
-        >
-            <small>{ firstLetterUppercase(fields.label) }</small>
-        </label>
-        <div className="col-sm-5 mb-sm-1 mb-4">
+        ><small>{ firstLetterUppercase(fields.label) }</small></label>
+        <div className="col-sm-5 mb-sm-3 mb-4">
             <input 
                 {...fields.firstName.input} 
                 type={fields.types0 || "text" }

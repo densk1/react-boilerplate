@@ -1,11 +1,13 @@
 import React from 'react';
 
+/*
 
 
 const firstLetterUppercase = (string) => {
     string.toLowerCase();
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+*/
 
 // type="text" //text is default so set to use a custom field
 // label={} 
@@ -13,13 +15,13 @@ const firstLetterUppercase = (string) => {
 // rather than copying the input name
 
 const renderFieldInline = (field) => (
-    <div className="form-group row">
-        <label className="col-sm-2 col-form-label text-muted pb-0">
+    <div className="form-group row mb-0">
+        <label className="col col-sm-2 col-form-label text-muted pb-0 ">
 			<small>
-			 {field.label || firstLetterUppercase(field.input.name)}
+			 {field.label && field.label }
 			</small>
         </label>
-        <div className="col-sm-10 ">
+        <div className="col-12 col-sm-10 mb-sm-3 mb-3">
 					<input 
 						{...field.input} 
 						type={field.type || "text" }

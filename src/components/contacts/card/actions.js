@@ -3,13 +3,14 @@ import {
 	GET_CONTACT,
 	CLEAR_CARD,
 	ADD_COMMENT,
-
+	LOAD_TO_FORM,
 	NEW_COMMENT_TEXT
 } from './types';
 
 export const getContact = (clientID = null) =>  dispatch => { 
 	axios.post('/crm/client/',{clientID})
 	.then( res => {
+		console.log(res);
 		dispatch({ type: GET_CONTACT, payload: res.data })
 	})
     .catch( err => {
@@ -39,3 +40,8 @@ export const addNewComment = (clientID, comment) => dispatch => {
 export const newCommentText = ( newText ) => dispatch => {
 	dispatch({ type: NEW_COMMENT_TEXT, payload: newText })
 } 
+
+export const load = data => {
+	console.log("loading");
+	return ({type: LOAD_TO_FORM, data})
+}

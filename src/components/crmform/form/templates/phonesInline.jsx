@@ -18,13 +18,13 @@ component={FieldsInline}
 */
 
 const renderFieldsInline = (fields) => (
-    <div className="form-group row ">
+    <div className="form-group row mb-0">
         <label 
             className="col-sm-2 col-form-label small text-muted pb-0"
         >
             <small>{ firstLetterUppercase(fields.label) }</small>
         </label>
-        <div className="col-8 col-sm-7   mb-sm-4 ">
+        <div className="col-6 col-sm-5 mb-sm-3 mb-3 ">
             <input 
                 {...fields.officePhone.input} 
                 type={fields.type0 || "text" }
@@ -37,12 +37,17 @@ const renderFieldsInline = (fields) => (
                     </span>
                 */}
         </div>
-        <div className="col-4 col-sm-3">
+		<div className="col-1 col-sm-1">
+			<label 
+				className=" col-form-label small text-muted pb-0"
+			><small>{ firstLetterUppercase(fields.placeholder[1]) }</small></label>
+		</div>
+        <div className="col col-sm-4">
             <input 
                 {...fields.extension.input} 
                 type={fields.type1 || "text" }
                 placeholder={fields.placeholder[1]}
-                className="form-control  " 
+                className="form-control" 
             />
                 { 
                 fields.extension.meta.touched && fields.extension.meta.error && 
@@ -54,9 +59,8 @@ const renderFieldsInline = (fields) => (
         <label 
             className="col-sm-2 col-form-label small text-muted pb-0"
         >
-           &nbsp;
         </label>
-        <div className="col-6 col-sm-5 ">
+        <div className="col-6 col-sm-5 mb-sm-3">
             <input 
                 {...fields.desk.input} 
                 type={fields.type2 || "text" }

@@ -3,7 +3,14 @@ import { connect } from 'react-redux';
 import * as actions from './actions.js';
 
 //import Comments from '../comments/';
-import Card from './card.jsx';
+import Card255 from './fields/contactView255.jsx';
+import Card273 from './fields/contactView273.jsx';
+import Card210 from './fields/contactView210.jsx';
+
+
+// loading in data
+
+
 
 class App extends Component {
 	componentDidMount = async () => {
@@ -20,43 +27,41 @@ class App extends Component {
 			this.props.newCommentText('');
 		}
 	}
+	
+	
 	buildContactCard = () => {
-		let card = this.props.card;
-		return(
+		const card = this.props.card;
+	  	return(
 			<div className="container">			
 				<div className="row">
-					<div className="col-sm-12 mb-4">
-					  <div className="container">
-						<div className="card">
-							<div className="card-body">
-					  <div className="container">
-							  
-							<Card data="cardenk@gmail.com"/>
-							  
-								{/*<label className="card-subtitle  text-muted">First Name</label>
-								<h5 className="card-title">{card.name}</h5>
-								<h6 className="card-subtitle mb- text-muted">Email</h6>
-								<input 
-									type="text" 
-									readOnly 
-									disabled 
-									className="form-control-plaintext mb-4" 
-									value={card.email}
-								/>*/}
-							  
-{/*							  
+				  	<div className="col-sm-12">
+					  
+					 {/* Start Card */}
+						<form id="contactCard" className="card card-body col-xs-12 offset-sm-1 col-sm-12 offset-md-1 col-md-10">
 
-								<h6 className="card-subtitle mb-2 text-muted">Company</h6>
-								<h5 className="card-title">{card.company}</h5>
-								<p className="card-text"><small className="text-muted">Last updated ...</small></p>*/}
 
-							  </div>
-						  </div>
+							
+							
+							  	<Card255 label="Name" data1={card.name} data2={''} />
+							  	<Card210 label="Email" data1={card.email} data2={''} />
+							  	<Card255 label="Company" data1={card.company} data2={"Producer"} />
+							  	<hr />
+							  	<Card273 label="Phone" data1={'01 708 8147'} data2={'147'} />
+							  	<Card255 label="" data1={"01 7088 147"} data2={"086 770 1331"} extraClass={"col-6"}/>
+						  		<hr />
+							  	<Card210 label="Address" data1={"22 Fitzwilliam Street Upper"} />
+							  	<Card210 label="" data1={"Dublin 2"}  />
+							  	<Card210 label="" data1={"Dublin"}  />
+							  	<Card210 label="" data1={"D02 WR82"}  />
+						  		<hr />
+						  		Edit Button
+						  	</form>
+					  {/* End Card */}
+
 						</div>
-						</div>
-					</div>
-				  
-{/*					<div className="col-md-12">
+
+{/* Comments Section ****
+  					<div className="col-md-12">
 						<div className="card mb-4">
 							
 							<div className="card-body">
@@ -89,7 +94,7 @@ class App extends Component {
 		return this.props.card && this.buildContactCard();
 	}
     componentWillUnmount = () => {
-				this.props.clearCard();
+				//this.props.clearCard();
     }
 }
 

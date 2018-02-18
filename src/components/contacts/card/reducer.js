@@ -1,6 +1,7 @@
 import {
 	GET_CONTACT,
 	CLEAR_CARD,
+	LOAD_TO_FORM,
 } from './types';
 
 const reducer = ( state = null, action = null ) => {
@@ -9,6 +10,10 @@ const reducer = ( state = null, action = null ) => {
 			return action.payload || false;
 		case CLEAR_CARD:
 			return false;
+ 		case LOAD_TO_FORM:
+			return {
+				data: action.data
+			}
 		default:
 			return state;
 	}

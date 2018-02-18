@@ -1,8 +1,8 @@
 
 #contactCard {
-    .special-card {
-        background-color: darken( blue, 10% ) ;
-    }
+	label {
+		padding-right:$labelPaddingRight;
+	}
 }
 
 $styleName: 'name';
@@ -12,4 +12,3 @@ $baseColor: indianred;
     color:$baseColor;
     background-color: lighten($baseColor, 20% );
 }
-

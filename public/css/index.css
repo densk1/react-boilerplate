@@ -1,6 +1,9 @@
 /* 
 https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc
 */
+/*
+Declare Variables
+*/
 /* BODY CSS */
 body {
   margin: 0;
@@ -22,8 +25,8 @@ footer {
 #contacttable tr:hover td {
   cursor: pointer; }
 
-#contactCard .special-card {
-  background-color: #0000cc; }
+#contactCard label {
+  padding-right: 5px; }
 
 .style-name {
   color: indianred;

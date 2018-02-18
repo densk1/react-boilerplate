@@ -16,13 +16,11 @@ component={FieldsInline}
 
 */
 const renderFieldsInline = (fields) => (
-    <div className="form-group row ">
+    <div className="form-group row mb-0">
         <label 
             className="col-sm-2 col-form-label small text-muted pb-0"
-            >
-            <small>{ firstLetterUppercase(fields.label) }</small>
-        </label>
-        <div className="col-sm-5 mb-sm-1 mb-4">
+            ><small>{ firstLetterUppercase(fields.label) }</small></label>
+        <div className="col-sm-5 mb-sm-3 mb-4">
             <input 
                 {...fields.organisation.input} 
                 type={fields.types0 || "text" }
@@ -40,7 +38,7 @@ const renderFieldsInline = (fields) => (
                 {...fields.role.input} 
                 type={fields.type1 || "text" }
                 placeholder={fields.placeholder[1]}
-                className="form-control  " 
+                className="form-control" 
             />
                 { 
                 fields.role.meta.touched && fields.role.meta.error && 
