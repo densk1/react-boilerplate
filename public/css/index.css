@@ -26,7 +26,7 @@ footer {
   cursor: pointer; }
 
 #contactCard label {
-  padding-right: 5px; }
+  padding-right: 0px; }
 
 .style-name {
   color: indianred;
@@ -85,3 +85,11 @@ nav .btn-outline-secondary:hover {
 
 #mainloginform .stayloggedinlabel input {
   margin-right: 10px; }
+
+#newContactForm label {
+  padding-right: 0px;
+  font-size: 14px; }
+
+.custom-form-plaintext {
+  border-color: white !important;
+  background-color: white !important; }

@@ -1,21 +1,26 @@
 import {
 	GET_CONTACT,
 	CLEAR_CARD,
-	LOAD_TO_FORM,
+	EDIT_CARD
 } from './types';
 
 const reducer = ( state = null, action = null ) => {
 	switch (action.type) {
 		case GET_CONTACT:
+
 			return action.payload || false;
 		case CLEAR_CARD:
 			return false;
- 		case LOAD_TO_FORM:
+		case EDIT_CARD:
+			
+				console.log("EDIT_CARD: ", state)
 			return {
-				data: action.data
-			}
+				...state,
+				cardEdit: action.payload	
+			};
 		default:
 			return state;
 	}
+	
 }
 export default reducer;

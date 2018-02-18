@@ -1,8 +1,12 @@
 #newContactForm {
 	label {
 		padding-right:$labelPaddingRight;
-		padding-left:$labelPaddingRight;
+		//padding-left:$labelPaddingLeft;
+		font-size: 14px;
 	}
-	
 }
 
+.custom-form-plaintext {
+	border-color: white!important;
+	background-color: white!important;
+}

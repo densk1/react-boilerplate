@@ -4,7 +4,8 @@ https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/
 /*
 Declare Variables
 */
-$labelPaddingRight: 5px;
+$labelPaddingLeft: 0px;
+$labelPaddingRight: 0px;
 
 /* BODY CSS */
 body {
@@ -32,3 +33,4 @@ footer {
 @import '../components/Navbar/_style.scss';
 @import '../scenes/Leaguetable/_style.scss';
 @import '../components/Loginform/_style.scss';
+@import '../components/crmform/_style.scss';

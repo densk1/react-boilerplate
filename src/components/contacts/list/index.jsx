@@ -19,7 +19,7 @@ class Contacts extends Component {
 	tableHeader = () => {
 		return (
 			<tr>
-				<th>Name</th><th>Email</th><th>Role</th><th>Company</th><th>Telephone</th><th>Mobile</th>
+				<th>Name</th><th>Email</th><th>Company</th><th>Desk</th><th>Office</th><th>Mobile</th>
 			</tr>
 		);
 	}
@@ -57,12 +57,12 @@ class Contacts extends Component {
         return(this.props.contacts.list.map( 
 			d => 
             <tr key={d._id} onClick={()=>this.setState({ id: d._id })}>
-                <td>{d.name}</td>
+                <td>{d.firstName+" "+d.secondName}</td>
                 <td>{d.email}</td>
-                <td>Role</td>
-                <td>{d.company}</td>
-                <td>Telephone</td>
-                <td>Mobile</td>
+                <td>{d.organisation}</td>
+                <td>{d.desk}</td>
+                <td>{d.office + d.office && ("("+d.extension+")")}</td>
+                <td>{d.mobile}</td>
             </tr>
 
         ))

@@ -2,14 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './actions.js';
 
-//import Comments from '../comments/';
-import Card255 from './fields/contactView255.jsx';
-import Card273 from './fields/contactView273.jsx';
-import Card210 from './fields/contactView210.jsx';
-
+import Comments from '../comments/';
 
 // loading in data
-
+import ContactForm from '../../crmform/form'
 
 
 class App extends Component {
@@ -28,39 +24,35 @@ class App extends Component {
 		}
 	}
 	
+	isEditable = false;
+	changeEditable = () => {
+		if (this.isEditable ) {
+			this.isEditable = false;
+		} else {
+			this.isEditable = true;
+		}
+	}
+
 	
 	buildContactCard = () => {
-		const card = this.props.card;
+		console.log("this.props.cardEdit ", this.props.cardEdit)
 	  	return(
 			<div className="container">			
 				<div className="row">
 				  	<div className="col-sm-12">
-					  
-					 {/* Start Card */}
-						<form id="contactCard" className="card card-body col-xs-12 offset-sm-1 col-sm-12 offset-md-1 col-md-10">
-
-
-							
-							
-							  	<Card255 label="Name" data1={card.name} data2={''} />
-							  	<Card210 label="Email" data1={card.email} data2={''} />
-							  	<Card255 label="Company" data1={card.company} data2={"Producer"} />
-							  	<hr />
-							  	<Card273 label="Phone" data1={'01 708 8147'} data2={'147'} />
-							  	<Card255 label="" data1={"01 7088 147"} data2={"086 770 1331"} extraClass={"col-6"}/>
-						  		<hr />
-							  	<Card210 label="Address" data1={"22 Fitzwilliam Street Upper"} />
-							  	<Card210 label="" data1={"Dublin 2"}  />
-							  	<Card210 label="" data1={"Dublin"}  />
-							  	<Card210 label="" data1={"D02 WR82"}  />
-						  		<hr />
-						  		Edit Button
-						  	</form>
-					  {/* End Card */}
-
+						<ContactForm 
+							onSubmit={this.submit}
+							isContactCard
+							editable={true}
+							/>
+						<button type="button" className="btn btn-success mb-3" onClick={() => {
+									this.changeEditable();
+									this.props.editCard(this.isEditable)
+						}}>
+					Load Account</button>
 						</div>
 
-{/* Comments Section ****
+
   					<div className="col-md-12">
 						<div className="card mb-4">
 							
@@ -84,7 +76,7 @@ class App extends Component {
 							</div>
 						</div>
 						<Comments clientID={ this.props.match.params.clientID }/>
-					</div>*/}
+					</div>
 				</div>
 			</div>
 
@@ -94,25 +86,14 @@ class App extends Component {
 		return this.props.card && this.buildContactCard();
 	}
     componentWillUnmount = () => {
-				//this.props.clearCard();
+		this.props.clearCard();
     }
 }
 
 function mapStateToProps ({ contacts }) {
-	let { card } = contacts;
+	let { card, cardEdit } = contacts;
 	let { newComment } = contacts.comments;
-	return { card, newComment };
+	return { card, newComment, cardEdit };
 }
 	
 export default connect(mapStateToProps,actions)(App);
-
-/*
-<input 
-    type="text" 
-    readonly 
-    disabled 
-    className="form-control-plaintext" 
-    id="staticEmail" 
-    value="email@example.com"
-/>
-*/

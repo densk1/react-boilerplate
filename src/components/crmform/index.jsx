@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../contacts/card/actions.js';
+import * as actions from './actions';
 
 
 import ContactForm from './form/';
@@ -8,26 +8,25 @@ import ContactForm from './form/';
 class Form extends Component {
 	componentDidMount = async () => {
 		// If Card/URL param is true....
-		//await this.props.getContact("5a7cc728100dfb2e9f856aef");
+		// await this.props.getContact("5a7cc728100dfb2e9f856aef");
 
 		
 	}
 	submit = values => {
 		// print the form values to the console
+		this.props.addNewContact({values});
 		console.log("values ",values)
 	}
 	render() {
-		this.props.card && console.log("card", this.props.card)
 		return(
 			<div className="container">
 				<div className="row">
 					<div className="col-sm-12">
-{/*    <div>
-        <button type="button" onClick={() =>{} }>Load Account</button>
-      </div>*/}
 						<ContactForm 
 							onSubmit={this.submit} 
-							contactCard={false}
+							isContactCard={true}
+
+							showPlaceholder={false}
 							/>
 					</div>
 				</div>
@@ -39,11 +38,8 @@ class Form extends Component {
 
 
 // NEW !!!!!!!!!!!!!!!
-function mapStateToProps ({ contacts }) {
-	let { card } = contacts;
+/*function mapStateToProps ({ }) {
 
-	//let { load } = contacts;
-	let { newComment } = contacts.comments;
-	return { card, newComment };
-}
-export default connect(mapStateToProps,actions)(Form)
+	return { };
+}*/
+export default connect(null,actions)(Form)
