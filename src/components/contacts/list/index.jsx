@@ -54,7 +54,7 @@ class Contacts extends Component {
 		)
 	}
 	tableBody = () => {
-        return(this.props.contacts.list.map( 
+        return(this.props.contacts.list.sort((a,b) => a.firstName > b.firstName).map( 
 			d => 
             <tr key={d._id} onClick={()=>this.setState({ id: d._id })}>
                 <td>{d.firstName+" "+d.secondName}</td>

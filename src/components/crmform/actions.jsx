@@ -5,6 +5,7 @@ import {
 } from './types';
 
 export const addNewContact = (newContact) => dispatch => {
+	console.log(newContact);
 	axios.post('/crm/contact/new', {
 		newContact
 	})

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './actions.js';
 
-import ContactForm from '../../crmform/form'
+import ContactForm from '../../form'
 import Comments from '../comments/';
 
 class App extends Component {
@@ -26,7 +26,7 @@ class App extends Component {
     }
 	
 	buildContactCard = () => {
-		//console.log("this.props ", this.props)
+
 	  	return(
 			<div className="container">			
 				<div className="row">

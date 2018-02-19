@@ -5,6 +5,7 @@ import {
 } from './types';
 
 const reducer = ( state = null, action = null ) => {
+	console.log(state, action);
 	switch (action.type) {
 		case ADD_NEW_CONTACT:
 			return { ...state, action.payload };

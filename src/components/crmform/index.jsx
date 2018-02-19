@@ -3,17 +3,13 @@ import { connect } from 'react-redux';
 import * as actions from './actions';
 
 
-import ContactForm from './form/';
+import ContactForm from '../form/';
 
 class Form extends Component {
-	componentDidMount = async () => {
-		// If Card/URL param is true....
-		// await this.props.getContact("5a7cc728100dfb2e9f856aef");		
-	}
 	submit = values => {
 		// print the form values to the console
 		this.props.addNewContact({values});
-		console.log("values ",values)
+		//console.log("values ",values)
 	}
 	render() {
 		return(
