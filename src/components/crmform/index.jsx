@@ -24,9 +24,9 @@ class Form extends Component {
 					<div className="col-sm-12">
 						<ContactForm 
 							onSubmit={this.submit} 
-							isContactCard={true}
+							
 
-							showPlaceholder={false}
+							showPlaceholder={true}
 							/>
 					</div>
 				</div>

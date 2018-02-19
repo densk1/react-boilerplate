@@ -2,8 +2,7 @@ import axios from 'axios';
 import {
 	GET_CONTACT,
 	CLEAR_CARD,
-	ADD_COMMENT,
-	NEW_COMMENT_TEXT,
+
 	EDIT_CARD,
 } from './types';
 
@@ -23,24 +22,9 @@ export const clearCard = () => dispatch => {
 }
 
 
-export const addNewComment = (clientID, comment) => dispatch => {
-	axios.post('/crm/client/comment/add', {
-		clientID,
-		comment
-	})
-	.then( res => {
-		dispatch({type: ADD_COMMENT, payload: res.data });
-	})
-	.catch( err => {
-		dispatch({type: ADD_COMMENT, payload: '' });
-	})
-}
 
-export const newCommentText = ( newText ) => dispatch => {
-	dispatch({ type: NEW_COMMENT_TEXT, payload: newText })
-}
 
 export const editCard = (bool) => dispatch => {
 	
-	dispatch({ type: EDIT_CARD, payload: (bool || false) })
+	dispatch({ type: EDIT_CARD, payload: ( bool || false) })
 }

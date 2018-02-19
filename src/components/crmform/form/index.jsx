@@ -24,21 +24,21 @@ const labelClassSpecial="col-12 col-sm-3 col-form-label text-muted pb-0 mb-0";
 class ContactForm extends Component {
 
 	render () {
-	const { 
-        handleSubmit, 
-        pristine, 
-        reset, 
-        submitting ,
-		isContactCard,
-		showPlaceholder,
-		editable,
-    } = this.props;
-	
-	const fieldSetup = {
-		component: CleanField,
-		isContactCard: this.props.cardEdit,
-		showPlaceholder
-	}
+        const { 
+            handleSubmit, 
+            pristine, 
+            reset, 
+            submitting ,
+            isContactCard,
+            showPlaceholder,
+            editable,
+        } = this.props;
+
+        const fieldSetup = {
+            component: CleanField,
+            isContactCard,
+            showPlaceholder
+        }
 		return (
 			<form 
 				id="newContactForm"
@@ -50,7 +50,7 @@ class ContactForm extends Component {
 					<div className={colClass255}>
 						<Field
 							name="firstName"
-							placeholder={showPlaceholder &&"First Name"}
+							placeholder={showPlaceholder && "First Name"}
 							{...fieldSetup}
 							/>					
 					</div>
@@ -221,7 +221,7 @@ ContactForm = reduxForm({
 
 function mapStateToProps ({ contacts }) {
 	let initialValues = contacts.card || null ;
-	let { cardEdit }  = contacts.card || true;
+	let { cardEdit }  = contacts.card || false;
 	return { initialValues, cardEdit };
 }
 

@@ -8,16 +8,18 @@ const reducer = ( state = null, action = null ) => {
 	switch (action.type) {
 		case GET_CONTACT:
 
-			return action.payload || false;
+			return { ...state,
+                ...action.payload || false
+            };
 		case CLEAR_CARD:
 			return false;
 		case EDIT_CARD:
-			
-				console.log("EDIT_CARD: ", state)
-			return {
+            let editPayload = {
 				...state,
-				cardEdit: action.payload	
-			};
+				cardEdit: action.payload
+			}
+            console.log("Edit payload", editPayload);
+			return editPayload;
 		default:
 			return state;
 	}

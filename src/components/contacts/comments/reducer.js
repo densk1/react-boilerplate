@@ -5,7 +5,7 @@ import {
 } from './types';
 
 const reducerInitialState = {
-	comments: null,
+	comments: '',
 	newComment: ''
 }
 
@@ -24,6 +24,7 @@ const reducer = ( state = reducerInitialState, action = null ) => {
 				comments
 			};
 		case NEW_COMMENT_TEXT:
+
 			let commentText = {
 				...state,
 				newComment: action.payload
