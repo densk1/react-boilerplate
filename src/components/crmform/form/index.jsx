@@ -116,13 +116,16 @@ class ContactForm extends Component {
 				</div>
 				<div className={formGroupRow}>
 					<label className={labelClassRegular}><small></small></label>
-					<div className={colClass255}>
+					{ (editable && isContactCard && !this.props.initialValues.desk )  ? "" :
+                    <div className={colClass255}>
 						<Field
 							name="desk"
 							placeholder="Desk"
 							{...fieldSetup}
 							/>					
 					</div>
+                    }
+                    { (editable && isContactCard && !this.props.initialValues.mobile )  ? "" :
 					<div className={colClass255}>
 						<Field
 							name="mobile"
@@ -130,9 +133,11 @@ class ContactForm extends Component {
 							{...fieldSetup}
 							/>					
 					</div>
+                    }
 				</div>	
 				<hr />
-                { //(this.props.initialValues.address1 && editable)  ? "" : 
+                {   
+                    (editable && isContactCard && !this.props.initialValues.address1 )  ? "" : 
 				<div className={formGroupRow}>
 					<label className={labelClassRegular}><small>Address</small></label>
 					<div className={colClass210}>
@@ -144,7 +149,7 @@ class ContactForm extends Component {
 					</div>
 				</div>
                 }
-				{ //(this.props.initialValues.address2 || false) && !editable && 
+				{  (editable && isContactCard && !this.props.initialValues.address2 )  ? "" :
                 <div className={formGroupRow}>
 					<label className={labelClassRegular}><small></small></label>
 					<div className={colClass210}>
@@ -156,7 +161,7 @@ class ContactForm extends Component {
 					</div>
 				</div>
                 }
-                
+                { (editable && isContactCard && !this.props.initialValues.city )  ? "" :
 				<div className={formGroupRow}>
 					<label className={labelClassRegular}><small></small></label>
 					<div className={colClass210}>
@@ -167,6 +172,8 @@ class ContactForm extends Component {
 							/>					
 					</div>
 				</div>
+                }
+                { (editable && isContactCard && !this.props.initialValues.postcode )  ? "" :
 				<div className={formGroupRow}>
 					<label className={labelClassRegular}><small></small></label>
 					<div className={colClass210}>
@@ -176,7 +183,10 @@ class ContactForm extends Component {
 							{...fieldSetup}
 							/>					
 					</div>
-				</div>			<div className={formGroupRow}>
+				</div>
+                }
+                { (editable && isContactCard && !this.props.initialValues.country )  ? "" :
+                <div className={formGroupRow}>
 					<label className={labelClassRegular}><small></small></label>
 					<div className={colClass210}>
 						<Field
@@ -186,6 +196,7 @@ class ContactForm extends Component {
 							/>					
 					</div>
 				</div>
+                }
 
 				{/*<hr />
 				<div className="text-muted text-center">

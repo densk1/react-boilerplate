@@ -3,6 +3,7 @@ import {
 	GET_COMMENTS,
 	ADD_COMMENT,
 	NEW_COMMENT_TEXT,
+    DELETE_COMMENT,
 } from './types';
 
 
@@ -30,5 +31,22 @@ export const addNewComment = (clientID, comment) => dispatch => {
 }
 
 export const newCommentText = ( newText ) => dispatch => {
+
 	dispatch({ type: NEW_COMMENT_TEXT, payload: newText })
 }
+
+export const deleteComment = (clientID, commentID, index) => dispatch => {
+
+    axios.post('/crm/client/comment/delete', {
+        clientID,
+		commentID,
+        index
+	})
+	.then( res => {
+		dispatch({ type: DELETE_COMMENT, payload: res.data.reverse() })
+	})
+	.catch( err => {
+		dispatch({ type: DELETE_COMMENT, payload: null })
+	})
+}
+

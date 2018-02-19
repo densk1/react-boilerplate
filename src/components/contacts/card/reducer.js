@@ -15,7 +15,6 @@ const reducer = ( state = null, action = null ) => {
 		case CLEAR_CARD:
 			return false;
 		case EDIT_CARD:
-
             let editPayload = {
 				...state,
 				cardEdit: action.payload
@@ -26,7 +25,6 @@ const reducer = ( state = null, action = null ) => {
                 ...state,
                 ...action.payload
             };
-            console.log("Post State: ",update);
             return update;
 		default:
 			return state;

@@ -17,21 +17,37 @@ class Comments extends Component {
 			dmy
 		)
 	}
+    deleteComment = (e, commentID, index) => {
+        e.preventDefault();
+        this.props.deleteComment(this.props.clientID, commentID, index);
+    }
 	showComments = () => {
 		let comments = this.props.comments;
-		return comments.map(
-			d=>
+		return comments.sort((a, b) => a.added < b.added).map(
+			( d )=>
 			<div key={d._id} className="card mb-4">
 				<div className="card-body">
-					<p className="card-text">{AllHtmlEntities.decode(d.comment)}</p>
-					<p className="card-text">
-						<small className="text-muted">
-							Added <strong>	<Moment date={d.added} fromNow /></strong> by 
-							<strong> {AllHtmlEntities.decode(d.addedBy)} </strong>
-							<a href="" className="text-success col-sm-2">edit </a> 
-							<a href={d._id} className="text-danger  col-sm-2">delete</a>
-						</small>
-					</p>
+                    <p className="card-text">{AllHtmlEntities.decode(d.comment)}</p>                        
+                        <div className="containter-fluid">
+                            <div className="row">
+                                <div className="col-7">
+                                    <p className="card-text">
+                                        <small className="text-muted">
+                                            Added <strong>	<Moment date={d.added} fromNow /></strong> by 
+                                            <strong> {AllHtmlEntities.decode(d.addedBy)} </strong>
+                                        </small>
+                                    </p>
+                                </div>
+                                <div className="col-5 mr-0 text-right">
+                                    <p className="card-text">
+                                        <small className="text-muted">
+                                            {/*<a href="" className="text-success ">edit </a> */}
+                                            <a href={"remove/"+d._id} onClick={(e) => this.deleteComment(e, d._id)} className="text-danger pl-4">delete</a>
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>  
 				</div>
 			</div>
 			)
