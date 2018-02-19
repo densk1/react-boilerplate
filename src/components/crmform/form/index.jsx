@@ -50,7 +50,7 @@ class ContactForm extends Component {
 					<div className={colClass255}>
 						<Field
 							name="firstName"
-							placeholder={showPlaceholder && "First Name"}
+							placeholder={"First Name"}
 							{...fieldSetup}
 							/>					
 					</div>
@@ -132,6 +132,7 @@ class ContactForm extends Component {
 					</div>
 				</div>	
 				<hr />
+                { //(this.props.initialValues.address1 && editable)  ? "" : 
 				<div className={formGroupRow}>
 					<label className={labelClassRegular}><small>Address</small></label>
 					<div className={colClass210}>
@@ -142,7 +143,9 @@ class ContactForm extends Component {
 							/>					
 					</div>
 				</div>
-				<div className={formGroupRow}>
+                }
+				{ //(this.props.initialValues.address2 || false) && !editable && 
+                <div className={formGroupRow}>
 					<label className={labelClassRegular}><small></small></label>
 					<div className={colClass210}>
 						<Field
@@ -152,6 +155,8 @@ class ContactForm extends Component {
 							/>					
 					</div>
 				</div>
+                }
+                
 				<div className={formGroupRow}>
 					<label className={labelClassRegular}><small></small></label>
 					<div className={colClass210}>
@@ -182,18 +187,20 @@ class ContactForm extends Component {
 					</div>
 				</div>
 
-				<hr />
+				{/*<hr />
 				<div className="text-muted text-center">
 					<h2>&lt; Insert First Comment box &gt;</h2>
-				<hr />
 				</div>
-				{ 
+				<hr />*/}
+
+                { 
 					editable &&
 						<div></div>
 				}
 				{ isContactCard /* OR EDIT BUTTON */ ? 			<div>
 
 				</div> :
+                
 				<Fields 
 					names={['save', 'clear']}
 					component={ButtonsInline} 

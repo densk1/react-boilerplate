@@ -8,9 +8,7 @@ import ContactForm from './form/';
 class Form extends Component {
 	componentDidMount = async () => {
 		// If Card/URL param is true....
-		// await this.props.getContact("5a7cc728100dfb2e9f856aef");
-
-		
+		// await this.props.getContact("5a7cc728100dfb2e9f856aef");		
 	}
 	submit = values => {
 		// print the form values to the console
@@ -24,9 +22,7 @@ class Form extends Component {
 					<div className="col-sm-12">
 						<ContactForm 
 							onSubmit={this.submit} 
-							
-
-							showPlaceholder={true}
+							showPlaceholder
 							/>
 					</div>
 				</div>

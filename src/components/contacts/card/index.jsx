@@ -19,7 +19,7 @@ class App extends Component {
 		}
 	}
     updateContact = (values) => {
-        console.log("values ",values);
+        this.props.updateContact(values);
         // Needs Action defined
         // Needs Action Creator & Reducer updated
         // Needs Upsert / Editing of a contact
@@ -30,19 +30,20 @@ class App extends Component {
 	  	return(
 			<div className="container">			
 				<div className="row">
-				  	<div className="col-sm-12">
+				  	<div className=" col-sm-12">
 						<ContactForm 
 							onSubmit={this.updateContact}
 							isContactCard={this.isEditable}
-							editable={false}
+							editable={true}
+                            showPlaceholder={!this.isEditable}
 							/>
 						<button 
                             type="button" 
-                            className="btn btn-success mb-3" 
+                            className="offset-sm-1 btn btn-success mt-3 mb-3" 
                             onClick={() => {
                                 this.changeEditable();
                                 this.props.editCard(this.isEditable)
-                            }}>Load Account</button>
+                            }}>Edit Contact</button>
 						</div>
                     <Comments />
 				</div>

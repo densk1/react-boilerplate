@@ -6,7 +6,7 @@ const cleanField = (field) => (
 		<input 
 			{...field.input} 
 			type={field.type || "text" }
-			placeholder={field.showPlaceholder && (field.placeholder || "") }
+			placeholder={field.showPlaceholder ? (field.placeholder || "") : ""}
 			{...displayContactCard(
 				field.isContactCard, 
 				(field.meta.touched && field.meta.error)
