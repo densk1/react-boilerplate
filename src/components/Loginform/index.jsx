@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from './actions';
 
@@ -22,9 +23,14 @@ class App extends Component {
 			this.setState({ submitted: true });
 			this.props.doLogin(emailaddress, password, stayloggedin);
 		}
-	
 	}
 	render() {
+        let { loggedIn, loginResult } = this.props
+        if ( loggedIn || loginResult ){
+            return <Redirect to={"/contacts"} />
+        }
+        
+        
 		return (
             <div id="mainloginform" className="container">
                 <div className="row">
@@ -59,7 +65,7 @@ class App extends Component {
 									Requires 1 number and 1 lower/uppercase character.
 								</div>
                             </div>
-                            <div className="form-group">
+                            {/*<div className="form-group">
                                 <label className="text-muted small stayloggedinlabel form-control-label">
                                     <input 
 										type="checkbox" 
@@ -69,13 +75,14 @@ class App extends Component {
 										onChange={() => this.setState({ stayloggedin: this.state.stayloggedin ? false : true })}
 										/>Keep me logged in.
                                 </label>
-                            </div>
+                            </div>*/}
                             <div className="form-group">
                                 <button 
+                                    onClick={(e) => (this.onLoginSubmit(e))}
                                     type="button"
                                     className="w-100 btn btn-success"
                                     color="success"
-                                    onClick={(e) => (this.onLoginSubmit(e))}
+                                    
                                     >Login</button>
                             </div>
                         </form>
@@ -89,8 +96,8 @@ class App extends Component {
 
 
 
-function mapStateToProps ({ loginResult }) {
-	return { loginResult };
+function mapStateToProps ({ loginResult, loggedIn }) {
+	return { loginResult, loggedIn };
 }
 	
 export default connect(mapStateToProps,actions)(App);

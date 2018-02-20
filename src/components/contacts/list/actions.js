@@ -14,7 +14,7 @@ export const getList = ( offset = null, amount = null ) => dispatch => {
     });
 }
 
-export const findContact = (queryString = '') =>  dispatch => { 
+export const findContact = (queryString = '') =>  dispatch => {
 	axios.post('/crm/search', { query: queryString})
 	.then( res => {
 		dispatch({ type: FIND_CONTACT, payload: res.data })

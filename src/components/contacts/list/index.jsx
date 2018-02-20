@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import * as actions from './actions.js';
+import { XmlEntities } from  'html-entities';
 
+const entities = new XmlEntities();
 
 class Contacts extends Component {
 	
@@ -12,26 +14,26 @@ class Contacts extends Component {
 			id: null,
 		}
 	}
-	componentDidMount = () => {
-		this.props.getList()
+	componentDidMount = async () => {
+		await this.props.getList()
 	}
 
 	tableHeader = () => {
 		return (
 			<tr>
-				<th>Name</th><th>Email</th><th>Company</th><th>Desk</th><th>Office</th><th>Mobile</th>
+				<th>Name</th><th>Email</th><th>Company</th>{/*<th>Desk</th>*/}<th>Office</th><th>Mobile</th>
 			</tr>
 		);
 	}
 	render(){
 		return(
-			<div className="container">
+			<div className="container card card-body">
 				<div className="row">
 					<div className="offset-sm-2 col-sm-8 center" >
 						<div className="form-group row text-center">
 
 							<div className="col-sm-8" >
-								<input className="form-control" type="text" placeholder="Search..." onChange={(e) => this.props.findContact(e.target.value)} />
+								<input className="form-control" type="text" placeholder="Search..." onChange={(e) => setInterval( this.props.findContact(e.target.value), 300)} />
 							</div>
 							<div className="col-sm-4" >
  								<button className="btn btn-secondary my-2 my-sm-0 w-100" type="submit">Search</button>
@@ -46,7 +48,7 @@ class Contacts extends Component {
 							{ this.state.id && <Redirect push to={"/contacts/card/"+this.state.id}/>}
 						</thead>
 						<tbody>
-							{this.props.contacts.list && this.tableBody()}
+							{this.props.contacts.list && this.tableBody() }
 						</tbody>
 					</table>
 				</div>
@@ -54,14 +56,14 @@ class Contacts extends Component {
 		)
 	}
 	tableBody = () => {
-        return(this.props.contacts.list.sort((a,b) => a.firstName > b.firstName).map( 
+        return(this.props.contacts.list.sort((a,b) => a.firstName < b.firstName ? -1 : a.firstName > b.firstName ? 1 : 0).map( 
 			d => 
             <tr key={d._id} onClick={()=>this.setState({ id: d._id })}>
-                <td>{d.firstName+" "+d.secondName}</td>
+                <td>{entities.decode(d.firstName+" "+d.secondName)}</td>
                 <td>{d.email}</td>
                 <td>{d.organisation}</td>
-                <td>{d.desk}</td>
-                <td>{d.office + d.office && ("("+d.extension+")")}</td>
+                {/*<td>{d.desk}</td>*/}
+                <td>{d.office} { d.extension && "("+d.extension+")"}</td>
                 <td>{d.mobile}</td>
             </tr>
 

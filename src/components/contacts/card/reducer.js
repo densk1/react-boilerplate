@@ -8,7 +8,6 @@ import {
 const reducer = ( state = null, action = null ) => {
 	switch (action.type) {
 		case GET_CONTACT:
-
 			return { ...state,
                 ...action.payload || false
             };

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import { XmlEntities } from  'html-entities';
+const entities = new XmlEntities();
+
 class Template extends Component {
 	tableTop = () => {
 		return (
@@ -14,7 +17,7 @@ class Template extends Component {
 		return(this.props.table.map(d =>  
             <tr key={d.SquadID}>
                 <td>{position++}</td>
-                <td>{d.SquadPlayerName}</td>
+                <td>{entities.decode(d.SquadPlayerName)}</td>
                 <td><div className="plrobj">{d.Squad_Number}</div></td>
                 <td>{d.GamesPlayed}</td>
                 <td>{d.Wins}</td>
