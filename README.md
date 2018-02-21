@@ -24,8 +24,7 @@ A boilerplate for react projects, including redux store setup and using bootstra
 - [x] Create form 
   - [x] Build form autocreator component
   - [x] Validate form data
-  - [ ] 
-  - [ ] Add form data to MongoDB
+  - [x] Add form data to MongoDB
   - [ ] Check if formdata already exists using a key. `{upsert: true}`
  - [ ] Build form for data collection and editing.
 
