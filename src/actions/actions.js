@@ -2,6 +2,9 @@ import axios from 'axios';
 import { 
 	CHECK_LOGIN,
 	CHECK_FAILED,
+	DO_LOGIN,
+	DO_LOGOUT,
+	LOGIN_FAILED,
 } from './types.js';
 
 
@@ -12,4 +15,31 @@ axios.post('/auth/checklogin', {
 	}).catch( err => {
 		dispatch({type: CHECK_FAILED, payload: null });
 	});
+}
+
+export const doLogin = ( emailAddress, password, stayLoggedIn ) =>  dispatch => {
+	axios.post('/auth/login', { 
+		emailAddress, 
+		password, 
+		stayLoggedIn,
+	}).then(res => {
+		dispatch({ type: DO_LOGIN, payload: res.data.result });
+	}).catch( 
+		err => {
+			dispatch({type: LOGIN_FAILED, payload: null });
+			//console.log(err.response, err.data, err.response.status);
+		}
+	);
+}
+
+export const doLogout = () => dispatch => {
+	axios.post('/auth/logout')
+    .then(res => {
+		dispatch({ type: DO_LOGOUT, payload: false });
+	}).catch( 
+		err => {
+            dispatch({type: DO_LOGOUT, payload: null });
+			//console.log(err.response, err.data, err.response.status);
+		}
+	);
 }

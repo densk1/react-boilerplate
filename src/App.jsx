@@ -3,10 +3,9 @@ import {
 	BrowserRouter,
 	Route, 
 	Switch,
-    Redirect,
+    //Redirect,
 } from 'react-router-dom';
-// import './styles/index.css';
-
+import ProtectedRoute from "react-router-protected-route";
 import NavBar from './components/Navbar';
 
 import { connect } from 'react-redux';
@@ -15,14 +14,11 @@ import * as actions from './actions/actions.js';
 
 //import Home from './scenes/Home/';
 import Login from './components/Loginform';
-import Table from './scenes/Leaguetable';
+
 import Form from './components/crmform';
 import Contacts from './components/contacts/list/';
 import ContactCard from './components/contacts/card/';
-
-const Home = () => (
-    <h1 className="success">Home</h1>
-)
+import Logout from './components/logout'
 
 const Footer = () => (
     <h1 className="success">&nbsp;</h1>
@@ -33,33 +29,35 @@ class App extends Component {
 		this.props.checkLogin();
 	}
     
-/*    loggedInOutRoutes = () => {
-        let { loggedIn, loginResult } = this.props
-        if ( loggedIn || loginResult ){
-            <Redirect to={"/"} />
-        }
-        
-    }*/
-    
 	render() {
+        const { loggedIn} = this.props;
+        const myProtectedRoutes = [
+            {component: Form, path: "/form", exact: true },
+            {component: Contacts, path: "/contacts", exact: true },
+            {component: ContactCard, path: "/contacts/card/:clientID", exact: true },
+        ]
 		return (
             <BrowserRouter basename="/" >
                 <div>
-                    <NavBar/>
+                    <NavBar isLoggedIn={loggedIn} />
                     <main>
                         <Switch>
-                            <Route exact path="/" component={Home}/>
-                            <Route path="/login" component={Login}/>
-
-                                <Route path="/form" component={Form}/>
-                                <Route 
-                                    exact path="/contacts" component={Contacts}/>
-                                <Route
+                            <Route exact path="/" component={Login}/>
+                            <Route exact path="/logout" component={Logout   }/>
+                            {myProtectedRoutes.map( 
+                                (d, i) => 
+                                <ProtectedRoute
+                                    key={i}
+                                    isAccessible={ loggedIn ? true : false }
                                     exact
-                                    path="/contacts/card/:clientID" component={ContactCard}/>
-                                <Route exact path="/team/:index(\d+)/leaguetable" component={Table}/>
-                                <Route path="/team/:index(\d+)/leaguetable/:season(\d+)" component={Table}/>
+                                    redirectToPath={"/"}
+                                    path={d.path}
+                                    component={d.component}
+                                    />
+                            )}
 
+                            
+                            
                         </Switch>
                     </main>
                     <footer>
@@ -73,7 +71,7 @@ class App extends Component {
 	}
 }
 
-function mapStateToProps ({ loggedIn, loginResult }) {
-	return { loggedIn, loginResult };
+function mapStateToProps ({ loggedIn }) {
+	return { loggedIn };
 }
 export default connect(mapStateToProps,actions)(App);

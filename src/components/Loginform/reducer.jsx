@@ -1,3 +1,4 @@
+/*
 import { DO_LOGIN, LOGIN_FAILED } from './types.js';
 
 const reducer = ( state = null, action = null ) => {
@@ -13,3 +14,4 @@ const reducer = ( state = null, action = null ) => {
 export default reducer;
 
 
+*/

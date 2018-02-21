@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actions from './actions';
+import * as actions from '../../actions/actions.js';
 
 class App extends Component {
 	constructor(props){
@@ -27,7 +27,7 @@ class App extends Component {
 	render() {
         let { loggedIn, loginResult } = this.props
         if ( loggedIn || loginResult ){
-            return <Redirect to={"/contacts"} />
+            return <Redirect push to={"/contacts"} />
         }
         
         
@@ -96,8 +96,8 @@ class App extends Component {
 
 
 
-function mapStateToProps ({ loginResult, loggedIn }) {
-	return { loginResult, loggedIn };
+function mapStateToProps ({ loggedIn }) {
+	return { loggedIn };
 }
 	
 export default connect(mapStateToProps,actions)(App);
