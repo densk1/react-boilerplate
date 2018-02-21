@@ -26,22 +26,22 @@ A boilerplate for react projects, including redux store setup and using bootstra
   - [x] Validate form data
   - [x] Add form data to MongoDB
   - [ ] Check if formdata already exists using a key. `{upsert: true}`
- - [ ] Build form for data collection and editing.
+ - [x] Build form for data collection and editing.
 
 ### TODO: Minor
 - [ ] Fix Passport `.serializeUser` & `.deserializeUser()` (& `findOne()`) 
 - [ ] Google Passport Auth Flow
 - [ ] Hide menu on link click
 - [ ] Teams page, select Team and potentially season.
-- [ ] Right align the logout button
+- [x] Right align the logout button
 
 ## 6. Route Planning
 
 ## 7. Current WIP plan
 > Editable entry
-- [ ] Create Card that flips to be editable as a form.
-- [ ] So data is 'live' updated.
-- [ ] Amend 'contact' Schema to include all new data types.
+- [x] Create Card that flips to be editable as a form.
+- [x] So data is 'live' updated.
+- [x] Amend 'contact' Schema to include all new data types.
 
 
 > Form for editing of CRM database
@@ -60,11 +60,11 @@ A boilerplate for react projects, including redux store setup and using bootstra
 - [x] Comments Box
 
 ### > Need to haves
-- [ ] Contact Edit
-  	- [ ] Static form data VS Flip to Editable on a Card
+- [x] Contact Edit
+  	- [x] Static form data VS Flip to Editable on a Card
 - [ ] Contact Delete
-- [ ] Contact Search
-- [ ] Account Management form > how to add 2x forms
+- [x] Contact Search
+- [ ] Account Management form > how to add 2x forms??
 
 
 ### > Nice to haves
