@@ -89,11 +89,75 @@ class ContactForm extends Component {
 					</div>
 				</div>		
 				<hr />
-				<div className={formGroupRow}>
+                <div className={formGroupRow}>
+                    <label className={labelClassRegular}><small>Phone</small></label>
+                    <div className={colClass255}>
+                        <div className="row form-group m-0 p-0">
+                            <label className="col-12 col-form-label text-muted mb-0 pb-0"><small>Office</small></label>
+                            <div className="col-12 p-0 m-0">
+                                <Field
+                                    name="office"
+                                    //placeholder="Office"
+                                    {...fieldSetup}
+                                    />					
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className={colClass255}>
+                        <div className="row form-group m-0 p-0">
+                            <label className="col-12 col-form-label text-muted pb-0 mb-0"><small>Ext.</small></label>
+                            <div className="col-12 p-0 m-0">
+                                <Field
+                                    name="extension"
+                                    //placeholder="Ext"
+                                    {...fieldSetup}
+                                    />					
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={formGroupRow}>
+                    <label className={labelClassRegular}><small></small></label>
+                    <div className={colClass255} >
+                        <div className="row form-group m-0 p-0">
+                            <label className="col-12 col-form-label text-muted mb-0 pb-0"><small>Desk</small></label>
+                            <div className="col-12 p-0 m-0">
+                                <Field
+                                    name="desk"
+                                    //placeholder="Office"
+                                    {...fieldSetup}
+                                    />					
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className={colClass255} >
+                        <div className="row form-group m-0 p-0">
+                            <label className="col-12 col-form-label text-muted pb-0 mb-0"><small>Mobile</small></label>
+                            <div className="col-12 p-0 m-0">
+                                <Field
+                                    name="mobile"
+                                    //placeholder="Ext"
+                                    {...fieldSetup}
+                                    />					
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+{/*				<div className={formGroupRow}>
 					<div className="col-8 col-form-label col-sm-8">
 						<div className={formGroupRowSpecial}>
 							<label className={labelClassSpecial}><small>Phone</small></label>
-							<div className="col-12 col-sm-9 ">
+							<div className="col-12 col-sm-9 " style={{border: '1px solid red'}}>
 								<Field
 									name="office"
 									placeholder="Office"
@@ -113,28 +177,8 @@ class ContactForm extends Component {
 							</div>
 						</div>
 					</div>
-				</div>
-				<div className={formGroupRow}>
-					<label className={labelClassRegular}><small></small></label>
-					{ (editable && isContactCard && !this.props.initialValues.desk )  ? "" :
-                    <div className={colClass255}>
-						<Field
-							name="desk"
-							placeholder="Desk"
-							{...fieldSetup}
-							/>					
-					</div>
-                    }
-                    { (editable && isContactCard && !this.props.initialValues.mobile )  ? "" :
-					<div className={colClass255}>
-						<Field
-							name="mobile"
-							placeholder="Mobile"
-							{...fieldSetup}
-							/>					
-					</div>
-                    }
-				</div>	
+				</div>*/}
+	
 				<hr />
                 {   
                     (editable && isContactCard && !this.props.initialValues.address1 )  ? "" : 

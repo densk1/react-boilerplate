@@ -25,8 +25,8 @@ const Footer = () => (
 )
 
 class App extends Component {
-	componentDidMount = () => {
-		this.props.checkLogin();
+	componentWillMount = async () => {
+		await this.props.checkLogin();
 	}
     
 	render() {
