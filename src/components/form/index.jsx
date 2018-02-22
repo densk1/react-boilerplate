@@ -33,7 +33,6 @@ class ContactForm extends Component {
             editable,
 			buttons
         } = this.props;
-
         const fieldSetup = {
             component: CleanField,
             isContactCard,
@@ -117,6 +116,7 @@ class ContactForm extends Component {
                         </div>
                     </div>
                 </div>
+                
                 <div className={formGroupRow}>
                     <label className={labelClassRegular}><small></small></label>
                     <div className={colClass255} >

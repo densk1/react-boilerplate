@@ -34,6 +34,12 @@ class App extends Component {
                                     className="nav-link"
                                 >Contacts</NavLink>
 							</li>
+							<li className="nav-item">
+								<NavLink 
+                                    to="/account" 
+                                    className="nav-link"
+                                >Account</NavLink>
+							</li>
                             
 						</ul>}
 						<ul className="nav navbar-nav ml-auto justify-content-end">

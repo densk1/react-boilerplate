@@ -25,20 +25,15 @@ class App extends Component {
 		}
 	}
 	render() {
-        let { loggedIn, loginResult } = this.props
-        if ( loggedIn || loginResult ){
+        let { loggedIn } = this.props
+        if ( loggedIn ){
             return <Redirect push to={"/contacts"} />
         }
-        
-        
+  
 		return (
             <div id="mainloginform" className="container">
                 <div className="row">
                     <div className="col col-sm-6 offset-sm-3">
-                        {/*
-						className="was-validated" 
-						className="needs-validation" novalidate 
-						*/}
                         <form >
                             <div className="form-group">
                                 <input 

@@ -12,8 +12,10 @@ export const checkLogin = () => dispatch => {
 axios.post('/auth/checklogin', { 
 	}).then(res => {
 		dispatch({ type: CHECK_LOGIN, payload: res.data.result });
+        return res.data.result ? true : false;
 	}).catch( err => {
 		dispatch({type: CHECK_FAILED, payload: null });
+        return false;
 	});
 }
 
