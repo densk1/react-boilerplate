@@ -27,8 +27,14 @@ A boilerplate for react projects, including redux store setup and using bootstra
   - [x] Add form data to MongoDB
   - [ ] Check if formdata already exists using a key. `{upsert: true}`
  - [x] Build form for data collection and editing.
+ 
+ 
+ 
 
 ### TODO: Minor
+- [ ] Add a footer box that shows when there is an error. 
+- [ ] How do I stop the auto forwarding that momentarily shows the login page?
+
 - [ ] Fix Passport `.serializeUser` & `.deserializeUser()` (& `findOne()`) 
 - [ ] Google Passport Auth Flow
 - [ ] Hide menu on link click
@@ -70,6 +76,7 @@ A boilerplate for react projects, including redux store setup and using bootstra
 ### > Nice to haves
 - [ ] Contact Specific ToDo list
 - [ ] Editable Notes
+- [x] Deletable Notes
 - [ ] Actions and Dates for notes
 - [ ] Email Alerts
 - [ ] Dashboard

@@ -6,8 +6,11 @@ import { XmlEntities } from  'html-entities';
 
 const entities = new XmlEntities();
 
-class Contacts extends Component {
-	
+// Styles
+const hideableRowLG = {className: "d-none d-lg-table-cell"};
+const hideableRowSM = {className: "d-none d-sm-table-cell"};
+
+class Contacts extends Component {	
 	constructor (props) {
 		super(props);
 		this.state = {
@@ -21,13 +24,17 @@ class Contacts extends Component {
 	tableHeader = () => {
 		return (
 			<tr>
-				<th>Name</th><th>Email</th><th>Company</th>{/*<th>Desk</th>*/}<th>Office</th><th>Mobile</th>
+				<th>Name</th>
+				<th {...hideableRowSM}>Email</th>
+				<th>Company</th>{/*<th>Desk</th>*/}<th {...hideableRowLG}>Office</th><th {...hideableRowLG}>Mobile</th>
 			</tr>
 		);
 	}
+	
 	render(){
+
 		return(
-			<div className="container card card-body">
+			<div className="container">
 				<div className="row">
 					<div className="offset-sm-2 col-sm-8 center" >
 						<div className="form-group row text-center">
@@ -60,11 +67,11 @@ class Contacts extends Component {
 			d => 
             <tr key={d._id} onClick={()=>this.setState({ id: d._id })}>
                 <td>{entities.decode(d.firstName+" "+d.secondName)}</td>
-                <td>{d.email}</td>
+                <td  {...hideableRowSM}>{d.email}</td>
                 <td>{d.organisation}</td>
                 {/*<td>{d.desk}</td>*/}
-                <td>{d.office} { d.extension && "("+d.extension+")"}</td>
-                <td>{d.mobile}</td>
+                <td {...hideableRowLG}>{d.office} { d.extension && "("+d.extension+")"}</td>
+                <td {...hideableRowLG}>{d.mobile}</td>
             </tr>
 
         ))

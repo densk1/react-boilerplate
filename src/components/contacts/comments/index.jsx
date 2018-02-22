@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-import PreviousComments from './previousComments';
-import CommentBox from './commentBox';
+import PreviousComments from './components/PreviousComments';
+import CommentBox from './components/CommentBox';
 
 
 class Comments extends Component {
 
     render () {
         return(
-            <div className="container">
+            <div className="container-fluid">
                 <CommentBox />
                 <PreviousComments/>
             </div>

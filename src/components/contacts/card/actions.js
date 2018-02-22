@@ -4,6 +4,7 @@ import {
 	CLEAR_CARD,
     UPDATE_CARD,
 	EDIT_CARD,
+	DELETE_CONTACT,
 } from './types';
 
 export const getContact = (clientID = null) =>  dispatch => { 
@@ -23,6 +24,7 @@ export const clearCard = () => dispatch => {
 }
 
 export const updateContact = (values) => dispatch => {
+
     axios.post('/crm/client/update',{values})
     .then( res =>{
         dispatch({type: UPDATE_CARD, payload: res.data });
@@ -32,7 +34,16 @@ export const updateContact = (values) => dispatch => {
         
     })
 }
-
+export const deleteContact = (contactID) => dispatch => {
+	axios.post('/crm/contact/delete', {contactID})
+    .then( res =>{
+        dispatch({type: DELETE_CONTACT, payload: res.data });
+    })
+    .catch( err => {
+        dispatch({type: DELETE_CONTACT, payload: false });
+        
+    })
+} 
 
 
 export const editCard = (bool) => dispatch => {

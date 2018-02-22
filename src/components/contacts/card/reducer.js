@@ -2,7 +2,8 @@ import {
 	GET_CONTACT,
 	CLEAR_CARD,
 	EDIT_CARD,
-    UPDATE_CARD
+    UPDATE_CARD,
+	DELETE_CONTACT,
 } from './types';
 
 const reducer = ( state = null, action = null ) => {
@@ -14,17 +15,18 @@ const reducer = ( state = null, action = null ) => {
 		case CLEAR_CARD:
 			return false;
 		case EDIT_CARD:
-            let editPayload = {
+            return {
 				...state,
 				cardEdit: action.payload
 			}
-			return editPayload;
+
         case UPDATE_CARD:
-            let update = { 
+            return { 
                 ...state,
                 ...action.payload
             };
-            return update;
+		case DELETE_CONTACT:
+			return state;
 		default:
 			return state;
 	}

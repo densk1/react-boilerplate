@@ -13,16 +13,15 @@ import ButtonsInline from './templates/buttonsInline';
 import CleanField from './templates/cleanField';
 
 // HTML classes
-const formClass="card card-body col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10 ";
+const formClass="card card-body col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10 mb-3";
 const colClass255 = "col-12 col-sm-5 mb-sm-2 mb-2";
 const colClass210 = "col-12 col-sm-10 mb-sm-2 mb-2";
 const labelClassRegular = "col col-sm-2 col-form-label text-muted pb-0 mb-0";
 const formGroupRow ="form-group row mb-0 pb-0";
-const formGroupRowSpecial ="form-group row mb-0 pb-0";
-const labelClassSpecial="col-12 col-sm-3 col-form-label text-muted pb-0 mb-0";
+//const formGroupRowSpecial ="form-group row mb-0 pb-0";
+//const labelClassSpecial="col-12 col-sm-3 col-form-label text-muted pb-0 mb-0";
 
 class ContactForm extends Component {
-
 	render () {
         const { 
             handleSubmit, 
@@ -32,6 +31,7 @@ class ContactForm extends Component {
             isContactCard,
             showPlaceholder,
             editable,
+			buttons
         } = this.props;
 
         const fieldSetup = {
@@ -145,40 +145,8 @@ class ContactForm extends Component {
                         </div>
                     </div>
                 </div>
-                
-                
-                
-                
-                
-                
-                
-                
-{/*				<div className={formGroupRow}>
-					<div className="col-8 col-form-label col-sm-8">
-						<div className={formGroupRowSpecial}>
-							<label className={labelClassSpecial}><small>Phone</small></label>
-							<div className="col-12 col-sm-9 " style={{border: '1px solid red'}}>
-								<Field
-									name="office"
-									placeholder="Office"
-									{...fieldSetup}
-									/>					
-							</div>
-						</div>
-					</div>
-					<div className="col-4 col-form-label col-sm-4">
-						<div className={formGroupRowSpecial}>
-							<label className={labelClassSpecial}><small>Ext</small></label>
-							<div className="col-12 col-sm-9">
-								<Field
-									name="extension"
-									{...fieldSetup}
-									/>					
-							</div>
-						</div>
-					</div>
-				</div>*/}
-	
+				
+				
 				<hr />
                 {   
                     (editable && isContactCard && !this.props.initialValues.address1 )  ? "" : 
@@ -264,8 +232,15 @@ class ContactForm extends Component {
 					onClick={reset}
 					/>
 				}
-
-
+				<div className={formGroupRow}>
+					<div className="col-6">
+						{buttons && buttons[0]}
+					
+					</div>
+					<div className="col-6">
+						{(editable && !isContactCard) ? buttons[1] : ''}
+					</div>
+				</div>
 			</form>
 		)
 	}

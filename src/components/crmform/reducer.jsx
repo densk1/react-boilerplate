@@ -1,14 +1,19 @@
+
 import {
 	ADD_NEW_CONTACT,
-	LOAD_TO_FORM,
-	EDIT_CARD,
+	CLEAR_NEW_CONTACT_ID,
+	//LOAD_TO_FORM,
+	//EDIT_CARD,
 } from './types';
 
 const reducer = ( state = null, action = null ) => {
-	console.log(state, action);
+
 	switch (action.type) {
 		case ADD_NEW_CONTACT:
-			return { ...state, action.payload };
+			let newID = action.payload;
+			return newID;
+		case CLEAR_NEW_CONTACT_ID:
+			return action.payload;
 		default:
 			return state;
 	}

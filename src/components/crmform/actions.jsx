@@ -2,10 +2,10 @@ import axios from 'axios';
 import {
 	LOAD_TO_FORM,
 	ADD_NEW_CONTACT,
+	CLEAR_NEW_CONTACT_ID,
 } from './types';
 
 export const addNewContact = (newContact) => dispatch => {
-	console.log(newContact);
 	axios.post('/crm/contact/new', {
 		newContact
 	})
@@ -15,6 +15,10 @@ export const addNewContact = (newContact) => dispatch => {
 	.catch( err => {
 		dispatch({type: ADD_NEW_CONTACT, payload: '' });
 	})
+}
+
+export const clearContactID = () => dispatch => {
+	dispatch({type: CLEAR_NEW_CONTACT_ID, payload: false });
 }
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from './actions.js';
+import * as actions from '../../actions.js';
 import Moment from 'react-moment';
 import {AllHtmlEntities} from 'html-entities';
 

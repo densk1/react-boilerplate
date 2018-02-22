@@ -55,9 +55,6 @@ class App extends Component {
                                     component={d.component}
                                     />
                             )}
-
-                            
-                            
                         </Switch>
                     </main>
                     <footer>
