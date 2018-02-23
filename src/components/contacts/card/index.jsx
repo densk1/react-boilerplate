@@ -22,9 +22,6 @@ class App extends Component {
 	}
     updateContact = (values) => {
         this.props.updateContact(values);
-        // Needs Action defined
-        // Needs Action Creator & Reducer updated
-        // Needs Upsert / Editing of a contact
     }
 	retEditButton = () => {
 		return (

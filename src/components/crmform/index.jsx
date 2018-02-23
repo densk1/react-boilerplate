@@ -26,7 +26,6 @@ class Form extends Component {
 							onSubmit={this.submit} 
 							showPlaceholder
 							/>
-						
 					</div>
 				</div>
 			</div>

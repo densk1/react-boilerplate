@@ -3,12 +3,12 @@ import { combineReducers } from 'redux';
 
 import addUserReducer from './addUser/reducer';
 import changePassReducer from './changePass/reducer';
-import editUsersReducer from './editUsers/reducer';
+import editUserReducer from './editUser/reducer';
 
 export default combineReducers({
 	addUser:		addUserReducer,
 	changePass:		changePassReducer,
-	editUsers:	    editUsersReducer,
+	editUser:	    editUserReducer,
 });
 
 console.warn(" ACCOUNT REDUCER  |  NOT YET EXPORTED TO PARENT REDUCER");

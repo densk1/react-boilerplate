@@ -1,36 +1,34 @@
 import React, {Component} from 'react';
 
 import AddUser from './addUser';
-import EditUser from './editUser';
+//import EditUser from './editUser';
 import ChangePassword from './changePass';
 
 class Account extends Component {
-    componentDidMount = () =>{
-        
-    }
     render() {
         return(
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">
-                        <AddUser /> 
+                        <AddUser  /> 
                     </div>
                 </div>
-                <div className="row">
+                {/*
+				<div className="row">
                     <div className="col-sm-12">
                         <EditUser /> 
                     </div>
                 </div>
+				*/}
                 <div className="row">
                     <div className="col-sm-12">
-                        <ChangePassword /> 
+                        <ChangePassword  
+							/> 
                     </div>
                 </div>
             </div>
         )
     }
-    
-    
 }
 
 
