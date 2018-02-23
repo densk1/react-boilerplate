@@ -1,5 +1,3 @@
-// formControl.jsx
-
 export const validate = values => {
     const errors = {}
     if (!values.firstName) {
@@ -51,3 +49,5 @@ export const warn = values => {
     return warnings
 }
 */
+ 
+ 

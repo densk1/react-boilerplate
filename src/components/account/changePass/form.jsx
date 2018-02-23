@@ -6,6 +6,8 @@ import { validate } from './formControl';
 import CleanField from '../../form/templates/cleanField';
 import ButtonInline from  '../../form/templates/buttonInline';
 
+const formClass = "card card-body col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10 mb-3";
+
 class ChangePassword extends Component {
 
     render() {
@@ -14,12 +16,14 @@ class ChangePassword extends Component {
             //pristine, 
             //reset, 
             submitting,
+            onSuccess,
+            onPassError,
         } = this.props;
         const fieldSetup = {
             component: CleanField,
         }
         return(
-            <form onSubmit={handleSubmit} className="card card-body col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10 mb-3">
+            <form onSubmit={handleSubmit} className={onSuccess ? formClass+" custom-form-success-outline" : formClass }>
                 <div className="form-group row mb-0 pb-0">
                     <div className="col-12">
                         <h4 className="text-success text-center">Update Password</h4>
@@ -47,7 +51,13 @@ class ChangePassword extends Component {
 								name="oldpassword"
 								type="password"
 								{...fieldSetup}
+                                specialValidation={onPassError}
 							/>
+                            {onPassError &&
+                            <div className="col-12 m-o p-0">
+                                 <span className="text-danger small m-0 p-0">Password is incorrect.</span>
+                            </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -87,8 +97,12 @@ class ChangePassword extends Component {
 							saveDisabled={submitting}
 							text={"Update"}
 							/>
-                       {/* <button className="form-control btn btn-success w-100" type="button" disabled={submitting}>Add</button>*/}
                     </div>
+                    {onSuccess &&
+                    <div className="col-12 pl-4 pt-4 m-o text-center pb-0">
+                         <span className="text-success small m-0 p-0">Password Changed.</span>
+                    </div>
+                    }
                 </div>
             </form>
         )
@@ -103,7 +117,6 @@ ChangePassword = reduxForm({
 })(ChangePassword)
 
 function mapStateToProps ({ loggedIn }) {
-	console.log(loggedIn)
 	let { email } = loggedIn
 	return { email };
 }

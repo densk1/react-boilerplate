@@ -1,4 +1,4 @@
-const displayContactCard = (isCard, isError) => {
+const displayContactCard = (isCard, isError, isSpecialError) => {
 	let card = {
 		disabled: true,
 		readOnly: true,
@@ -6,6 +6,7 @@ const displayContactCard = (isCard, isError) => {
 
 	}
 	let form = { className: "form-control " }
+    form = isSpecialError ? { className: "form-control is-invalid" } : form;
 	if (isError) form.className = "form-control is-invalid"
 	
 	return isCard ? card : form;

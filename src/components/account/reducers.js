@@ -10,5 +10,3 @@ export default combineReducers({
 	changePass:		changePassReducer,
 	editUser:	    editUserReducer,
 });
-
-console.warn(" ACCOUNT REDUCER  |  NOT YET EXPORTED TO PARENT REDUCER");

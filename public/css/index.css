@@ -93,3 +93,13 @@ nav .btn-outline-secondary:hover {
 .custom-form-plaintext {
   border-color: white !important;
   background-color: white !important; }
+
+.custom-form-success-outline {
+  border-color: #28a745 !important;
+  box-shadow: 0 0 10px #5cb85c !important;
+  transition: border-color .25s ease-in-out, box-shadow .25s ease-in-out; }
+
+.custom-form-danger-outline {
+  border-color: #d9534f !important;
+  box-shadow: 0 0 10px #d9534f !important;
+  transition: border-color .25s ease-in-out, box-shadow .25s ease-in-out; }

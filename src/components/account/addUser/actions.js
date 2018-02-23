@@ -1,17 +1,24 @@
 import axios from 'axios';
 import {
 	ADD_NEW_USER,
+    CLEAR_NEW_USER
 } from './types';
 
-export const addNewUser =  (values, CB) => async (dispatch) => { 
-console.log("Add New Users", {values});
+import {reset} from 'redux-form';
+
+export const addNewUser =  (values) => async (dispatch) => { 
+
 	try {
-		let res = await axios.post('/account/adduser',{values}, CB);
-		console.log("Add User Success");
+		let res = await axios.post('/account/adduser',{values} );
 		dispatch({ type: ADD_NEW_USER, payload: res.data })
+        dispatch(reset('AddUser'));
+        setTimeout(()=>{
+            dispatch({ type: CLEAR_NEW_USER, payload: false });
+        }, 5000);
 	} catch (e) {
 		dispatch({ type: "SERVER_ERROR", payload: e.status })
 		console.warn("Add User ERROR", e);
 		
 	}
 }
+ 

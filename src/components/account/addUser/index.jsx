@@ -4,21 +4,22 @@ import * as actions from './actions.js';
 
 import AddUserForm from './form';
 
-
-
 class AddUser extends Component {
-	handleAddUser = values => {
-		console.warn("handleAddUser ");
-		console.log({values});
-	}
-	
+
+	addUserHandler = values => {
+		const {
+			addNewUser,
+		} = this.props;
+		addNewUser(values);
+    }
+    
     render() {
 		const {
-			addNewUser
+			addUser
 		} = this.props;
         return(
 			<div>
-				<AddUserForm onSubmit={addNewUser} /> 
+				<AddUserForm onSubmit={this.addUserHandler} onSuccess={addUser} /> 
                 {/*
 				<div className="row">
                     <div className="col-sm-12">
@@ -39,8 +40,8 @@ class AddUser extends Component {
     }
 }
 
-function mapStateToProps ({ addUser }) {
-
+function mapStateToProps ({ account }) {
+    const { addUser } = account;
 	return { addUser };
 }
 export default connect(mapStateToProps,actions)(AddUser);

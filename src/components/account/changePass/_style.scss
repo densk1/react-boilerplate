@@ -1,0 +1,15 @@
+.custom-form-success-outline {
+  border-color: #28a745 !important;
+  box-shadow: 0 0 10px rgba(92, 184, 92, 1) !important;
+    transition:
+        border-color .25s ease-in-out,
+        box-shadow .25s ease-in-out
+}
+
+.custom-form-danger-outline {
+  border-color: #d9534f !important;
+  box-shadow: 0 0 10px rgba(217, 83, 79, 1) !important;
+    transition:
+        border-color .25s ease-in-out,
+        box-shadow .25s ease-in-out
+}

@@ -9,7 +9,8 @@ const cleanField = (field) => (
 			placeholder={field.showPlaceholder ? (field.placeholder || "") : ""}
 			{...displayContactCard(
 				field.isContactCard, 
-				(field.meta.touched && field.meta.error)
+				(field.meta.touched && field.meta.error), 
+                field.specialValidation
 			)}
 		/>
 			{ field.meta.touched && field.meta.error && 

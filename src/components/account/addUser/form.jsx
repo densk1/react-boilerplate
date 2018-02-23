@@ -9,6 +9,8 @@ import { validate } from './formControl';
 import ButtonInline from  '../../form/templates/buttonInline';
 import ClearButton from  '../../form/templates/clearButton';
 
+const formClass = "card card-body col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10 mb-3";
+
 let AddUser = props => {
 
 
@@ -17,12 +19,14 @@ let AddUser = props => {
             pristine, 
             reset, 
             submitting,
+            onSuccess,
+
         } = props;
         const fieldSetup = {
             component: CleanField,
         }
         return(
-            <form onSubmit={handleSubmit} className="card card-body col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10 mb-3">
+            <form onSubmit={handleSubmit} className={onSuccess ? formClass+" custom-form-success-outline" : formClass }>
                 
                 <div className="form-group row mb-0 pb-0">
                     <div className="col-12">
@@ -110,6 +114,11 @@ let AddUser = props => {
 							text={"Clear"}
 							/>
                     </div>
+                    {onSuccess &&
+                    <div className="col-12 pl-4 pt-4 m-o text-center pb-0">
+                         <span className="text-success small m-0 p-0">User  added successfully.</span>
+                    </div>
+                    }
                 </div>
             </form>
         )
