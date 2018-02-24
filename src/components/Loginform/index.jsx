@@ -25,8 +25,8 @@ class App extends Component {
 		}
 	}
 	render() {
-        let { loggedIn } = this.props
-        if ( loggedIn ){
+        let { loggedIn, onFail } = this.props
+        if ( loggedIn.email ){
             return <Redirect push to={"/contacts"} />
         }
   
@@ -71,7 +71,7 @@ class App extends Component {
 										/>Keep me logged in.
                                 </label>
                             </div>*/}
-                            <div className="form-group">
+                            <div className="form-group mb-0 pb-0">
                                 <button 
                                     onClick={(e) => (this.onLoginSubmit(e))}
                                     type="button"
@@ -80,6 +80,13 @@ class App extends Component {
                                     
                                     >Login</button>
                             </div>
+							{onFail &&
+                            <div className="form-group mt-0 pt-0">
+								<div className="col-12 pl-4 pt-4 m-o text-center pb-0">
+									 <span className="text-danger small m-0 p-0">Please provide valid credentials.</span>
+								</div>
+							</div>
+							}
                         </form>
                     </div>	
                 </div>
@@ -92,7 +99,8 @@ class App extends Component {
 
 
 function mapStateToProps ({ loggedIn }) {
-	return { loggedIn };
+	const { onFail } = loggedIn
+	return { loggedIn, onFail };
 }
 	
 export default connect(mapStateToProps,actions)(App);

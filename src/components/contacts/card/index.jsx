@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './actions.js';
-import { Link } from 'react-router-dom';
 
+import MyModal from '../../modal';
 
 import ContactForm from '../../form'
 import Comments from '../comments/';
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { 
+			modal: {
+				body:null,
+				callback:null,
+				clear: this.clearModal,
+			}
+		}
+	}
 	componentDidMount = async () => {
 		const { clientID } = this.props.match.params;
 		await this.props.getContact( clientID );
@@ -23,7 +33,7 @@ class App extends Component {
     updateContact = (values) => {
         this.props.updateContact(values);
     }
-	retEditButton = () => {
+/*	retEditButton = () => {
 		return (
 			<button 
 				type="button" 
@@ -34,24 +44,40 @@ class App extends Component {
 				}}>Edit Contact</button>
 		)
 	}
-	retDeleteButton = () => {
-		const { clientID } = this.props.match.params;
-		return (
-			<Link to={"/contacts"}><button 
-				type="button" 
-				className="btn btn-outline-danger mt-3 mb-2" 
-				onClick={() => {
-					this.props.deleteContact(clientID);
-					this.props.clearCard();
-
-				}}>Delete</button></Link>
-		)
+	*/
+	retEditButton = () => {
+		this.changeEditable();
+		this.props.editCard(this.isEditable)
 	}
 	
+	
+	retDeleteButton = () => {
+		return this.handleCardDelete();
+	}
+	handleCardDelete = () => {
+		const { clientID } = this.props.match.params;
+		let body = "Permanently delete this entry?";
+		this.setState({
+			modal: {
+				body: body,
+				callback:()=> { 
+					this.props.deleteContact(clientID);
+					this.props.history.push("/contacts");
+				},
+				clear: this.clearModal,
+			}
+		})
+	}
+	
+	clearModal = () => {this.setState({modal: false})}
+
 	buildContactCard = () => {
 		const { clientID } = this.props.match.params;
 	  	return(
-			<div className="container-fluid">			
+			<div className="container-fluid">	
+				<MyModal
+					{...this.state.modal}
+					/>
 				<div className="row">
 				  	<div className=" col-sm-12">
 						<ContactForm 
@@ -59,9 +85,8 @@ class App extends Component {
 							isContactCard={this.isEditable}
 							editable={true}
                             showPlaceholder={!this.isEditable}
-							deleteContact={this.props.deleteContact}
 							contactID={clientID}
-							buttons={[this.retEditButton(), this.retDeleteButton()]}
+							buttons={[this.retEditButton, this.retDeleteButton]}
 							/>
 						
 						</div>

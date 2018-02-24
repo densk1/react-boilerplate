@@ -9,8 +9,10 @@ class AddUser extends Component {
 	addUserHandler = values => {
 		const {
 			addNewUser,
+			
 		} = this.props;
 		addNewUser(values);
+		
     }
     
     render() {

@@ -6,18 +6,27 @@ import {
     LOGIN_FAILED
 } from './types.js';
 
-const reducer = ( state = null, action = null ) => {
+const reducer = ( state = { onFail: null }, action = null ) => {
 	switch (action.type) {
 		case CHECK_LOGIN:
-			return action.payload || false;
+			return {
+				...state,
+				...action.payload || false
+			};
 		case DO_LOGIN:
-			return action.payload || false;
+			return {
+				...state,
+				...action.payload || false
+			};
 		case DO_LOGOUT:
 			return false;
         case CHECK_FAILED:
 			return false;
 		case LOGIN_FAILED:
-			return false;
+			return {
+				...state,
+				onFail: action.payload
+			}
 		default:
 			return state;
 	}

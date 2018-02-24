@@ -28,8 +28,11 @@ export const doLogin = ( emailAddress, password, stayLoggedIn ) =>  dispatch => 
 		dispatch({ type: DO_LOGIN, payload: res.data.result });
 	}).catch( 
 		err => {
-			dispatch({type: LOGIN_FAILED, payload: null });
-			//console.log(err.response, err.data, err.response.status);
+			dispatch({type: LOGIN_FAILED, payload: err.response.status });
+			setTimeout( () => {
+				dispatch({ type: LOGIN_FAILED, payload: false})
+			}, 5000);
+			// console.log(err.response.status);
 		}
 	);
 }

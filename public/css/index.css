@@ -103,3 +103,11 @@ nav .btn-outline-secondary:hover {
   border-color: #d9534f !important;
   box-shadow: 0 0 10px #d9534f !important;
   transition: border-color .25s ease-in-out, box-shadow .25s ease-in-out; }
+
+.modal-dialog {
+  position: absolute;
+  width: 90%;
+  top: 45%;
+  margin-left: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) !important; }

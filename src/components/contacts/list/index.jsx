@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import * as actions from './actions.js';
-import { XmlEntities } from  'html-entities';
+import { XmlEntities,  } from  'html-entities';
 
 const entities = new XmlEntities();
 
@@ -40,7 +40,7 @@ class Contacts extends Component {
 						<div className="form-group row text-center">
 
 							<div className="col-sm-8" >
-								<input className="form-control" type="text" placeholder="Search..." onChange={(e) => setInterval( this.props.findContact(e.target.value), 300)} />
+								<input className="form-control" type="text" placeholder="Search..." onChange={(e) => setInterval((e) => {this.props.findContact(e.target.value)}, 300)} />
 							</div>
 							<div className="col-sm-4" >
  								<button className="btn btn-secondary my-2 my-sm-0 w-100" type="submit">Search</button>
@@ -66,7 +66,7 @@ class Contacts extends Component {
         return(this.props.contacts.list.sort((a,b) => a.firstName < b.firstName ? -1 : a.firstName > b.firstName ? 1 : 0).map( 
 			d => 
             <tr key={d._id} onClick={()=>this.setState({ id: d._id })}>
-                <td>{entities.decode(d.firstName+" "+d.secondName)}</td>
+                <td>{d.firstName+" "+entities.decode(d.secondName)}</td>
                 <td  {...hideableRowSM}>{d.email}</td>
                 <td>{d.organisation}</td>
                 {/*<td>{d.desk}</td>*/}

@@ -17,10 +17,11 @@ export const getComments = ( clientID ) => dispatch => {
 	})	
 }
 
-export const addNewComment = (clientID, comment) => dispatch => {
+export const addNewComment = (clientID, comment, author) => dispatch => {
 	axios.post('/crm/client/comment/add', {
 		clientID,
-		comment
+		comment,
+		author
 	})
 	.then( res => {
 		dispatch({type: ADD_COMMENT, payload: res.data });

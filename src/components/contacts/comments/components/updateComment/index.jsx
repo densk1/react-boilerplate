@@ -7,7 +7,7 @@ import * as actions from '../../actions.js';
 
 
 
-class CommentBox extends Component {
+class UpdateComment extends Component {
 	addComment = (e) => {
 		e.preventDefault();
         let comment = this.props.newComment;
@@ -25,13 +25,15 @@ class CommentBox extends Component {
                     <div className="card mb-4">
                         <div className="card-body  pb-0">
                             <div className="form-group mb-0">
-                                <form onSubmit={ (e)=>this.addComment(e) }>
+                                <form onSubmit={(e)=> {
+									this.updateComment(e) 
+									}}>
                                 <textarea 
                                 className="form-control"
-                                onChange={(e)=> { this.props.newCommentText(e.target.value) }}
+                                onChange={(e)=> { this.props.updatedCommentText(e.target.value) }}
 
                                 placeholder="Add a note..."
-                                value={ this.props.newComment }
+                                value={ this.props.commentText }
 
                                 ></textarea>
                                 <div className="form-group mt-3 pb-0">
@@ -57,5 +59,5 @@ function mapStateToProps ({ contacts, loggedIn }) {
 	return { contacts, clientID, newComment, firstName, secondName };
 }
 	
-export default connect(mapStateToProps,actions)(CommentBox);
+export default connect(mapStateToProps,actions)(UpdateComment);
 

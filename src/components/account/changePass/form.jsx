@@ -33,13 +33,7 @@ class ChangePassword extends Component {
                     <label className="col-sm-2 col-form-label text-muted mb-0 pb-0 pr-0"><small>User</small></label>
                     <div className="col-sm-10 pb-0 mb-0 ml-0 mt-0 pt-0">
                         <div>
-							<input type="text" name="firstName" value={this.props.email} disabled readOnly className="form-control custom-form-plaintext text-success p-xs-0 m-xs-0 ml-0 pl-0  "/>
-							{/*<Field
-								name="user"
-								type="password"
-								{...fieldSetup}
-							/>*/}
-                            
+							<div disabled readOnly className="form-control custom-form-plaintext text-success p-xs-0 m-xs-0 ml-0 pl-0  ">{this.props.email}</div>
                         </div>
                     </div>
                 </div>

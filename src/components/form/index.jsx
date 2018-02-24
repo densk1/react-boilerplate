@@ -232,7 +232,34 @@ class ContactForm extends Component {
 					onClick={reset}
 					/>
 				}
+				{ buttons &&
 				<div className={formGroupRow}>
+					<div className="col-12 mr-0 text-right">
+						<p className="card-text">
+							<small className="text-muted">
+								<a 
+									href="/edit" 
+									className="text-success "
+									onClick={(e) =>{
+										e.preventDefault();
+										buttons[0]();
+									}}>
+									edit </a> 
+								<a 
+									href={"/delete"} 
+									onClick={(e) => {
+										e.preventDefault();
+										buttons[1]();
+									}} 
+									className="text-danger pl-4"
+									>delete</a>
+							</small>
+						</p>
+					</div>
+				</div>
+				}
+				{/*<div className={formGroupRow}>
+
 					<div className="col-6">
 						{buttons && buttons[0]}
 					
@@ -240,7 +267,7 @@ class ContactForm extends Component {
 					<div className="col-6">
 						{(editable && !isContactCard) ? buttons[1] : ''}
 					</div>
-				</div>
+				</div>*/}
 			</form>
 		)
 	}
