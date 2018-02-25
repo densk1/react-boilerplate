@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import * as actions from './actions.js';
-import { XmlEntities,  } from  'html-entities';
+import { AllHtmlEntities  } from  'html-entities';
 
-const entities = new XmlEntities();
 
 // Styles
 const hideableRowLG = {className: "d-none d-lg-table-cell"};
@@ -40,7 +39,10 @@ class Contacts extends Component {
 						<div className="form-group row text-center">
 
 							<div className="col-sm-8" >
-								<input className="form-control" type="text" placeholder="Search..." onChange={(e) => setInterval((e) => {this.props.findContact(e.target.value)}, 300)} />
+								<input className="form-control" type="text" placeholder="Search..." onChange={(e) => {
+										let value = e.target.value;
+										this.props.findContact(value)
+									}} />
 							</div>
 							<div className="col-sm-4" >
  								<button className="btn btn-secondary my-2 my-sm-0 w-100" type="submit">Search</button>
@@ -66,12 +68,12 @@ class Contacts extends Component {
         return(this.props.contacts.list.sort((a,b) => a.firstName < b.firstName ? -1 : a.firstName > b.firstName ? 1 : 0).map( 
 			d => 
             <tr key={d._id} onClick={()=>this.setState({ id: d._id })}>
-                <td>{d.firstName+" "+entities.decode(d.secondName)}</td>
+                <td>{AllHtmlEntities.decode(d.firstName+" "+d.secondName)}</td>
                 <td  {...hideableRowSM}>{d.email}</td>
-                <td>{d.organisation}</td>
+                <td>{AllHtmlEntities.decode(d.organisation)}</td>
                 {/*<td>{d.desk}</td>*/}
-                <td {...hideableRowLG}>{d.office} { d.extension && "("+d.extension+")"}</td>
-                <td {...hideableRowLG}>{d.mobile}</td>
+                <td {...hideableRowLG}>{AllHtmlEntities.decode(d.office)} { AllHtmlEntities.decode(d.extension && "("+d.extension+")")}</td>
+                <td {...hideableRowLG}>{AllHtmlEntities.decode(d.mobile)}</td>
             </tr>
 
         ))

@@ -6,7 +6,7 @@ class App extends Component {
 		return (
             <header>
                 <nav className="navbar navbar-expand-sm navbar-dark bg-success" >
-					<Link to="/" className="navbar-brand">den den</Link>
+					<Link to="/" className="navbar-brand">Bootstrap CRM</Link>
                     <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

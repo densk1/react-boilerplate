@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import ReactFileReader from 'react-file-reader';
 import Dropzone from 'react-dropzone'
 import csv from 'csv';
-
-
-//import * as actions from './actions.js';
-
+import axios from 'axios';
 
 class ImportContacts extends Component {
 	constructor(props) {
@@ -14,36 +10,76 @@ class ImportContacts extends Component {
 		this.state = {
 			dragEnter: false,
 			accepted: [],
-			rejected: []
+			rejected: [],
+			data:null,
+			progress: 0,
+			arraySize: false
 		}
 	}
-	handleFiles = files => {
-		var reader = new FileReader();
-		reader.onload = function(e) {
-		// Use reader.result
-		alert(reader.result)
-		}
-	  reader.readAsText(files[0]);
+	onDrop = (e) => {
+		this.setState({
+			dragEnter: false,
+		})
+		const reader = new FileReader();
+		reader.onload = () => {
+			csv.parse(reader.result, (err, data) => {
+				if (err) console.log(err);
+				this.processData(data)
+			});
+		};
+		reader.readAsBinaryString(e[0]);
 	}
-/*	onDrop = (e) => {
-		console.log(e);
-		
-	}*/
-onDrop = (e) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-        csv.parse(reader.result, (err, data) => {
-            console.log(data);
-        });
-    };
+	processData = async (d) => {
 
-    reader.readAsBinaryString(e[0]);
-}
+		let contactsArray = [];
+		d.forEach((d, i) => {
+			let data = d.map(string => string.trim())
+
+			if ( !data[0] ) {
+				data[0] = data[3];
+			}
+			if ( i === 0 ) {return;}
+			contactsArray.push({
+				firstName:  data[0],
+				secondName:  data[1],
+				email:  data[2],
+				organisation:  data[3],
+				role:  data[4],
+				status: data[5],
+				office:  data[6],
+				extension:  data[7],
+				direct:  data[8],
+				mobile:  data[9],
+				address1:  data[10],
+				address2:  data[11],
+				city:  data[12],
+				postcode:  data[13],
+				country: data[14],
+				comments: [data[15], data[17], data[18], data[19], data[20], data[21],/*Need Function that will take any additional data and insert it as comments*/]
+			})			
+		})
+		await this.setState({ arraySize: contactsArray.length})	
+		for (let i = 0; i < contactsArray.length; i++) {
+			this.setState({progress: i})
+			let sendContact = await axios.post("/account/import", {...contactsArray[i]})
+			if ( !sendContact || !this.state.arraySize ) { break; }
+			
+		}
+	
+		console.log("contactsArray", contactsArray);
+		return this.setState({ arraySize: false})
+	}
+	componentWillUnmount = () => {
+		return this.setState({ arraySize: false})
+	}
     render() {
+		let progressWidth = (this.state.progress / this.state.arraySize) * 100;
+		let decimalProgressWidth = this.state.arraySize ? (0.40 + ( 0.60 * (this.state.progress / this.state.arraySize).toFixed(2))) : 0.20 ;
+		
         return(
-			<form 
+			<div 
 				
-				className="card card-body col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10 mb-3">
+				className="card card-body col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10 mb-3 text-center">
 				<div className="form-group row mb-0 pb-0">
 					<div className="col-12">
 						<h4 className="text-success text-center">Import Contacts</h4>
@@ -51,19 +87,41 @@ onDrop = (e) => {
 				</div>
 				
 				<Dropzone 
-					// https://github.com/react-dropzone/react-dropzone/tree/master/examples/Accept
-					// https://stackoverflow.com/questions/43756014/convert-csv-to-json-client-side-with-react-dropzone
 					accept="text/csv"
 					onDrop={this.onDrop}
-					className={"dropzone-style border-primary p-5 "+(this.state.dragEnter ? " bg-primary text-white" : "")}
+					multiple={false}
+
+					className={"dropzone-style mb-4  "+(this.state.dragEnter ? " bg-success text-white" : "")}
 					onDragEnter={() => this.setState({dragEnter: true})}
 					onDragLeave={() => this.setState({dragEnter: false})}
 					>
-					<div>
-						Drop your <strong>.CSV</strong> files here to upload.
+					<div style={{position:'relative', backgroundColor: 'rgba(40, 167, 69, '+decimalProgressWidth+' )'}}>
+						{!this.state.arraySize ?
+							<div className={"p-5 "+ (this.state.dragEnter ? " text-white" : " text-success")}>
+								Drop your <strong>.CSV</strong> files here to upload.
+							</div>
+							:
+							<div className="p-5 text-center">
+							
+							<div className="bg-success" style={{position: 'absolute', margin: 0, padding: 0, left: 0, top: 0, height: '100%', width: progressWidth+"%", }}>
+							 &nbsp;
+							</div>
+								<div style={{position: 'relative', zIndex: 99999}}>
+									<span className=" text-white p-2 rounded" style={{position: 'relative', zIndex: 9999999}}>{progressWidth && progressWidth.toFixed(1)} %</span>
+									
+								</div>
+							</div>
+						}
+						
 					</div>
 				</Dropzone>
-			</form>
+				{ this.state.arraySize &&
+				<button 
+					className="btn-sm btn-outline-danger w-50  m-auto " onClick={
+						() => this.setState({ arraySize: false }) 
+					}>Cancel</button>
+				}
+			</div>
         )
     }
 

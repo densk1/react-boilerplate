@@ -1,93 +1,45 @@
 # react-boilerplate
 ### Description
-A boilerplate for react projects, including redux store setup and using bootstrap for HTML styling.
+A CRM system for a video and creative agency built on Reactjs, Bootstrap 4, Mongo and Node.
 
-### Objective
-- [] Create a boilerplate react project with node server for an application with **authentication**, **persistent login** and route serving.
+### Dependencies
 
-## 0. Table of Contents
-1. Project Objective
-2. TODO: Major
-3. TODO: Minor
-4. Task List
-5. Project Requirements
-6. Route Planning
-7. Add SCSS or less
-8. Current WIP plan
-
-### TODO: Major
-- [x] Mysql implementation
-- [x] NoSQL implementation (MongoDB & Mongoose)
-  - [x] Create store on Mlab
-  - [x] Connect to store on Mlab
-  - [x] Create Schema
-- [x] Create form 
-  - [x] Build form autocreator component
-  - [x] Validate form data
-  - [x] Add form data to MongoDB
-  - [ ] Check if formdata already exists using a key. `{upsert: true}`
- - [x] Build form for data collection and editing.
- 
- 
- 
-
-### TODO: Minor
-- [ ] Add a footer box that shows when there is an error. 
-- [ ] How do I stop the auto forwarding that momentarily shows the login page?
-
-- [ ] Fix Passport `.serializeUser` & `.deserializeUser()` (& `findOne()`) 
-- [ ] Google Passport Auth Flow
-- [ ] Hide menu on link click
-- [ ] Teams page, select Team and potentially season.
-- [x] Right align the logout button
-
-## 6. Route Planning
-
-## 7. Current WIP plan
-> Editable entry
-- [x] Create Card that flips to be editable as a form.
-- [x] So data is 'live' updated.
-- [x] Amend 'contact' Schema to include all new data types.
-
-
-> Form for editing of CRM database
-- [x] Name
-- [x] Email Address
-- [x] Company | Job Title
-- [x] Office
-- [x] Extension
-- [x] Desk
-- [x] Mobile
-- [x] Street Number and Name
-- [x] Address Line 1
-- [x] City
-- [x] Postcode
-- [x] Country
-- [x] Comments Box
-
-### > Need to haves
-- [x] Contact Edit
-  	- [x] Static form data VS Flip to Editable on a Card
-- [ ] Contact Delete
-- [x] Contact Search
-- [ ] Account Management form > how to add 2x forms??
-
-
-### > Nice to haves
-- [ ] Contact Specific ToDo list
-- [ ] Editable Notes
-- [x] Deletable Notes
-- [ ] Actions and Dates for notes
-- [ ] Email Alerts
-- [ ] Dashboard
-
-## 8. Sitemap
+## > React
 ```
-/-Marketing
- |-/Signup
- |-/Login
- |-/Dashboard (Get some Data)
- |-/Manage Account
- |-/Logout
+    "axios": "^0.17.1",
+    "csv": "^2.0.0",
+    "html-entities": "^1.2.1",
+    "moment": "^2.20.1",
+    "node-sass-chokidar": "0.0.3",
+    "react": "^16.2.0",
+    "react-bootstrap-modal": "^4.0.0",
+    "react-dom": "^16.2.0",
+    "react-dropzone": "^4.2.8",
+    "react-moment": "^0.7.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-protected-route": "^1.0.0",
+    "react-scripts": "1.0.17",
+    "redux": "^3.7.2",
+    "redux-form": "^7.2.3",
+    "redux-thunk": "^2.2.0"
 ```
- 
+
+## > Node
+```
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-sanitize-escape": "^1.1.0",
+    "jwt-simple": "^0.5.1",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.0.3",
+    "mysql": "^2.15.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
+    "passport-jwt": "^3.0.1",
+    "sha256": "^0.2.0"
+	
+```
+

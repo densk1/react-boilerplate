@@ -9,31 +9,27 @@ import ImportContacts from './import/';
 class Account extends Component {
     render() {
         return(
-            <div className="container">
-                <div className="row">
-                    <div className="col-sm-12">
-						<ImportContacts /> 
-                    </div>
-                </div>	
+            <div className="container-fluid">
+				<div className="row m-0 p-0">
 				{ this.props.admin &&
-				<div>
-				<div className="row">
-                    <div className="col-sm-12">
+				<div className="col-md-6 col-12 p-0 m-0">
+                    <div className="col-12 p-0 m-0">
                         <EditUser /> 
                     </div>
-                </div>
-				<div className="row">
-                    <div className="col-sm-12">
+                    <div className="col-12 p-0 m-0">
                         <AddUser  /> 
                     </div>
                 </div>
-                </div>
                 }
-                <div className="row">
-                    <div className="col-sm-12">
+                <div className="col-12 col-md-6 p-0 m-0">
+                    <div className={!this.props.admin ? " col-12 p-0 m-0" : " col-12  p-0 m-0" }>
                         <ChangePassword  
 							/> 
                     </div>
+					<div className={!this.props.admin ? " col-12 p-0 m-0" : " col-12 p-0 m-0" }>
+						<ImportContacts /> 
+                    </div>
+                </div>
                 </div>
             </div>
         )

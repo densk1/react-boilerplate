@@ -34,7 +34,7 @@ class App extends Component {
             <div id="mainloginform" className="container">
                 <div className="row">
                     <div className="col col-sm-6 offset-sm-3">
-                        <form >
+                        <form onSubmit={(e) => (this.onLoginSubmit(e))}>
                             <div className="form-group">
                                 <input 
                                     className="form-control"
@@ -73,11 +73,10 @@ class App extends Component {
                             </div>*/}
                             <div className="form-group mb-0 pb-0">
                                 <button 
-                                    onClick={(e) => (this.onLoginSubmit(e))}
+									onClick={(e) => (this.onLoginSubmit(e))}
                                     type="button"
+									value="submit"
                                     className="w-100 btn btn-success"
-                                    color="success"
-                                    
                                     >Login</button>
                             </div>
 							{onFail &&

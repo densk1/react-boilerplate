@@ -15,16 +15,18 @@ export const getList = ( offset = null, amount = null ) => dispatch => {
 }
 
 export const findContact = (queryString = '') =>  dispatch => {
-	axios.post('/crm/search', { query: queryString})
-	.then( res => {
-		dispatch({ type: FIND_CONTACT, payload: res.data })
-	})
-    .catch( err => {
-		dispatch({ type: FIND_CONTACT, payload: false });
-        // redirect
-        console.log(err);
-        // console.log(err.response);
-		// console.log(err.data);
-		// console.log(err.response.status);
-	})
+	setTimeout(() => {
+		axios.post('/crm/search', { query: queryString})
+		.then( res => {
+			dispatch({ type: FIND_CONTACT, payload: res.data })
+		})
+		.catch( err => {
+			dispatch({ type: FIND_CONTACT, payload: false });
+			// redirect
+			console.log(err);
+			// console.log(err.response);
+			// console.log(err.data);
+			// console.log(err.response.status);
+		})										
+	}, 300)
 }
