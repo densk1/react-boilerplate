@@ -1,6 +1,40 @@
 # react-boilerplate
 ### Description
-A CRM system for a video and creative agency built on Reactjs, Bootstrap 4, Mongo and Node.
+A CRM system for a video and creative agency built on Reactjs, Bootstrap 4, Mongo and Node. Created to circumvent the need for GDPR related data protection contracts between agencies and saas CRM companies. Installed in-house with access limited to in office LAN only.
+
+# You will need to add the following in the `server/config` directory?
+- Mongo DB keys
+- Unique JWT key
+
+
+### Features
+
+- Contact Management ( CRUD )
+- Contact Search
+- Comments for Contacts
+- Two types of user: standard / admin
+- Upload CSV
+- Should have the following heading in row 1 of the uploaded CSV
+	```
+	(
+	firstName	
+	secondName	
+	email	
+	organisation	
+	role	
+	status	
+	office	
+	extension	
+	direct	
+	mobile	
+	address1	
+	address2	
+	city	
+	postcode	
+	country	
+	Background
+	)
+	```
 
 ### Dependencies
 
@@ -43,3 +77,7 @@ A CRM system for a video and creative agency built on Reactjs, Bootstrap 4, Mong
 	
 ```
 
+### Version 2
+- Email password reset link
+- Date based auto alert emails
+- Editable comments
