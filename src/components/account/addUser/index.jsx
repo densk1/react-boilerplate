@@ -20,24 +20,7 @@ class AddUser extends Component {
 			addUser
 		} = this.props;
         return(
-			<div>
 				<AddUserForm onSubmit={this.addUserHandler} onSuccess={addUser} /> 
-                {/*
-				<div className="row">
-                    <div className="col-sm-12">
-                        <EditUser /> 
-                    </div>
-                </div>
-				
-                <div className="row">
-                    <div className="col-sm-12">
-                        <ChangePassword 
-							onSubmit={this.handleChangePassword} 
-							/> 
-                    </div>
-                </div>
-				*/}
-            </div>
         )
     }
 }

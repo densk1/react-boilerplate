@@ -104,6 +104,10 @@ nav .btn-outline-secondary:hover {
   box-shadow: 0 0 10px #d9534f !important;
   transition: border-color .25s ease-in-out, box-shadow .25s ease-in-out; }
 
+.dropzone-style {
+  width: 100%;
+  border: 1px solid; }
+
 .modal-dialog {
   position: absolute;
   width: 90%;

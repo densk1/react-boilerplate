@@ -4,11 +4,17 @@ import { connect } from 'react-redux';
 import AddUser from './addUser';
 import EditUser from './editUser';
 import ChangePassword from './changePass';
+import ImportContacts from './import/';
 
 class Account extends Component {
     render() {
         return(
             <div className="container">
+                <div className="row">
+                    <div className="col-sm-12">
+						<ImportContacts /> 
+                    </div>
+                </div>	
 				{ this.props.admin &&
 				<div>
 				<div className="row">

@@ -48,7 +48,7 @@ class App extends Component {
                                     key={i}
                                     isAccessible={ loggedIn ? true : false }
                                     exact
-                                    redirectToPath={"/"}
+                                    redirectToPath={"/account"}
                                     path={d.path}
                                     component={d.component}
                                     />

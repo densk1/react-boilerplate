@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "csv": "^2.0.0",
     "html-entities": "^1.2.1",
     "moment": "^2.20.1",
     "node-sass-chokidar": "0.0.3",
@@ -11,6 +12,8 @@
     "react-bootstrap": "^0.32.1",
     "react-bootstrap-modal": "^4.0.0",
     "react-dom": "^16.2.0",
+    "react-dropzone": "^4.2.8",
+    "react-file-reader": "^1.1.4",
     "react-moment": "^0.7.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
