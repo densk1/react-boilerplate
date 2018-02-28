@@ -3,9 +3,10 @@
 An agency CRM agency built on Reactjs, Bootstrap 4, Mongo and Node. Created to circumvent the need for GDPR related data protection contracts between agencies and saas CRM companies. Installed in-house with access limited to in office LAN only.
 
 ### Screenshots
-![Contacts Page](BootstrapCRM-ContactsPage.png)
-![New Contact Page](BootstrapCRM-NewContactForm.png)
-![Account Page](BootstrapCRM-AccountPage.png)
+
+Contacts Page|New Contact Page|Account Page
+-------------|----------------|------------
+![Contacts Page](BootstrapCRM-ContactsPage.png)|![New Contact Page](BootstrapCRM-NewContactForm.png)|![Account Page](BootstrapCRM-AccountPage.png)
 
 ### Features
 
