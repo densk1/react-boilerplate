@@ -69,8 +69,8 @@ class ImportContacts extends Component {
 		console.log("contactsArray", contactsArray);
 		return this.setState({ arraySize: false})
 	}
-	componentWillUnmount = () => {
-		return this.setState({ arraySize: false})
+	componentWillUnmount = async () => {
+		await this.setState({ arraySize: false})
 	}
     render() {
 		let progressWidth = (this.state.progress / this.state.arraySize) * 100;
