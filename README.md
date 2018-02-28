@@ -2,15 +2,13 @@
 ### Description
 An agency CRM agency built on Reactjs, Bootstrap 4, Mongo and Node. Created to circumvent the need for GDPR related data protection contracts between agencies and saas CRM companies. Installed in-house with access limited to in office LAN only.
 
-
 ### Features
 
-- Contact Management ( CRUD )
-- Contact Search
-- Comments for Contacts
-- Two types of user: standard / admin
-- Upload CSV
-- Should have the following heading in row 1 of the uploaded CSV
+- Contact Management and Contact Comments (Add, Edit)
+- Contact Search (Partial String Database Search)
+- Standard and administrative accounts for users.
+- Can upload a formatted .CSV file of contacts.
+- The .CSV file should have the following headings in row.
 	```
 	(
 	firstName	
@@ -32,9 +30,18 @@ An agency CRM agency built on Reactjs, Bootstrap 4, Mongo and Node. Created to c
 	)
 	```
 
+### Start up 
+1. In a new console tab/window git clone repo, install and start the [corresponding node server](https://github.com/densk1/react-bootstrap-crm) Collecion setup on Mlab or other Mongo DB required.
+2. `Git Clone repository && npm install && npm start`
+3. Return to react server and `npm start`
+4. Login using the default account
+- **U:** info@example.com
+- **P:** password
+
+
 ### Dependencies
 
-## > React
+#### > React
 ```
     "axios": "^0.17.1",
     "csv": "^2.0.0",
@@ -55,25 +62,3 @@ An agency CRM agency built on Reactjs, Bootstrap 4, Mongo and Node. Created to c
     "redux-form": "^7.2.3",
     "redux-thunk": "^2.2.0"
 ```
-
-## > Node
-```
-    "body-parser": "^1.18.2",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.16.2",
-    "express-sanitize-escape": "^1.1.0",
-    "jwt-simple": "^0.5.1",
-    "mongo": "^0.1.0",
-    "mongoose": "^5.0.3",
-    "mysql": "^2.15.0",
-    "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0",
-    "passport-jwt": "^3.0.1",
-    "sha256": "^0.2.0"
-	
-```
-
-### Version 2
-- Email password reset link
-- Date based auto alert emails
-- Editable comments
