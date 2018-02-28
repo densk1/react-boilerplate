@@ -2,6 +2,11 @@
 ### Description
 An agency CRM agency built on Reactjs, Bootstrap 4, Mongo and Node. Created to circumvent the need for GDPR related data protection contracts between agencies and saas CRM companies. Installed in-house with access limited to in office LAN only.
 
+### Screenshots
+![Contacts Page](BootstrapCRM-ContactsPage.png)
+![New Contact Page](BootstrapCRM-NewContactForm.png)
+![Account Page](BootstrapCRM-AccountPage.png)
+
 ### Features
 
 - Contact Management and Contact Comments (Add, Edit)
@@ -29,6 +34,7 @@ An agency CRM agency built on Reactjs, Bootstrap 4, Mongo and Node. Created to c
 	Background
 	)
 	```
+
 
 ### Start up 
 1. In a new console tab/window git clone repo, install and start the [corresponding node server](https://github.com/densk1/react-bootstrap-crm) Collecion setup on Mlab or other Mongo DB required.
