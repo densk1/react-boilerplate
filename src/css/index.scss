@@ -24,6 +24,65 @@ footer {
 
 /* DOCUMENT WIDE STYLES */
 
+
+
+
+
+
+
+
+// Bootstrap SCSS
+
+$ipNavy: #0f2d53; 	// rgb(15,45,83)
+$ipRed: #ed1652;		// rgb(237,22,82);
+$ipGreen: #92c83e;  // rgb(146,200,62);
+$ipBlue: #01b3c5;    // rgb(1,179,197);
+
+$theme-colors: (
+	"success": $ipNavy,
+	"danger": $ipRed,
+	"secondary": $ipBlue,
+);
+
+
+
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+nav .btn-outline-secondary:hover {
+	background-color:$ipBlue!important;
+	color:white;
+}
+
+nav li.nav-item a.nav-link {
+	color:lightgrey!important;
+}
+nav li.nav-item a.nav-link:hover {
+	color:$ipRed!important;	
+}
+nav li.nav-item a.nav-link.active {
+	color:$ipBlue!important;	
+}
+h4.text-success {
+	color: $ipRed!important;
+}
+
+form label small {
+	color: $ipNavy!important;
+}
+
+thead.table-sm tr th {
+	border-bottom-color:$ipNavy;
+	color: $ipNavy;
+}
+
+table tbody.table-sm tr td {
+	border-color:$ipNavy;
+}
+
+
+
+
 /* COMPONENT STYLES
 *  Each component should encapsulate it's parts inside a unique ID
 */
@@ -37,3 +96,4 @@ footer {
 @import '../components/account/changePass/_style.scss';
 @import '../components/account/import/_style.scss';
 @import '../components/modal/_style.scss';
+

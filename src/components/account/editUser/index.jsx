@@ -70,7 +70,7 @@ class EditUser extends Component {
 									onChange={(e) => this.handleUserUpdate(d._id, d.admin, d.firstName, d.secondName, index)} /></td>
 							<td className="text-center">
 								{!(email === d.email) && <button 
-									className="btn-sm btn-outline-secondary"
+									className="btn-sm btn-outline-danger"
 									onClick={() => this.handleUserDelete(d._id, index, d.firstName, d.secondName)}
 									>Remove</button>}</td>
 						</tr>
