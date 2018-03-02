@@ -55,14 +55,14 @@ class Comments extends Component {
                                 <div className="col-4 ml-0 pl-0 mr-0 text-right">
                                     <p className="card-text ml-0 pl-0 mr-0">
                                         <small className="text-muted">
-											<a 
+											{/*<a 
 												href="/edit" 
 												className="text-success "
 												onClick={(e) =>{
 													e.preventDefault();
 
 												}}>
-												edit</a> 
+												edit</a> */}
                                             <a href={"remove/"+d._id} onClick={(e) => this.handleUserDelete(e, d._id, index)} className="text-danger absolute-bottom pl-4">delete</a>
                                         </small>
                                     </p>
