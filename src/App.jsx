@@ -18,7 +18,9 @@ import ContactCard from './components/contacts/card/';
 import Account from './components/account/'
 
 const Footer = () => (
-    <h1 className="success">&nbsp;</h1>
+	<div className="text-center">
+		<img className="p-5" src="img/iplogo.png" alt="logo"/>
+	</div>
 )
 
 class App extends Component {

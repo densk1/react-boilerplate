@@ -51,7 +51,7 @@ class Contacts extends Component {
 					</div>
 				</div>
 				<div className="row">
-					<table id="contacttable" className="col-sm-12 table table-striped table-hover ">
+					<table id="contacttable" className="col-sm-12 table table-hover ">
 						<thead>
 							{ this.tableHeader() }
 							{ this.state.id && <Redirect push to={"/contacts/card/"+this.state.id}/>}

@@ -2,3 +2,34 @@
 #contacttable tr:hover td {
     cursor:pointer;
 }
+
+
+#contacttable {
+	th {
+		background-color: $ipNavy;
+		color: white;
+	}
+	
+	td {
+		color: $ipNavy;
+	}
+	th {
+		border-color: $ipNavy;
+	}
+	tr:nth-of-type(even) td {
+		background-color:lighten($ipNavy, 78%);
+	}
+	tr:hover td {
+		//color:white;
+		background-color:lighten($ipNavy, 75%);
+	}
+	tr:nth-of-type(3n-2) td{
+		border-color:$ipRed;
+	}
+	tr:nth-of-type(3n-1) td{
+		border-color:$ipGreen;
+	}
+	tr:nth-of-type(3n) td{
+		border-color:$ipBlue;
+	}
+}

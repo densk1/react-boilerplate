@@ -50,15 +50,15 @@ class EditUser extends Component {
 					{...this.state.modal}
 					/>
                 <h4 className="text-success text-center">Users</h4>
-                <table className="col-sm-12 table">
+                <table id="editusers" className="col-sm-12 table">
                     <thead className="table-sm">
                         <tr>
                             <th className="w-50 pl-1">Name</th>
                             <th className="text-center">Admin</th>
-                            <th className="text-center">Delete</th>
+                            <th className="text-center pt-0 pb-0">Delete</th>
                         </tr>
                     </thead>
-                    <tbody className="table-sm">
+                    <tbody className="table">
 						{editUser && editUser.map( (d, index) => 
 						<tr key={index}>
 							<td className="align-middle">{AllHtmlEntities.decode(d.firstName+" "+d.secondName)}</td>
@@ -68,9 +68,9 @@ class EditUser extends Component {
 									checked={d.admin} 
 									disabled={email === d.email}
 									onChange={(e) => this.handleUserUpdate(d._id, d.admin, d.firstName, d.secondName, index)} /></td>
-							<td className="text-center">
+							<td className="text-center pt-2 pb-2">
 								{!(email === d.email) && <button 
-									className="btn-sm btn-outline-danger"
+									className="btn-sm btn-outline-danger mt-0 mb-0"
 									onClick={() => this.handleUserDelete(d._id, index, d.firstName, d.secondName)}
 									>Remove</button>}</td>
 						</tr>

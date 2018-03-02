@@ -6069,8 +6069,18 @@ thead.table-sm tr th {
   border-bottom-color: #0f2d53;
   color: #0f2d53; }
 
-table tbody.table-sm tr td {
-  border-color: #0f2d53; }
+#editusers tr th {
+  background-color: #0f2d53;
+  color: white; }
+
+#editusers tr:nth-of-type(3n-2) td {
+  border-color: #ed1652; }
+
+#editusers tr:nth-of-type(3n-1) td {
+  border-color: #92c83e; }
+
+#editusers tr:nth-of-type(3n) td {
+  border-color: #01b3c5; }
 
 /* COMPONENT STYLES
 *  Each component should encapsulate it's parts inside a unique ID
@@ -6078,6 +6088,31 @@ table tbody.table-sm tr td {
 /* CONTACTS LIST */
 #contacttable tr:hover td {
   cursor: pointer; }
+
+#contacttable th {
+  background-color: #0f2d53;
+  color: white; }
+
+#contacttable td {
+  color: #0f2d53; }
+
+#contacttable th {
+  border-color: #0f2d53; }
+
+#contacttable tr:nth-of-type(even) td {
+  background-color: #f3f7fd; }
+
+#contacttable tr:hover td {
+  background-color: #e6effa; }
+
+#contacttable tr:nth-of-type(3n-2) td {
+  border-color: #ed1652; }
+
+#contacttable tr:nth-of-type(3n-1) td {
+  border-color: #92c83e; }
+
+#contacttable tr:nth-of-type(3n) td {
+  border-color: #01b3c5; }
 
 #contactCard label {
   padding-right: 0px; }
