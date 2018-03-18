@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import { connect } from 'react-redux';
 import Dropzone from 'react-dropzone'
 import csv from 'csv';
 import axios from 'axios';
 
-class ImportContacts extends Component {
+class ImportContacts extends PureComponent {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -16,6 +16,7 @@ class ImportContacts extends Component {
 			arraySize: false
 		}
 	}
+  
 	onDrop = (e) => {
 		this.setState({
 			dragEnter: false,
@@ -29,8 +30,8 @@ class ImportContacts extends Component {
 		};
 		reader.readAsBinaryString(e[0]);
 	}
+  
 	processData = async (d) => {
-
 		let contactsArray = [];
 		d.forEach((d, i) => {
 			let data = d.map(string => string.trim())

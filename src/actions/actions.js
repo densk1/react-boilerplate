@@ -38,8 +38,15 @@ export const doLogin = (emailAddress, password, stayLoggedIn) => (dispatch) => {
 export const doLogout = () => (dispatch) => {
   axios.post('/auth/logout')
     .then((res) => {
+<<<<<<< HEAD
       dispatch({ type: DO_LOGOUT, payload: false, res });
     }).catch((err) => {
       dispatch({ type: DO_LOGOUT, payload: null, err });
+=======
+      dispatch({ type: DO_LOGOUT, payload: false || res });
+    }).catch((err) => {
+      dispatch({ type: DO_LOGOUT, payload: null, err });
+      // console.log(err.response, err.data, err.response.status);
+>>>>>>> linting
     });
 };
