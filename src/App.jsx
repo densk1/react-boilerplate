@@ -30,6 +30,7 @@ class App extends Component {
 
   render() {
     const { loggedIn } = this.props;
+    const isAccessible = loggedIn && true;
     const myProtectedRoutes = [
       { component: Form, path: '/form', exact: true },
       { component: Contacts, path: '/contacts', exact: true },
@@ -47,7 +48,7 @@ class App extends Component {
               {myProtectedRoutes.map(d => (
                 <ProtectedRoute
                   key={d.path}
-                  isAccessible={loggedIn}
+                  isAccessible={isAccessible}
                   exact
                   redirectToPath="/account"
                   path={d.path}
@@ -68,7 +69,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  loggedIn: PropTypes.bool.isRequired,
+  loggedIn: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   checkLogin: PropTypes.func.isRequired,
 };
 
