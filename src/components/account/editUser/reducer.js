@@ -10,7 +10,6 @@ const removeItemFromArray = (array, index) => array.filter((item, i) => i !== in
 const reducer = (state = [], action = null) => {
   switch (action.type) {
     case GET_USERS:
-
       return [
         ...action.payload.result,
       ];

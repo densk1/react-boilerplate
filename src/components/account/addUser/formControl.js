@@ -1,4 +1,4 @@
-const validate = (values) => {
+export const validate = (values) => {
   const errors = {};
   if (!values.firstName) {
     errors.firstName = 'Please add a First Name.';
@@ -48,5 +48,3 @@ export const warn = values => {
     return warnings
 }
 */
-
-export default validate;
