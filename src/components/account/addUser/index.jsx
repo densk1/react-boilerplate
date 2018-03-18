@@ -5,28 +5,26 @@ import * as actions from './actions.js';
 import AddUserForm from './form';
 
 class AddUser extends Component {
-
-	addUserHandler = values => {
-		const {
-			addNewUser,
-			
-		} = this.props;
-		addNewUser(values);
-		
-    }
+  addUserHandler = (values) => {
+    const { addNewUser } = this.props;
+    addNewUser(values);
+  }
     
-    render() {
-		const {
-			addUser
-		} = this.props;
-        return(
-				<AddUserForm onSubmit={this.addUserHandler} onSuccess={addUser} /> 
-        )
-    }
+  render() {
+    const {
+      addUser
+    } = this.props;
+    return (
+      <AddUserForm
+        onSubmit={this.addUserHandler}
+        onSuccess={addUser}
+      />
+    );
+  }
 }
 
-function mapStateToProps ({ account }) {
-    const { addUser } = account;
-	return { addUser };
+function mapStateToProps({ account }) {
+  const { addUser } = account;
+  return { addUser };
 }
-export default connect(mapStateToProps,actions)(AddUser);
+export default connect(mapStateToProps, actions)(AddUser);
