@@ -6,12 +6,12 @@ import {
   DELETE_CONTACT,
 } from './types';
 
-const reducer = (state = null, action = null) => {
+const reducer = (state = { _id: '' }, action = null) => {
   switch (action.type) {
     case GET_CONTACT:
       return {
         ...state,
-        ...action.payload || false,
+        ...action.payload || {},
       };
     case CLEAR_CARD:
       return false;

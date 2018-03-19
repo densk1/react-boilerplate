@@ -16,7 +16,7 @@ class AddUser extends Component {
     return (
       <AddUserForm
         onSubmit={this.addUserHandler}
-        onSuccess={addUser}
+        onSuccess={addUser && true}
       />
     );
   }
@@ -24,7 +24,7 @@ class AddUser extends Component {
 
 AddUser.propTypes = {
   addNewUser: PropTypes.func.isRequired,
-  addUser: PropTypes.func.isRequired,
+  addUser: PropTypes.bool.isRequired,
 };
 function mapStateToProps({ account }) {
   const { addUser } = account;

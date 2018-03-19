@@ -90,7 +90,7 @@ class ContactCard extends Component {
 }
 
 ContactCard.propTypes = {
-  card: PropTypes.instanceOf(Object).isRequired,
+  card: PropTypes.bool.isRequired,
   match: PropTypes.instanceOf(Object).isRequired,
   history: PropTypes.instanceOf(Object).isRequired,
   getContact: PropTypes.func.isRequired,
@@ -101,7 +101,7 @@ ContactCard.propTypes = {
 };
 
 function mapStateToProps({ contacts }) {
-  const { card } = contacts;
+  const card = contacts.card && true;
   const { newComment } = contacts.comments;
   return { card, newComment };
 }

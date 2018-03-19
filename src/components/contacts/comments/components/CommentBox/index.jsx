@@ -31,8 +31,7 @@ class CommentBox extends Component {
                   <div className="form-group mt-3 pb-0">
                     <button
                       className="btn btn-sm btn-success mb-0"
-                    >
-                      Add Note
+                    >Add Note
                     </button>
                   </div>
                 </form>
@@ -47,11 +46,11 @@ class CommentBox extends Component {
 
 CommentBox.propTypes = {
   newComment: PropTypes.string.isRequired,
-  newCommentText: PropTypes.string.isRequired,
-  clientID: PropTypes.string.isRequired,
-  addNewComment: PropTypes.func.isRequired,
   firstName: PropTypes.string.isRequired,
   secondName: PropTypes.string.isRequired,
+  clientID: PropTypes.string.isRequired,
+  newCommentText: PropTypes.func.isRequired,
+  addNewComment: PropTypes.func.isRequired,
 };
 
 function mapStateToProps({ contacts, loggedIn }) {

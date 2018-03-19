@@ -5,7 +5,6 @@ import { Redirect } from 'react-router-dom';
 import { AllHtmlEntities } from 'html-entities';
 import * as actions from './actions';
 
-
 // Styles
 const hideableRowLG = { className: 'd-none d-lg-table-cell' };
 const hideableRowSM = { className: 'd-none d-sm-table-cell' };
@@ -29,13 +28,11 @@ class Contacts extends Component {
       <th {...hideableRowLG}>Office</th>
       <th {...hideableRowLG}>Mobile</th>
     </tr>
-  )
-  tableBody = () => {
-    const { list } = this.props.contacts;
-    return (
-      list.sort((a, b) => (
-        a.firstName < b.firstName ? -1 : a.firstName > (b.firstName ? 1 : 0)
-      )).map(d => (
+
+  );
+  tableBody = () => (
+    this.props.contacts.list.sort((a, b) => (
+      (a.firstName < b.firstName) ? -1 : a.firstName) > (b.firstName ? 1 : 0)).map(d => (
         <tr key={d._id} onClick={() => this.setState({ id: d._id })}>
           <td>{AllHtmlEntities.decode(`${d.firstName} ${d.secondName}`)}</td>
           <td {...hideableRowSM}>{d.email}</td>
@@ -44,9 +41,8 @@ class Contacts extends Component {
           <td {...hideableRowLG}>{AllHtmlEntities.decode(d.office)} { AllHtmlEntities.decode(d.extension && `(${d.extension})`)}</td>
           <td {...hideableRowLG}>{AllHtmlEntities.decode(d.mobile)}</td>
         </tr>
-      ))
-    );
-  }
+    ))
+  );
   render() {
     return (
       <div className="container">
@@ -59,7 +55,8 @@ class Contacts extends Component {
                   type="text"
                   placeholder="Search..."
                   onChange={(e) => {
-                    this.props.findContact(e.target.value);
+                    const { value } = e.target;
+                    this.props.findContact(value);
                   }}
                 />
               </div>
@@ -72,11 +69,12 @@ class Contacts extends Component {
         <div className="row">
           <table id="contacttable" className="col-sm-12 table table-striped table-hover ">
             <thead>
-              { this.tableHeader() }
-              { this.state.id && <Redirect push to={`/contacts/card/${this.state.id}`} /> }
+              {this.tableHeader()}
+              {this.state.id && <Redirect push to={`/contacts/card/${this.state.id}`} />}
             </thead>
             <tbody>
-              { this.props.contacts.list && this.tableBody() }
+              {this.props.contacts.list && this.tableBody() }
+
             </tbody>
           </table>
         </div>
