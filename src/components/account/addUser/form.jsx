@@ -9,7 +9,7 @@ import ClearButton from '../../form/templates/clearButton';
 
 const formClass = 'card card-body col-xs-12 offset-sm-1 col-sm-10 offset-md-1 col-md-10 mb-3';
 
-const AddUser = ({
+const AddUserForm = ({
   handleSubmit,
   pristine,
   reset,
@@ -124,9 +124,9 @@ export default reduxForm({
   form: 'AddUser',
   validate,
   // warn,
-})(AddUser);
+})(AddUserForm);
 
-AddUser.propTypes = {
+AddUserForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   pristine: PropTypes.bool.isRequired,
   reset: PropTypes.func.isRequired,

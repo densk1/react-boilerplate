@@ -9,7 +9,7 @@ import {
 // action
 // dispatch(reset('myForm'));
 
-const changeUserPassword = values => async (dispatch) => {
+export const changeUserPassword = values => async (dispatch) => {
   try {
     const res = await axios.post('/account/update/password', { ...values });
     dispatch({ type: CHANGE_PASSWORD, payload: res.data });
@@ -25,5 +25,3 @@ const changeUserPassword = values => async (dispatch) => {
     // console.warn("Add User ERROR", e);
   }
 };
-
-export default changeUserPassword;

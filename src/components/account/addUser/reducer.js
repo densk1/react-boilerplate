@@ -3,12 +3,12 @@ import {
   CLEAR_NEW_USER,
 } from './types';
 
-const reducer = (state = null, action = null) => {
+const reducer = (state = false, action = null) => {
   switch (action.type) {
     case ADD_NEW_USER:
-      return { ...state, ...action.payload };
+      return action.payload && true;
     case CLEAR_NEW_USER:
-      return action.payload;
+      return false;
     default:
       return state;
   }

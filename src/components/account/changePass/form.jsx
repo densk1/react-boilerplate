@@ -110,21 +110,20 @@ class ChangePassword extends PureComponent {
 
 ChangePassword.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  submitting: PropTypes.func.isRequired,
+  submitting: PropTypes.bool.isRequired,
   onSuccess: PropTypes.bool.isRequired,
   onPassError: PropTypes.bool.isRequired,
   email: PropTypes.string.isRequired,
 };
-ChangePassword = reduxForm({
-  // a unique name for the form
-  form: 'changePassword',
-  validate,
-  // warn,
-})(ChangePassword);
 
 function mapStateToProps({ loggedIn }) {
   const { email } = loggedIn;
   return { email };
 }
 
-export default connect(mapStateToProps, null)(ChangePassword);
+export default connect(mapStateToProps, null)(reduxForm({
+  // a unique name for the form
+  form: 'changePassword',
+  validate,
+  // warn,
+})(ChangePassword));

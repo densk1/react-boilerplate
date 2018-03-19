@@ -6,7 +6,15 @@ import {
   LOGIN_FAILED,
 } from './types';
 
-const reducer = (state = { onFail: null }, action = null) => {
+const reducer = (
+  state = {
+    admin: false,
+    firstName: '',
+    secondName: '',
+    email: '',
+  },
+  action = null,
+) => {
   switch (action.type) {
     case CHECK_LOGIN:
       return {
@@ -19,9 +27,9 @@ const reducer = (state = { onFail: null }, action = null) => {
         ...action.payload || false,
       };
     case DO_LOGOUT:
-      return false;
+      return {};
     case CHECK_FAILED:
-      return false;
+      return {};
     case LOGIN_FAILED:
       return {
         ...state,

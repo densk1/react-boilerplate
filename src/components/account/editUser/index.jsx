@@ -13,7 +13,7 @@ class EditUser extends Component {
       modal: {
         body: null,
         callback: null,
-        clear: null,
+        clear: false,
       },
     };
   }
@@ -105,7 +105,6 @@ EditUser.propTypes = {
   getUsers: PropTypes.func.isRequired,
   updateUser: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired,
-  clearModal: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
   editUser: PropTypes.instanceOf(Array).isRequired,
 };

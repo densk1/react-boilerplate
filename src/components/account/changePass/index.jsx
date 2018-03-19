@@ -17,8 +17,8 @@ class ChangePassword extends Component {
     return (
       <ChangePasswordForm
         onSubmit={this.handleChangePassword}
-        onSuccess={changePass.changeSuccess}
-        onPassError={changePass.changeFail}
+        onSuccess={changePass.changeSuccess || false}
+        onPassError={changePass.changeFail || false}
       />
     );
   }

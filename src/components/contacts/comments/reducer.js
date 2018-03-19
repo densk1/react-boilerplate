@@ -6,17 +6,16 @@ import {
 } from './types';
 
 const reducerInitialState = {
-  comments: '',
+  comments: [],
   newComment: '',
 };
 
 const reducer = (state = reducerInitialState, action = null) => {
   switch (action.type) {
     case ADD_COMMENT:
-      const newComment = action.payload;
       return {
         ...state,
-        comments: [...newComment, ...state.comments],
+        comments: [...action.payload, ...state.comments],
       };
     case GET_COMMENTS:
 
