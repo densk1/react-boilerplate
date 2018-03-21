@@ -27,9 +27,11 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
+    "start": "concurrently -p [{index}][{name}] -c green.bold,blue.bold,magenta.bold,red.bold,yello.bold,red.bold -n \"CLIENT,SERVER, SASS , TEST \"  \"npm run client\" \"npm run server\" \"npm run watch-css\" \"npm run test\"",
     "build-css": "node-sass-chokidar src/ -o public/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o public/ --watch --recursive",
-    "start": "react-scripts start",
+    "client": "react-scripts start",
+    "server": "cd server && nodemon index.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
