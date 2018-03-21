@@ -23,7 +23,7 @@ const Footer = () => (
   <h1 className="success">&nbsp;</h1>
 );
 
-class App extends Component {
+export class App extends Component {
   componentWillMount = () => {
     this.props.checkLogin();
   }

@@ -10,6 +10,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import reducers from './reducers';
 
 import App from './App';
+configure({ adapter: new Adapter() });
 
 const store = createStore(
   reducers,
@@ -18,14 +19,9 @@ const store = createStore(
 );
 
 const component = mount(<App />);
-configure({ adapter: new Adapter() });
-it('renders without crashing', () => {
-    <Provider store={store}>
-      {expect(component
-          .find(App)
-          .to
-          .have
-          .length(1))
-      }
-    </Provider>
-});
+<Provider store={store}>
+  it('renders without crashing', () => {
+    wrapper = shallow(<Home output={output}/>);
+    component.find(App).to.have.length(1));
+  };
+</Provider>
