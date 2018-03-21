@@ -69,7 +69,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  loggedIn: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  loggedIn: PropTypes.instanceOf(Object).isRequired,
   checkLogin: PropTypes.func.isRequired,
 };
 
