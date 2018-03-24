@@ -38,7 +38,7 @@ UploaderBar.propTypes = {
   dragEnter: PropTypes.bool.isRequired,
   decimalProgressWidth: PropTypes.number.isRequired,
   progressWidth: PropTypes.number.isRequired,
-  arraySize: PropTypes.number.isRequired,
+  arraySize: PropTypes.bool.isRequired,
 };
 
 

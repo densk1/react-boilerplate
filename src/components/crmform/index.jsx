@@ -30,10 +30,13 @@ class Form extends Component {
     );
   }
 }
+Form.defaultProps = {
+  cardID: false,
+};
 Form.propTypes = {
   clearContactID: PropTypes.func.isRequired,
   addNewContact: PropTypes.func.isRequired,
-  cardID: PropTypes.string.isRequired,
+  cardID: PropTypes.string,
 };
 
 

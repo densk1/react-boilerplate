@@ -33,14 +33,22 @@ const cleanField = ({
   );
 };
 
+cleanField.defaultProps = {
+  type: '',
+  showPlaceholder: false,
+  placeholder: '',
+  isContactCard: false,
+  specialValidation: false,
+};
+
 cleanField.propTypes = {
   input: PropTypes.instanceOf(Object).isRequired,
-  type: PropTypes.string.isRequired,
-  showPlaceholder: PropTypes.bool.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  isContactCard: PropTypes.bool.isRequired,
+  type: PropTypes.string,
+  showPlaceholder: PropTypes.bool,
+  placeholder: PropTypes.string,
+  isContactCard: PropTypes.bool,
   meta: PropTypes.instanceOf(Object).isRequired,
-  specialValidation: PropTypes.instanceOf(Object).isRequired,
+  specialValidation: PropTypes.bool,
 };
 
 export default cleanField;

@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 
 import { Field, Fields, reduxForm } from 'redux-form';
@@ -20,7 +21,7 @@ const formGroupRow = 'form-group row mb-0 pb-0';
 // const formGroupRowSpecial ="form-group row mb-0 pb-0";
 // const labelClassSpecial="col-12 col-sm-3 col-form-label text-muted pb-0 mb-0";
 
-class ContactForm extends PureComponent {
+class ContactForm extends Component {
   render() {
     const {
       handleSubmit,
@@ -259,15 +260,6 @@ class ContactForm extends PureComponent {
             </div>
           </div>
         }
-        {/* <div className={formGroupRow}>
-        <div className="col-6">
-        {buttons && buttons[0]}
-        </div>
-        <div className="col-6">
-        {(editable && !isContactCard) ? buttons[1] : ''}
-        </div>
-        </div>
-        */}
       </form>
     );
   }

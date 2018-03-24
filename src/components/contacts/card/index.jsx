@@ -17,6 +17,7 @@ class ContactCard extends Component {
         callback: null,
         clear: this.clearModal,
       },
+      isEditable: false,
     };
   }
   componentDidMount = async () => {
@@ -26,22 +27,13 @@ class ContactCard extends Component {
   componentWillUnmount = () => {
     this.props.clearCard();
   }
-  changeEditable = () => {
-    if (this.isEditable) {
-      this.isEditable = false;
-    } else {
-      this.isEditable = true;
-    }
-  }
   updateContact = (values) => {
     this.props.updateContact(values);
   }
   retEditButton = () => {
-    this.changeEditable();
+    this.setState({ isEditable: !this.state.isEditable });
     this.props.editCard(this.isEditable);
   }
-
-
   retDeleteButton = () => this.handleCardDelete();
   handleCardDelete = () => {
     const { clientID } = this.props.match.params;
@@ -60,7 +52,7 @@ class ContactCard extends Component {
 
   clearModal = () => this.setState({ modal: false });
 
-  isEditable = !false;
+  // isEditable = !false;
   buildContactCard = () => {
     const { clientID } = this.props.match.params;
     return (
@@ -72,9 +64,9 @@ class ContactCard extends Component {
           <div className=" col-sm-12">
             <ContactForm
               onSubmit={this.updateContact}
-              isContactCard={this.isEditable}
+              isContactCard={!this.state.isEditable}
               editable
-              showPlaceholder={!this.isEditable}
+              showPlaceholder={this.state.isEditable}
               contactID={clientID}
               buttons={[this.retEditButton, this.retDeleteButton]}
             />
