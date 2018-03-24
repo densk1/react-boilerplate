@@ -35,10 +35,10 @@ const UploaderBar = ({
   </div>
 );
 UploaderBar.propTypes = {
-  dragEnter: PropTypes.string.isRequired,
-  decimalProgressWidth: PropTypes.string.isRequired,
-  progressWidth: PropTypes.string.isRequired,
-  arraySize: PropTypes.string.isRequired,
+  dragEnter: PropTypes.bool.isRequired,
+  decimalProgressWidth: PropTypes.number.isRequired,
+  progressWidth: PropTypes.number.isRequired,
+  arraySize: PropTypes.number.isRequired,
 };
 
 

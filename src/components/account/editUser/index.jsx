@@ -24,7 +24,7 @@ class EditUser extends Component {
     const currentRole = this.props.editUser[index].admin;
     const verb = currentRole ? 'Remove' : 'Set';
 
-    const body = `${verb}  ${AllHtmlEntities.decode(firstName)} ${AllHtmlEntities.decode(secondName)} as admin?`;
+    const body = `${verb} ${AllHtmlEntities.decode(firstName)} ${AllHtmlEntities.decode(secondName)} as admin?`;
     this.setState({
       modal: {
         body,
@@ -71,14 +71,13 @@ class EditUser extends Component {
                     type="checkbox"
                     checked={d.admin}
                     disabled={email === d.email}
-                    onChange={
-                      () => this.handleUserUpdate(
-                        d._id,
-                        d.admin,
-                        d.firstName,
-                        d.secondName,
-                      )
-                    }
+                    onChange={() => this.handleUserUpdate(
+                      d._id,
+                      d.admin,
+                      d.firstName,
+                      d.secondName,
+                      index,
+                    )}
                   />
                 </td>
                 <td className="text-center">
