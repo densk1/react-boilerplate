@@ -21,7 +21,7 @@ const store = createStore(
 const component = mount(<App />);
 <Provider store={store}>
   it('renders without crashing', () => {
-    wrapper = shallow(<Home output={output}/>);
-    component.find(App).to.have.length(1));
+    // wrapper = shallow(<Home output={output} />);
+    component.find(App).to.have.length(1);
   };
 </Provider>
